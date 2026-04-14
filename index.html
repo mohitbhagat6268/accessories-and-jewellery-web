@@ -71,14 +71,14 @@
         </ul>
 
         <div class="flex items-center space-x-6 text-brand-subtext">
-            <a href="#" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
-            <span class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+            <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="9" cy="21" r="1"></circle>
                     <circle cx="20" cy="21" r="1"></circle>
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
-            </span>
+            </a>
         </div>
     </nav>
 
@@ -141,7 +141,7 @@
                     <h3 class="font-serif text-lg text-center mb-2">14K Gold Diamond Ring</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$199.00</div>
-                    <button class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('14K Gold Diamond Ring', 199.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
                 <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
                     <div class="w-full aspect-square overflow-hidden mb-4">
@@ -150,7 +150,7 @@
                     <h3 class="font-serif text-lg text-center mb-2">Luxury Necklace</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$299.00</div>
-                    <button class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('Luxury Necklace', 299.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
                 <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
                     <div class="w-full aspect-square overflow-hidden mb-4">
@@ -159,7 +159,7 @@
                     <h3 class="font-serif text-lg text-center mb-2">Pearl Necklace</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$1,499.00</div>
-                    <button class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('Pearl Necklace', 1499.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
                 <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
                     <div class="w-full aspect-square overflow-hidden mb-4">
@@ -168,7 +168,7 @@
                     <h3 class="font-serif text-lg text-center mb-2">Sauvage Dior Perfume</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$1,999.00</div>
-                    <button class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('Sauvage Dior Perfume', 1999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colbuttonpercase text-xs tracking-wider">Add to Cart</button>
                 </div>
                 <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
                     <div class="w-full aspect-square overflow-hidden mb-4">
@@ -177,7 +177,7 @@
                     <h3 class="font-serif text-lg text-center mb-2">Worthy Motif Cotton Cap</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$2,100.00</div>
-                    <button class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('Worthy Motif Cotton Cap', 2100.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
                 <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
                     <div class="w-full aspect-square overflow-hidden mb-4">
@@ -186,7 +186,7 @@
                     <h3 class="font-serif text-lg text-center mb-2">Diamond Bracelet</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$2,999.00</div>
-                    <button class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('Diamond Bracelet', 2999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
                 <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
                     <div class="w-full aspect-square overflow-hidden mb-4">
@@ -195,7 +195,7 @@
                     <h3 class="font-serif text-lg text-center mb-2">Jecob & Co. Bugatti Watch</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$260,000.00</div>
-                    <button class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('Jecob & Co. Bugatti Watch', 260000.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
                 <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
                     <div class="w-full aspect-square overflow-hidden mb-4">
@@ -204,7 +204,7 @@
                     <h3 class="font-serif text-lg text-center mb-2">Louis Vuitton Bag</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$179,000.00</div>
-                    <button class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('Louis Vuitton Bag', 179000.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -336,5 +336,6 @@
             }
         }
     </script>
+    <script src="./script/cart.js"></script>
 </body>
 </html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Aura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#131313',          
+                            card: '#333C3C',        
+                            button: '#775144',      
+                            hover: '#C08991',       
+                            text: '#F4D6D8',        
+                            subtext: '#BEABA7',     
+                            shadow: '#0A0A0A'       
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #333C3C; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #775144; }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden min-h-screen flex flex-col">
+
+    <nav class="w-full z-50 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
+        <a href="../index.html" class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</a>
+        <div class="flex items-center space-x-6 text-brand-subtext">
+            <a href="../index.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Back to Shop</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-20 px-6 md:px-12 max-w-4xl mx-auto w-full">
+        <h2 class="text-3xl md:text-5xl font-serif text-center mb-12 tracking-wider">Your Shopping Cart</h2>
+        
+        <div id="cart-items" class="mb-8">
+            </div>
+
+        <div class="bg-brand-shadow/50 border border-brand-card p-8 rounded-lg flex flex-col items-end">
+            <h3 class="text-xl font-serif text-brand-subtext mb-2">Order Summary</h3>
+            <div class="flex items-center justify-between w-full md:w-1/2 lg:w-1/3 mt-4 pt-4 border-t border-brand-card/50">
+                <span class="text-lg tracking-wider">Total:</span>
+                <span id="cart-total" class="text-3xl font-serif font-bold text-brand-text">$0.00</span>
+            </div>
+            <button onclick="proceedToCheckout()" class="mt-8 rounded-full px-10 py-4 bg-brand-button hover:bg-brand-hover text-brand-text font-serif tracking-widest uppercase text-sm transition-all duration-300 shadow-xl shadow-brand-shadow/60 w-full md:w-auto">
+                Proceed to Checkout
+            </button>
+        </div>
+    </main>
+
+    <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">AURA</h3>
+                <p class="text-brand-subtext font-light text-sm leading-relaxed">Elegance that defines you. Discover timeless jewelry and accessories crafted for your unforgettable moments.</p>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Contact Us</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light mb-6">
+                    <li>Email: support@aurajewels.com</li>
+                    <li>Phone: +1 (800) 123-4567</li>
+                    <li>Address: 5th Ave, New York, NY</li>
+                </ul>
+                <div class="flex space-x-4">
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
+    </a>
+
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
+    </a>
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
+    </a>
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
+    </a>
+
+</div>
+            </div>
+        </div>
+        <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
+            &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
+        </div>
+    </footer>
+
+
+    <script src="../script/cart.js"></script>
+</body>
+</html>

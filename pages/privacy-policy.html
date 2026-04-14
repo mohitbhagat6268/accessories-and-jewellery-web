@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Center | Privacy & Terms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            text: '#f8fafc',
+                            subtext: '#94a3b8',
+                            hover: '#38bdf8',
+                            accent: '#0ea5e9'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #475569; }
+        
+        /* Smooth scrolling for the content area */
+        .scroll-smooth { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-bg/80 border-b border-brand-subtext/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-brand-accent rounded-lg flex items-center justify-center font-bold text-white">L</div>
+                <span class="text-lg font-semibold tracking-tight">Legal<span class="text-brand-accent text-xl">.</span></span>
+            </div>
+
+            <div class="relative z-50">
+                <button id="dropdownBtn" class="flex items-center space-x-2 border border-brand-subtext/30 rounded-full px-4 py-1.5 text-xs font-medium text-brand-text hover:border-brand-hover hover:bg-brand-card transition bg-brand-card">
+                    <span>🌍 EN</span>
+                    <svg id="dropdownIcon" class="w-3 h-3 text-brand-subtext transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="dropdownMenu" class="absolute right-0 mt-2 w-48 bg-brand-card border border-brand-subtext/20 rounded-xl shadow-2xl opacity-0 invisible -translate-y-2 transition-all duration-300 transform origin-top max-h-60 overflow-y-auto custom-scrollbar">
+                    <div class="py-2">
+                        <a href="#" class="flex items-center px-4 py-2 text-xs hover:bg-brand-bg/50 transition">🇺🇸 <span class="ml-2">United States</span></a>
+                        <a href="#" class="flex items-center px-4 py-2 text-xs hover:bg-brand-bg/50 transition">🇬🇧 <span class="ml-2">United Kingdom</span></a>
+                        <a href="#" class="flex items-center px-4 py-2 text-xs hover:bg-brand-bg/50 transition">🇨🇦 <span class="ml-2">Canada</span></a>
+                        <a href="#" class="flex items-center px-4 py-2 text-xs hover:bg-brand-bg/50 transition">🇦🇺 <span class="ml-2">Australia</span></a>
+                        <a href="#" class="flex items-center px-4 py-2 text-xs hover:bg-brand-bg/50 transition">🇩🇪 <span class="ml-2">Germany</span></a>
+                        <a href="#" class="flex items-center px-4 py-2 text-xs hover:bg-brand-bg/50 transition">🇫🇷 <span class="ml-2">France</span></a>
+                        <a href="#" class="flex items-center px-4 py-2 text-xs hover:bg-brand-bg/50 transition">🇯🇵 <span class="ml-2">Japan</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <aside class="lg:w-1/4">
+                <div class="sticky top-28 space-y-6">
+                    <div>
+                        <h2 class="text-xs uppercase tracking-widest text-brand-subtext font-bold mb-4">Documentation</h2>
+                        <nav class="space-y-1">
+                            <button onclick="switchTab('privacy')" id="btn-privacy" class="active-nav w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl bg-brand-accent/10 text-brand-accent border border-brand-accent/20 transition-all">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                Privacy Policy
+                            </button>
+                            <button onclick="switchTab('terms')" id="btn-terms" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl text-brand-subtext hover:bg-brand-card hover:text-brand-text transition-all">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                                Terms of Service
+                            </button>
+                            <button onclick="switchTab('returns')" id="btn-returns" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl text-brand-subtext hover:bg-brand-card hover:text-brand-text transition-all">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z"></path></svg>
+                                Return Policy
+                            </button>
+                        </nav>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-brand-accent/20 to-brand-card p-6 rounded-2xl border border-brand-accent/20">
+                        <h4 class="text-sm font-bold mb-2">Need clarification?</h4>
+                        <p class="text-xs text-brand-subtext mb-4 leading-relaxed">Our legal team is here to help you understand your rights.</p>
+                        <a href="mailto:support@example.com" class="text-xs font-bold text-brand-accent hover:underline flex items-center">
+                            Contact Support <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="lg:w-3/4 bg-brand-card rounded-3xl border border-brand-subtext/10 shadow-2xl relative overflow-hidden">
+                <div id="progressBar" class="absolute top-0 left-0 h-1 bg-brand-accent transition-all duration-200" style="width: 0%"></div>
+
+                <div id="contentScrollArea" class="p-8 md:p-12 h-[75vh] overflow-y-auto custom-scrollbar scroll-smooth">
+                    
+                    <section id="content-privacy" class="policy-section space-y-8 animate-in fade-in duration-500">
+                        <div class="space-y-2">
+                            <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">Security First</span>
+                            <h1 class="text-4xl font-black italic tracking-tighter">Privacy Policy</h1>
+                        </div>
+                        <div class="prose prose-invert max-w-none text-brand-subtext space-y-6">
+                            <p class="text-lg leading-relaxed italic text-brand-text">"Your data belongs to you. We just keep it safe."</p>
+                            <p>We respect your privacy and are committed to protecting it through our compliance with this policy. This policy describes the types of information we may collect from you or that you may provide when you visit our website.</p>
+                            <h3 class="text-xl font-bold text-brand-text">1. Collection of Data</h3>
+                            <p>We collect information you provide directly to us. For example, we collect information when you create an account, subscribe to our newsletter, or communicate with us.</p>
+                            <div class="bg-brand-bg/50 p-6 rounded-xl border-l-4 border-brand-accent">
+                                <p class="text-sm"><strong>Note:</strong> We never sell your personal data to third parties. Period.</p>
+                            </div>
+                            <p>The information we collect may include your name, email address, postal address, phone number, and any other information you choose to provide.</p>
+                        </div>
+                    </section>
+
+                    <section id="content-terms" class="policy-section hidden space-y-8">
+                        <div class="space-y-2">
+                            <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">The Agreement</span>
+                            <h1 class="text-4xl font-black italic tracking-tighter">Terms of Service</h1>
+                        </div>
+                        <div class="prose prose-invert max-w-none text-brand-subtext space-y-6">
+                            <p>By using our service, you agree to these terms. Please read them carefully. Our services are very diverse, so sometimes additional terms or product requirements may apply.</p>
+                            <h3 class="text-xl font-bold text-brand-text">1. Usage Rights</h3>
+                            <p>We grant you a personal, worldwide, royalty-free, non-assignable and non-exclusive license to use the software provided to you as part of the services.</p>
+                        </div>
+                    </section>
+
+                    <section id="content-returns" class="policy-section hidden space-y-8">
+                        <div class="space-y-2">
+                            <span class="text-brand-accent text-xs font-bold uppercase tracking-widest">Satisfaction</span>
+                            <h1 class="text-4xl font-black italic tracking-tighter">Return Policy</h1>
+                        </div>
+                        <div class="prose prose-invert max-w-none text-brand-subtext space-y-6">
+                            <p>If you're not happy, we're not happy. We offer a 30-day money-back guarantee on all standard purchases.</p>
+                            <h3 class="text-xl font-bold text-brand-text">1. How to Return</h3>
+                            <p>Simply log into your dashboard, navigate to orders, and click "Initiate Return." We'll send you a prepaid shipping label immediately.</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 1. COUNTRY DROPDOWN LOGIC
+        const dropdownBtn = document.getElementById('dropdownBtn');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const dropdownIcon = document.getElementById('dropdownIcon');
+
+        dropdownBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('opacity-0');
+            dropdownMenu.classList.toggle('invisible');
+            dropdownMenu.classList.toggle('-translate-y-2');
+            dropdownIcon.classList.toggle('rotate-180');
+        });
+
+        document.addEventListener('click', () => {
+            dropdownMenu.classList.add('opacity-0', 'invisible', '-translate-y-2');
+            dropdownIcon.classList.remove('rotate-180');
+        });
+
+        // 2. TAB SWITCHING LOGIC
+        function switchTab(tabId) {
+            // Hide all sections
+            document.querySelectorAll('.policy-section').forEach(s => s.classList.add('hidden'));
+            // Show selected section
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+            
+            // Update buttons
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('bg-brand-accent/10', 'text-brand-accent', 'border', 'border-brand-accent/20');
+                btn.classList.add('text-brand-subtext');
+            });
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            activeBtn.classList.add('bg-brand-accent/10', 'text-brand-accent', 'border', 'border-brand-accent/20');
+            activeBtn.classList.remove('text-brand-subtext');
+
+            // Reset scroll and progress bar
+            const scrollArea = document.getElementById('contentScrollArea');
+            scrollArea.scrollTop = 0;
+            document.getElementById('progressBar').style.width = '0%';
+        }
+
+        // 3. READING PROGRESS BAR LOGIC
+        const scrollArea = document.getElementById('contentScrollArea');
+        const progressBar = document.getElementById('progressBar');
+
+        scrollArea.addEventListener('scroll', () => {
+            const winScroll = scrollArea.scrollTop;
+            const height = scrollArea.scrollHeight - scrollArea.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            progressBar.style.width = scrolled + "%";
+        });
+    </script>
+</body>
+</html>
