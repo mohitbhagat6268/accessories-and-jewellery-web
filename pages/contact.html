@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | Contact Us</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/contact.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#131313',          // Night Background
+                            card: '#333C3C',        // Dark Gray Cards
+                            button: '#775144',      // Maroon Buttons
+                            hover: '#C08991',       // Hover Maroon
+                            text: '#F4D6D8',        // Off White Main Text
+                            subtext: '#BEABA7',     // Light Gray Subtext
+                            shadow: '#0A0A0A'       // Deep Shadow
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body class="bg-[#0f0f0f] text-[#f5e6d3] font-sans">
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-button selection:text-white">
 
-<nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center shadow-lg">
         <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
         
         <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
-            <li><a href="#" class="hover:text-brand-text transition-colors">Home</a></li>
+            <li><a href="../index.html" class="hover:text-brand-text transition-colors">Home</a></li>
             <li>
                 <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
                     <option value="" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
@@ -37,12 +65,12 @@
                     <option value="perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
                 </select>
             </li>
-            <li><a href="#" class="hover:text-brand-text transition-colors">About</a></li>
-            <li><a href="#" class="hover:text-brand-text transition-colors">Contact</a></li>
+            <li><a href="../pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="../pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
         </ul>
 
         <div class="flex items-center space-x-6 text-brand-subtext">
-            <a href="#" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            <a href="../pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
             <span class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="9" cy="21" r="1"></circle>
@@ -53,163 +81,173 @@
         </div>
     </nav>
 
+    <section class="h-[350px] bg-cover bg-center flex items-center justify-center mt-[72px] relative" style="background-image: url('../assets/bg.jpeg');">
+        <div class="absolute inset-0 bg-brand-shadow/60"></div>
+        <div class="relative bg-brand-bg/40 backdrop-blur-sm border border-brand-card/50 px-10 py-8 rounded-2xl text-center shadow-2xl">
+            <h1 class="text-5xl md:text-6xl font-serif font-bold text-brand-text tracking-wide mb-2">Contact Us</h1>
+            <p class="text-brand-subtext font-light tracking-widest uppercase text-sm">We’d love to hear from you</p>
+        </div>
+    </section>
 
-  
-  <section class="h-[300px] bg-cover bg-center flex items-center justify-center"
-    style="background-image: url('assets/bg.jpeg');">
-    <div class="bg-black/60 px-8 py-6 rounded-xl text-center">
-      <h1 class="text-6xl font-bold text-white">Contact Us</h1>
-      <p class="text-gray-300 mt-2">We’d love to hear from you</p>
-    </div>
-  </section>
+    <section class="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12 items-start">
+        
+        <div class="space-y-8">
+            <div>
+                <h1 class="text-3xl font-serif font-semibold mb-4 text-brand-text">Contact Information</h1>
+                <p class="text-brand-subtext leading-relaxed font-light">
+                    💬 Feel free to reach out to us for any inquiries or support. <br>
+                    ❤️ We’d love to hear from you—contact us anytime! <br>
+                    📞 Get in touch with our team for assistance and inquiries. <br>
+                    💎 Have a question about our jewelry? We’re here to help you shine ✨
+                </p>
+            </div>
 
-  
-  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10">
-
-    
-    <div class="space-y-6">
-      <h1 class="text-2xl font-semibold">Contact Information</h1>
-
-      <p>💬 Feel free to reach out to us for any inquiries or support. ❤️ We’d love to hear from you—contact us anytime! 📞 Get in touch with our team for assistance and inquiries. 💎 Have a question about our jewelry? We’re here to help you shine ✨</p>
-
-      <div><p>📞 Phone</p><p class="text-gray-400">+1 (800) 123-4567</p></div>
-      <div><p>📍 Address</p><p class="text-gray-400"> 5th Ave, New York, NY</p></div>
-      <div><p>📧 Email</p><p class="text-gray-400">support@aurajewels.com</p></div>
-      <div><p>🕒 Working Hours</p><p class="text-gray-400">Mon - Fri: 9 AM - 7 PM</p></div>
-      <div><p>💬 WhatsApp</p><p class="text-gray-400">+1 (800) 123-4567</p></div>
-    </div>
-
-   
-    <div class="bg-[#1a1a1a] p-6 rounded-2xl shadow-lg">
-
-      <img src="assets/diamond.jpeg" class="w-full h-40 object-cover rounded-xl mb-5">
-
-      <h2 class="text-2xl font-semibold mb-4">Send a Message</h2>
-
-      <form id="contactForm" class="space-y-4">
-        <input type="text" placeholder="Full Name"
-          class="w-full p-3 rounded bg-[#0f0f0f] border border-gray-700">
-
-        <input type="email" placeholder="Email"
-          class="w-full p-3 rounded bg-[#0f0f0f] border border-gray-700">
-
-        <div class="relative">
-          <textarea placeholder="Your Message"
-            class="w-full p-3 pr-14 rounded h-32 bg-[#0f0f0f] border border-gray-700"></textarea>
-
-          <img src="assets/ring.jpeg"
-               class="absolute right-3 bottom-3 w-12 h-12 rounded-full">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-brand-card/50">
+                <div class="space-y-1">
+                    <p class="font-serif text-brand-text text-lg">📞 Phone</p>
+                    <p class="text-brand-subtext font-light tracking-wide">+1 (800) 123-4567</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-serif text-brand-text text-lg">📍 Address</p>
+                    <p class="text-brand-subtext font-light tracking-wide">5th Ave, New York, NY</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-serif text-brand-text text-lg">📧 Email</p>
+                    <p class="text-brand-subtext font-light tracking-wide">support@aurajewels.com</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-serif text-brand-text text-lg">🕒 Working Hours</p>
+                    <p class="text-brand-subtext font-light tracking-wide">Mon - Fri: 9 AM - 7 PM</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-serif text-brand-text text-lg">💬 WhatsApp</p>
+                    <p class="text-brand-subtext font-light tracking-wide">+1 (800) 123-4567</p>
+                </div>
+            </div>
         </div>
 
-        <button class="w-full bg-[#7a1811] p-3 rounded-full">
-          Send Message
-        </button>
-      </form>
-    </div>
+        <div class="bg-brand-card/40 border border-brand-subtext/20 p-8 rounded-3xl shadow-2xl backdrop-blur-md">
+            <img src="../assets/diamond.jpeg" alt="Diamond" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-lg border border-brand-subtext/10">
 
-  </section>
+            <h2 class="text-2xl font-serif font-semibold mb-6 text-brand-text">Send a Message</h2>
 
- 
-  <div class="relative h-screen w-full overflow-hidden">
+            <form id="contactForm" class="space-y-5">
+                <input type="text" placeholder="Full Name" class="w-full p-4 rounded-xl bg-brand-bg/60 border border-brand-subtext/30 focus:border-brand-hover focus:ring-1 focus:ring-brand-hover outline-none transition-all text-sm font-light placeholder-brand-subtext/50 text-brand-text">
 
-    <video autoplay muted loop class="absolute w-full h-full object-cover">
-      <source src="assets/video-diamod.mp4" type="video/mp4">
-    </video>
+                <input type="email" placeholder="Email" class="w-full p-4 rounded-xl bg-brand-bg/60 border border-brand-subtext/30 focus:border-brand-hover focus:ring-1 focus:ring-brand-hover outline-none transition-all text-sm font-light placeholder-brand-subtext/50 text-brand-text">
 
-    <div class="absolute inset-0 bg-black/70"></div>
+                <div class="relative">
+                    <textarea placeholder="Your Message" class="w-full p-4 pr-16 rounded-xl h-36 bg-brand-bg/60 border border-brand-subtext/30 focus:border-brand-hover focus:ring-1 focus:ring-brand-hover outline-none transition-all text-sm font-light placeholder-brand-subtext/50 text-brand-text resize-none"></textarea>
+                    
+                    <img src="../assets/ring.jpeg" alt="Ring" class="absolute right-4 bottom-4 w-12 h-12 rounded-full border-2 border-brand-subtext/30 object-cover shadow-md">
+                </div>
 
-    <div class="relative flex items-center justify-center h-full px-4">
+                <button type="submit" class="w-full bg-brand-button hover:bg-brand-hover text-white font-serif tracking-widest uppercase text-xs p-4 rounded-xl transition-colors shadow-lg">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
 
-      <div class="bg-black/60 backdrop-blur-md p-8 rounded-2xl w-full max-w-lg">
+    <div class="relative min-h-screen w-full overflow-hidden flex items-center justify-center py-20">
+        <video autoplay muted loop playsinline class="absolute w-full h-full object-cover z-0">
+            <source src="../assets/video-diamod.mp4" type="video/mp4">
+        </video>
 
-        <h1 class="text-3xl font-bold text-center mb-6">Jewelry Preference Survey 💎</h1>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-shadow/90 via-brand-shadow/70 to-brand-shadow/90 z-10"></div>
 
-        <form id="surveyForm" class="space-y-4">
+        <div class="relative z-20 w-full max-w-lg px-4">
+            <div class="bg-brand-card/30 backdrop-blur-xl border border-brand-subtext/20 p-8 md:p-10 rounded-[2rem] shadow-2xl">
+                <h1 class="text-3xl font-serif font-bold text-center mb-8 text-brand-text">Jewelry Preference Survey 💎</h1>
 
-          <input type="text" id="name" placeholder="Your Name"
-            class="w-full p-3 rounded bg-black/40 border border-gray-500">
+                <form id="surveyForm" class="space-y-5">
+                    <input type="text" id="name" placeholder="Your Name" class="w-full p-4 rounded-xl bg-brand-bg/60 border border-brand-subtext/30 text-brand-text placeholder-brand-subtext/60 focus:border-brand-hover focus:ring-1 focus:ring-brand-hover outline-none transition-all text-sm">
 
-          <select id="gender" class="w-full p-3 rounded bg-black/40 border border-gray-500">
-            <option value="">Select Gender</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Other</option>
-          </select>
+                    <select id="gender" class="w-full p-4 rounded-xl bg-brand-bg/60 border border-brand-subtext/30 text-brand-text focus:border-brand-hover outline-none transition-all text-sm appearance-none cursor-pointer">
+                        <option value="" class="bg-brand-bg">Select Gender</option>
+                        <option class="bg-brand-bg">Male</option>
+                        <option class="bg-brand-bg">Female</option>
+                        <option class="bg-brand-bg">Other</option>
+                    </select>
 
-          <div>
-            <p>💍 What do you like most?</p>
-            <label><input type="radio" name="jewelry" value="Rings"> Rings</label><br>
-            <label><input type="radio" name="jewelry" value="Necklaces"> Necklaces</label><br>
-            <label><input type="radio" name="jewelry" value="Bracelets"> Bracelets</label><br>
-            <label><input type="radio" name="jewelry" value="Earrings"> Earrings</label>
-          </div>
+                    <div class="p-4 rounded-xl bg-brand-bg/40 border border-brand-subtext/20">
+                        <p class="font-serif text-brand-text mb-3">💍 What do you like most?</p>
+                        <div class="space-y-2 text-sm text-brand-subtext">
+                            <label class="flex items-center space-x-3 cursor-pointer group"><input type="radio" name="jewelry" value="Rings" class="accent-brand-button w-4 h-4"><span class="group-hover:text-brand-text transition-colors">Rings</span></label>
+                            <label class="flex items-center space-x-3 cursor-pointer group"><input type="radio" name="jewelry" value="Necklaces" class="accent-brand-button w-4 h-4"><span class="group-hover:text-brand-text transition-colors">Necklaces</span></label>
+                            <label class="flex items-center space-x-3 cursor-pointer group"><input type="radio" name="jewelry" value="Bracelets" class="accent-brand-button w-4 h-4"><span class="group-hover:text-brand-text transition-colors">Bracelets</span></label>
+                            <label class="flex items-center space-x-3 cursor-pointer group"><input type="radio" name="jewelry" value="Earrings" class="accent-brand-button w-4 h-4"><span class="group-hover:text-brand-text transition-colors">Earrings</span></label>
+                        </div>
+                    </div>
 
-          <select id="budget" class="w-full p-3 rounded bg-black/40 border border-gray-500">
-            <option value="">Preferred Budget</option>
-            <option>Under ₹1000</option>
-            <option>₹1000 - ₹5000</option>
-            <option>₹5000+</option>
-          </select>
+                    <select id="budget" class="w-full p-4 rounded-xl bg-brand-bg/60 border border-brand-subtext/30 text-brand-text focus:border-brand-hover outline-none transition-all text-sm appearance-none cursor-pointer">
+                        <option value="" class="bg-brand-bg">Preferred Budget</option>
+                        <option class="bg-brand-bg">Under ₹1000</option>
+                        <option class="bg-brand-bg">₹1000 - ₹5000</option>
+                        <option class="bg-brand-bg">₹5000+</option>
+                    </select>
 
-          <textarea id="message" placeholder="Additional preferences..."
-            class="w-full p-3 rounded h-24 bg-black/40 border border-gray-500"></textarea>
+                    <textarea id="message" placeholder="Additional preferences..." class="w-full p-4 rounded-xl h-28 bg-brand-bg/60 border border-brand-subtext/30 text-brand-text placeholder-brand-subtext/60 focus:border-brand-hover focus:ring-1 focus:ring-brand-hover outline-none transition-all text-sm resize-none"></textarea>
 
-          <div>
-            <p class="mb-2">⭐ Rate your experience</p>
-            <div id="starContainer" class="flex space-x-2 text-3xl cursor-pointer">
-              <span data-value="1">☆</span>
-              <span data-value="2">☆</span>
-              <span data-value="3">☆</span>
-              <span data-value="4">☆</span>
-              <span data-value="5">☆</span>
+                    <div class="p-4 rounded-xl bg-brand-bg/40 border border-brand-subtext/20 text-center">
+                        <p class="font-serif text-brand-text mb-2">⭐ Rate your experience</p>
+                        <div id="starContainer" class="flex justify-center space-x-2 text-3xl cursor-pointer text-brand-subtext/50">
+                            <span data-value="1" class="hover:text-brand-hover transition-colors">☆</span>
+                            <span data-value="2" class="hover:text-brand-hover transition-colors">☆</span>
+                            <span data-value="3" class="hover:text-brand-hover transition-colors">☆</span>
+                            <span data-value="4" class="hover:text-brand-hover transition-colors">☆</span>
+                            <span data-value="5" class="hover:text-brand-hover transition-colors">☆</span>
+                        </div>
+                        <input type="hidden" id="rating" value="0">
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-button hover:bg-brand-hover text-white font-serif tracking-widest uppercase text-xs p-4 rounded-xl transition-all shadow-[0_0_20px_rgba(119,81,68,0.4)]">
+                        Submit Survey
+                    </button>
+                </form>
             </div>
-            <input type="hidden" id="rating" value="0">
-          </div>
-
-          <button class="w-full bg-red-800 p-3 rounded-full">
-            Submit Survey
-          </button>
-
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <section class="max-w-6xl mx-auto px-6 py-12">
-    <h2 class="text-2xl font-semibold mb-6">⭐ Customer Reviews</h2>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-[#1e1e1e] p-4 rounded-xl">
-        ⭐⭐⭐⭐⭐ <p>"Amazing quality jewelry!"</p>
-      </div>
-      <div class="bg-[#1e1e1e] p-4 rounded-xl">
-        ⭐⭐⭐⭐⭐ <p>"Loved the designs!"</p>
-      </div>
-      <div class="bg-[#1e1e1e] p-4 rounded-xl">
-        ⭐⭐⭐⭐⭐ <p>"Perfect gift 💎"</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="location-banner">
-  <div class="location-content">
-
-    <div class="location-left">
-      <h2>Our Location📍</h2>
-      <p>5th Avenue, New York</p>
-      <img src="assets/location.jpeg" alt="Location Map Style">
+        </div>
     </div>
 
-    <div class="location-right">
-      <img src="assets/Aura.jpeg" alt="Aura Jewellery Building">
-    </div>
+    <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-serif font-bold text-brand-text">⭐ Customer Reviews</h2>
+            <p class="text-brand-subtext text-sm mt-2 tracking-widest uppercase">What our clients say</p>
+        </div>
 
-  </div>
-</section>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-brand-card/40 border border-brand-subtext/10 p-8 rounded-2xl text-center hover:border-brand-subtext/30 transition-colors">
+                <div class="text-brand-hover mb-3 text-lg">★★★★★</div>
+                <p class="font-serif text-brand-text text-lg italic">"Amazing quality jewelry!"</p>
+            </div>
+            <div class="bg-brand-card/40 border border-brand-subtext/10 p-8 rounded-2xl text-center hover:border-brand-subtext/30 transition-colors">
+                <div class="text-brand-hover mb-3 text-lg">★★★★★</div>
+                <p class="font-serif text-brand-text text-lg italic">"Loved the designs!"</p>
+            </div>
+            <div class="bg-brand-card/40 border border-brand-subtext/10 p-8 rounded-2xl text-center hover:border-brand-subtext/30 transition-colors">
+                <div class="text-brand-hover mb-3 text-lg">★★★★★</div>
+                <p class="font-serif text-brand-text text-lg italic">"Perfect gift 💎"</p>
+            </div>
+        </div>
+    </section>
 
+    <section class="max-w-6xl mx-auto px-6 pb-20">
+        <div class="bg-brand-card/30 border border-brand-subtext/20 rounded-[2rem] overflow-hidden flex flex-col md:flex-row items-stretch shadow-2xl">
+            
+            <div class="w-full md:w-1/2 p-10 flex flex-col justify-center border-b md:border-b-0 md:border-r border-brand-subtext/10">
+                <h2 class="text-3xl font-serif font-bold text-brand-text mb-2">Our Location 📍</h2>
+                <p class="text-brand-subtext tracking-widest uppercase text-xs mb-8">5th Avenue, New York</p>
+                <img src="../assets/location.jpeg" alt="Location Map Style" class="w-full h-48 md:h-64 object-cover rounded-xl shadow-lg border border-brand-subtext/20 grayscale hover:grayscale-0 transition-all duration-500">
+            </div>
 
-  
-   <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
+            <div class="w-full md:w-1/2 p-6 md:p-10 flex items-center justify-center bg-brand-bg/50">
+                <img src="../assets/Aura.jpeg" alt="Aura Jewellery Building" class="w-full h-full object-cover rounded-xl shadow-lg border border-brand-subtext/20">
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
                 <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">AURA</h3>
@@ -218,7 +256,7 @@
             <div>
                 <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
                 <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
+                    <li><a href="../pages/about.html" class="hover:text-brand-hover transition-colors">About Us</a></li>
                     <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
                     <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
                     <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
@@ -227,9 +265,9 @@
             <div>
                 <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
                 <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
+                    <li><a href="../pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
+                    <li><a href="../pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
+                    <li><a href="../pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
                 </ul>
             </div>
             <div>
@@ -240,21 +278,19 @@
                     <li>Address: 5th Ave, New York, NY</li>
                 </ul>
                 <div class="flex space-x-4">
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
-    </a>
-
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
-    </a>
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
-    </a>
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
-    </a>
-
-</div>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:bg-brand-card/50">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain brightness-200 opacity-80">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:bg-brand-card/50">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain brightness-200 opacity-80">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:bg-brand-card/50">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain brightness-200 opacity-80">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:bg-brand-card/50">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain brightness-200 opacity-80">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
@@ -262,7 +298,6 @@
         </div>
     </footer>
 
-  <script src="script.js"></script>
-
+    <script src="../script/contact.js"></script>
 </body>
 </html>

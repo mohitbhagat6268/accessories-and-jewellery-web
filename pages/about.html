@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura | About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#131313',          // Night Background
+                            card: '#333C3C',        // Dark Gray Cards
+                            button: '#775144',      // Maroon Buttons
+                            hover: '#C08991',       // Hover Maroon
+                            text: '#F4D6D8',        // Off White Main Text
+                            subtext: '#BEABA7',     // Light Gray Subtext
+                            shadow: '#0A0A0A'       // Deep Shadow
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-brand-bg text-brand-text font-sans selection:bg-brand-button selection:text-brand-text">
+
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
+        
+        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
+            <li><a href="../index.html" class="hover:text-brand-text transition-colors">Home</a></li>
+            <li>
+                <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
+                    <option value="" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
+                    <option value="rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
+                    <option value="pendents.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
+                    <option value="earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
+                    <option value="bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
+                    <option value="diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
+                    <option value="platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
+                </select>
+            </li>
+            <li>
+                <select id="collection" onchange="goToPage()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
+                    <option value="" class="bg-brand-bg text-brand-text">COLLECTION ⮛</option>
+                    <option value="bags.html" class="bg-brand-bg text-brand-text text-center">Bags</option>
+                    <option value="hats.html" class="bg-brand-bg text-brand-text text-center">Hats</option>
+                    <option value="belts.html" class="bg-brand-bg text-brand-text text-center">Belts</option>
+                    <option value="watches.html" class="bg-brand-bg text-brand-text text-center">Watches</option>
+                    <option value="perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
+                </select>
+            </li>
+            <li><a href="../pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="../pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-6 text-brand-subtext">
+            <a href="../pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            <a href="../pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <main class="container mx-auto px-6 py-16 md:py-24">
+
+        <section class="text-center mb-24 md:mb-32">
+            <h1 class="font-serif text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-brand-text leading-tight">Crafting Your <span class="italic text-brand-subtext">Aura</span></h1>
+            <p class="font-sans text-xl md:text-2xl text-brand-subtext max-w-3xl mx-auto leading-relaxed">Aura isn't just jewelry; it's a reflection of your unique light, a statement of elegance and confidence. We believe that true beauty is cultivated from within, and our accessories are designed to celebrate yours.</p>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-24 md:mb-32 items-center">
+            <div class="space-y-8">
+                <h2 class="font-serif text-4xl font-bold text-brand-text">The Beginning of our Aura</h2>
+                <div class="text-brand-subtext space-y-4 leading-loose text-lg font-light">
+                    <p>It started with a simple belief: everyone deserves to shine. Our founders, a team of passionate creators and dreamers, were inspired by the radiant energy within people. They saw a need for jewelry and accessories that didn't just adorn, but amplified.</p>
+                    <p>Our story is one of meticulous craft, endless innovation, and a commitment to providing exquisite pieces that tell *your* story. We blend timeless elegance with contemporary design, ensuring every Aura creation is a symbol of self-expression.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-8 text-center pt-6 border-t border-brand-card">
+                    <div class="bg-brand-card p-8 rounded-xl shadow-xl shadow-brand-shadow flex-1">
+                        <i class="fas fa-rocket text-4xl text-brand-subtext mb-5"></i>
+                        <h3 class="font-serif text-2xl font-semibold text-brand-text mb-2">Our Mission</h3>
+                        <p class="text-brand-subtext font-light">To empower individuals to embrace and radiate their inner confidence through beautifully crafted, ethically sourced jewelry and accessories.</p>
+                    </div>
+                    <div class="bg-brand-card p-8 rounded-xl shadow-xl shadow-brand-shadow flex-1">
+                        <i class="fas fa-eye text-4xl text-brand-subtext mb-5"></i>
+                        <h3 class="font-serif text-2xl font-semibold text-brand-text mb-2">Our Vision</h3>
+                        <p class="text-brand-subtext font-light">To become a global beacon of elegant self-expression, inspiring millions to celebrate their unique 'Aura' with conscious, high-quality adornments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative group aspect-[3/4] overflow-hidden rounded-2xl shadow-xl shadow-brand-shadow">
+                <img src="../assets/founder.png" alt="Aura jewelry close up" class="w-full h-full object-cover group-hover:scale-90 transition-transform duration-500 ease-in-out">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                <div class="absolute bottom-10 left-10 p-4 border border-brand-text/50 rounded-md backdrop-blur-sm">
+                   <p class="font-serif text-2xl text-brand-text italic font-medium">Radiate elegance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-10 bg-brand-card rounded-3xl shadow-2xl shadow-brand-shadow mb-24 md:mb-32">
+            <h2 class="font-serif text-4xl md:text-5xl font-extrabold text-brand-text text-center mb-16 tracking-tight">The Pillars of Aura</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                
+                <div class="flex flex-col items-center text-center group">
+                    <div class="p-6 bg-brand-bg rounded-full text-brand-subtext mb-6 group-hover:text-brand-hover group-hover:bg-brand-shadow/50 transition duration-300">
+                        <i class="fas fa-gem text-5xl"></i>
+                    </div>
+                    <h3 class="font-sans text-2xl font-bold text-brand-text mb-4">Quality & Craftsmanship</h3>
+                    <p class="text-brand-subtext font-light leading-relaxed">Meticulously designed and curated using the finest materials and masterful craftsmanship, ensuring each piece is timeless and built to last.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center group">
+                    <div class="p-6 bg-brand-bg rounded-full text-brand-subtext mb-6 group-hover:text-brand-hover group-hover:bg-brand-shadow/50 transition duration-300">
+                        <i class="fas fa-handshake text-5xl"></i>
+                    </div>
+                    <h3 class="font-sans text-2xl font-bold text-brand-text mb-4">Trust & Integrity</h3>
+                    <p class="text-brand-subtext font-light leading-relaxed">Built on transparency and ethical sourcing. We are committed to building lasting relationships with our customers and partners through trust.</p>
+                </div>
+
+                <div class="flex flex-col items-center text-center group">
+                    <div class="p-6 bg-brand-bg rounded-full text-brand-subtext mb-6 group-hover:text-brand-hover group-hover:bg-brand-shadow/50 transition duration-300">
+                        <i class="fas fa-heart text-5xl"></i>
+                    </div>
+                    <h3 class="font-sans text-2xl font-bold text-brand-text mb-4">Customer Satisfaction</h3>
+                    <p class="text-brand-subtext font-light leading-relaxed">Your joy is our success. We provide personalized service, seamless experiences, and an unwavering commitment to your ultimate satisfaction.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-24 md:mb-32">
+            <h2 class="font-serif text-4xl md:text-5xl font-extrabold text-brand-text mb-16 tracking-tight text-center">Loved by our Aura Community</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <div class="bg-brand-card p-8 rounded-2xl shadow-xl shadow-brand-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-400 mb-6 space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-brand-text font-light leading-relaxed text-lg mb-6">“Absolutely in love with my Aura necklace! The quality is amazing, and I always get compliments. Definitely coming back for more!”</p>
+                    </div>
+                    <div class="flex items-center pt-6 border-t border-brand-shadow">
+                        <img src="https://i.pravatar.cc/150?u=sara123" alt="Sarah J." class="w-14 h-14 rounded-full mr-4 border-2 border-brand-subtext">
+                        <div>
+                            <p class="font-semibold text-brand-text">Sarah J.</p>
+                            <p class="text-brand-subtext font-light">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card p-8 rounded-2xl shadow-xl shadow-brand-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-400 mb-6 space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="text-brand-text font-light leading-relaxed text-lg mb-6">“Got the minimalist gold earrings, and they are perfect for everyday wear. Simple, elegant, and comfortable. Aura’s collection is stunning.”</p>
+                    </div>
+                    <div class="flex items-center pt-6 border-t border-brand-shadow">
+                        <img src="https://i.pravatar.cc/150?u=michealt" alt="Michael T." class="w-14 h-14 rounded-full mr-4 border-2 border-brand-subtext">
+                        <div>
+                            <p class="font-semibold text-brand-text">Michael T.</p>
+                            <p class="text-brand-subtext font-light">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-card p-8 rounded-2xl shadow-xl shadow-brand-shadow flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-yellow-400 mb-6 space-x-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-brand-text font-light leading-relaxed text-lg mb-6">“Bought a gift for my sister and she absolutely adored it! The packaging was exquisite too. A great experience from start to finish.”</p>
+                    </div>
+                    <div class="flex items-center pt-6 border-t border-brand-shadow">
+                        <img src="https://i.pravatar.cc/150?u=emmap" alt="Emma P." class="w-14 h-14 rounded-full mr-4 border-2 border-brand-subtext">
+                        <div>
+                            <p class="font-semibold text-brand-text">Emma P.</p>
+                            <p class="text-brand-subtext font-light">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-24 md:mb-32">
+            <h2 class="font-serif text-4xl md:text-5xl font-extrabold text-brand-text mb-16 tracking-tight text-center">Meet the Visionaries Behind Aura</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+                
+                <div class="text-center group flex flex-col items-center">
+                    <div class="relative w-48 h-48 rounded-full overflow-hidden border-4 border-brand-card group-hover:border-brand-subtext transition duration-300 shadow-xl shadow-brand-shadow mb-6">
+                        <img src="https://i.pinimg.com/736x/42/e1/c4/42e1c49e421395675c0b744773a66226.jpg" alt="Cillian Murphy as founder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h4 class="font-sans text-xl font-semibold text-brand-text">Cillian Murphy</h4>
+                    <p class="text-brand-subtext font-light mb-4">Founder & Creative Lead</p>
+                    <div class="flex space-x-4 text-brand-subtext">
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fas fa-envelope text-xl"></i></a>
+                    </div>
+                </div>
+
+                <div class="text-center group flex flex-col items-center">
+                    <div class="relative w-48 h-48 rounded-full overflow-hidden border-4 border-brand-card group-hover:border-brand-subtext transition duration-300 shadow-xl shadow-brand-shadow mb-6">
+                        <img src="https://i.pinimg.com/736x/04/98/e3/0498e3924e421a08d9dbefe27656970f.jpg" alt="Chris Evans as founder" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h4 class="font-sans text-xl font-semibold text-brand-text">Chris Evans</h4>
+                    <p class="text-brand-subtext font-light mb-4">Co-Founder & Ethics Officer</p>
+                    <div class="flex space-x-4 text-brand-subtext">
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fas fa-envelope text-xl"></i></a>
+                    </div>
+                </div>
+
+                <div class="text-center group flex flex-col items-center">
+                    <div class="relative w-48 h-48 rounded-full overflow-hidden border-4 border-brand-card group-hover:border-brand-subtext transition duration-300 shadow-xl shadow-brand-shadow mb-6">
+                        <img src="https://i.pinimg.com/736x/07/89/dc/0789dc0014c7aa2ece4fe86295f26bf5.jpg" alt="Johnny Depp - Head Designer" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h4 class="font-sans text-xl font-semibold text-brand-text">Johnny Depp</h4>
+                    <p class="text-brand-subtext font-light mb-4">Head Designer</p>
+                    <div class="flex space-x-4 text-brand-subtext">
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fas fa-envelope text-xl"></i></a>
+                    </div>
+                </div>
+                
+                <div class="text-center group flex flex-col items-center">
+                    <div class="relative w-48 h-48 rounded-full overflow-hidden border-4 border-brand-card group-hover:border-brand-subtext transition duration-300 shadow-xl shadow-brand-shadow mb-6">
+                        <img src="https://i.pravatar.cc/300?u=sophia" alt="Sophia M. - Operations Manager" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <h4 class="font-sans text-xl font-semibold text-brand-text">Sophia Müller</h4>
+                    <p class="text-brand-subtext font-light mb-4">Operations Manager</p>
+                    <div class="flex space-x-4 text-brand-subtext">
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                        <a href="#" class="hover:text-brand-hover transition"><i class="fas fa-envelope text-xl"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-20 bg-brand-bg rounded-3xl text-center border-4 border-brand-card shadow-inner shadow-brand-shadow">
+            <h2 class="font-serif text-4xl md:text-5xl font-extrabold text-brand-text mb-8 tracking-tight">Discover your perfect piece</h2>
+            <p class="font-sans text-xl text-brand-subtext max-w-xl mx-auto mb-10 leading-relaxed font-light">Explore our curated collections of jewelry and accessories, and find the ones that perfectly express your unique Aura.</p>
+            <a href="#" class="inline-block bg-brand-button hover:bg-brand-hover text-brand-text px-10 py-4 rounded-full font-bold text-lg shadow-md transition duration-300 ease-out transform hover:scale-105">Shop the Collection</a>
+        </section>
+
+    </main>
+
+    <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">AURA</h3>
+                <p class="text-brand-subtext font-light text-sm leading-relaxed">Elegance that defines you. Discover timeless jewelry and accessories crafted for your unforgettable moments.</p>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="../pages/about.html" class="hover:text-brand-hover transition-colors">About Us</a></li>
+                    <li><a href="../pages/" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Contact Us</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light mb-6">
+                    <li>Email: support@aurajewels.com</li>
+                    <li>Phone: +1 (800) 123-4567</li>
+                    <li>Address: 5th Ave, New York, NY</li>
+                </ul>
+                <div class="flex space-x-4">
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
+    </a>
+
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
+    </a>
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
+    </a>
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
+    </a>
+
+</div>
+            </div>
+        </div>
+        <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
+            &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

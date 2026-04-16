@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal Center | Privacy & Terms</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+       <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            bg: '#0f172a',
-                            card: '#1e293b',
-                            text: '#f8fafc',
-                            subtext: '#94a3b8',
-                            hover: '#38bdf8',
-                            accent: '#0ea5e9'
+                            bg: '#131313',          // Night Background
+                            card: '#333C3C',        // Dark Gray Cards
+                            button: '#775144',      // Maroon Buttons
+                            hover: '#C08991',       // Hover Maroon
+                            text: '#F4D6D8',        // Off White Main Text
+                            subtext: '#BEABA7',     // Light Gray Subtext
+                            shadow: '#0A0A0A'       // Deep Shadow
                         }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
                     }
                 }
             }
@@ -82,6 +87,10 @@
                             <button onclick="switchTab('returns')" id="btn-returns" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl text-brand-subtext hover:bg-brand-card hover:text-brand-text transition-all">
                                 <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z"></path></svg>
                                 Return Policy
+                            </button>
+                            <button onclick="switchTab('return')" id="btn-return" class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl text-brand-subtext hover:bg-brand-card hover:text-brand-text transition-all">
+                                <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z"></path></svg>
+                                <a href="../index.html">Back To Home</a>
                             </button>
                         </nav>
                     </div>
@@ -151,7 +160,6 @@
         const dropdownBtn = document.getElementById('dropdownBtn');
         const dropdownMenu = document.getElementById('dropdownMenu');
         const dropdownIcon = document.getElementById('dropdownIcon');
-
         dropdownBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             dropdownMenu.classList.toggle('opacity-0');
