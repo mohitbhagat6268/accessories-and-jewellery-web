@@ -1,0 +1,68 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+button, input, textarea {
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(243, 37, 10, 0.6);
+}
+.location-banner {
+  background-color: #020000;
+  padding: 50px 20px;
+  color: white;
+}
+
+.location-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+.location-left {
+  flex: 1;
+}
+
+.location-left h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.location-left p {
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.location-left img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.location-right {
+  flex: 1;
+  text-align: right;
+}
+
+.location-right img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+}
+
+
+@media (max-width: 768px) {
+  .location-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .location-right {
+    text-align: center;
+  }
+}
