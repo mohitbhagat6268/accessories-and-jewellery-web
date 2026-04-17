@@ -1,0 +1,1538 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #1e1e1e;
+}
+
+/* ===== NAVBAR BASE ===== */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 60px;
+
+    background: rgba(19, 19, 19, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(51, 60, 60, 0.4);
+
+    transition: all 0.3s ease;
+}
+
+/* ===== LOGO ===== */
+nav div:first-child {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-family: "Playfair Display", serif;
+    color: #F4D6D8;
+    cursor: pointer;
+}
+
+/* ===== NAV LINKS ===== */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #BEABA7;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    position: relative;
+    transition: 0.3s ease;
+}
+
+/* Hover effect underline */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: #C08991;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #F4D6D8;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ===== DROPDOWN SELECT ===== */
+nav select {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #BEABA7;
+    font-size: 13px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+/* Dropdown hover */
+nav select:hover {
+    color: #F4D6D8;
+}
+
+/* Dropdown options */
+nav select option {
+    background: #131313;
+    color: #F4D6D8;
+    text-align: center;
+}
+
+/* ===== RIGHT SIDE (LOGIN + CART) ===== */
+nav .flex a {
+    text-decoration: none;
+    color: #BEABA7;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+nav .flex a:hover {
+    color: #F4D6D8;
+}
+
+/* ===== CART ICON ===== */
+nav svg {
+    stroke: #BEABA7;
+    transition: 0.3s ease;
+}
+
+nav svg:hover {
+    stroke: #F4D6D8;
+    transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav {
+        padding: 15px 20px;
+    }
+}
+
+/* Header */
+.main-header {
+    background: #2b1e1e;
+    padding: 15px 30px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #ff6600;
+}
+/* Hero Section */
+/* HERO SECTION */
+.hero-bag-man{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background: url('/assets/9FC4021C-D96F-44C7-8C4B-2F31FCE5A30F.jpeg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-skate {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/*hero section women page*/
+.hero-bag-womem {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background: url('/assets/Live-now.webp') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+h1{
+    color:wheat;
+}
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-bag-womem {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* HERO SECTION for-man-hat*/
+.hero-man-hat {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-man-hat {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+.hero-man-hat {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-man-hat {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}.hero-man-hat {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-man-hat {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}.hero-man-hat {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-man-hat {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* HERO SECTION for-man-hat*/
+
+.hero-hats-man {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background: url('/assets/hatsbghero.webp') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+h1{
+    color:wheat;
+}
+/* HERO SECTION */
+.hero-watch-man{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background: url('/assets/videoframe_13017.png') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-skate {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* HERO SECTION */
+.hero-women-belts{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background: url('/assets/beltswomenbghero.webp') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-women-belts {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-bag-womem {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* HERO SECTION */
+.hero-man-belts{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background: url('/assets/beltsmanherobg.webp') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-women-belts {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-bag-womem {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-skate {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+.hero-bag-womem {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background: url('/assets/Live-now.webp') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+h1{
+    color:wheat;
+}
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-bag-womem {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* HERO SECTION for-man-hat*/
+.hero-perfume-man {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('/assets/bgperfume.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-man-hat {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-man-watch {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* HERO SECTION for-weman-watch*/
+.hero-women-watch {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+
+    background: url('Everyday-Luxury-Brands-Watches-for-Women.jpg.webp') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    padding-left: 80px;
+}
+
+/* OVERLAY (for dark effect) */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.6), transparent);
+}
+
+/* CONTENT */
+.hero-content {
+    position: relative;
+    color: rgb(255, 255, 255);
+    max-width: 500px;
+    z-index: 1;
+}
+
+/* HEADING */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* PARAGRAPH */
+.hero-content p {
+    font-size: 16px;
+    color: #fffdfd;
+    margin-bottom: 25px;
+}
+
+/* BUTTON */
+.hero-btn {
+    background: rgb(222, 222, 114);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-weight: bold;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: black;
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-man-watch {
+        padding: 20px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+/* Title */
+.page-title {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Products Grid */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 40px;
+}
+
+/* Card */
+.product-card {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image */
+.image-wrapper {
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Buttons */
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+
+.buy-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Details */
+.product-details {
+    padding: 15px;
+    background-color: #2D3333;
+}
+
+.product-details h3 {
+    font-size: 16px;
+    color: #fff2f2;
+}
+
+.product-details p {
+    font-size: 14px;
+    color: white;
+}
+
+/* Price */
+.price {
+    margin-top: 10px;
+}
+
+.new {
+    font-weight: bold;
+}
+
+.old {
+    text-decoration: line-through;
+    margin-left: 10px;
+    color: gray;
+}
+
+.off {
+    color: green;
+    margin-left: 5px;
+}
+span{
+    color:white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* ===== FOOTER BASE ===== */
+footer {
+    background: rgba(10, 10, 10, 0.9);
+    border-top: 1px solid rgba(51, 60, 60, 0.3);
+    padding: 60px 60px 30px;
+    color: #BEABA7;
+}
+
+/* ===== FOOTER GRID ===== */
+footer .max-w-7xl {
+    max-width: 1200px;
+    margin: auto;
+}
+
+footer .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* ===== LOGO + TEXT ===== */
+footer h3 {
+    font-family: "Playfair Display", serif;
+    color: #F4D6D8;
+    margin-bottom: 20px;
+}
+
+footer h3:first-child {
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+/* ===== PARAGRAPH ===== */
+footer p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #BEABA7;
+}
+
+/* ===== LINKS ===== */
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #BEABA7;
+    transition: 0.3s;
+}
+
+footer ul li a:hover {
+    color: #C08991;
+    padding-left: 5px;
+}
+
+/* ===== CONTACT TEXT ===== */
+footer ul li {
+    color: #BEABA7;
+}
+
+/* ===== SOCIAL ICONS ===== */
+footer .flex {
+    display: flex;
+    gap: 12px;
+}
+
+footer .flex a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid #333C3C;
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+/* Icon image */
+footer .flex img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Hover effect */
+footer .flex a:hover {
+    border-color: #C08991;
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* ===== COPYRIGHT ===== */
+footer .text-center {
+    text-align: center;
+    border-top: 1px solid rgba(51, 60, 60, 0.3);
+    padding-top: 20px;
+    font-size: 13px;
+    color: #BEABA7;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    footer .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 40px 20px;
+    }
+
+    footer .grid {
+        grid-template-columns: 1fr;
+    }
+}
