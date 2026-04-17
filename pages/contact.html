@@ -35,49 +35,72 @@
             }
         }
     </script>
+    <link rel="icon" type="image/x-icon" href="../assets/Favicon.jpg">
 </head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
 
-<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-button selection:text-white">
-
-    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center shadow-lg">
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
         
-        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
-            <li><a href="../index.html" class="hover:text-brand-text transition-colors">Home</a></li>
-            <li>
-                <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
-                    <option value="" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
-                    <option value="rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
-                    <option value="pendents.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
-                    <option value="earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
-                    <option value="bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
-                    <option value="diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
-                    <option value="platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
-                </select>
-            </li>
-            <li>
-                <select id="collection" onchange="goToPage()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
-                    <option value="" class="bg-brand-bg text-brand-text">COLLECTION ⮛</option>
-                    <option value="bags.html" class="bg-brand-bg text-brand-text text-center">Bags</option>
-                    <option value="hats.html" class="bg-brand-bg text-brand-text text-center">Hats</option>
-                    <option value="belts.html" class="bg-brand-bg text-brand-text text-center">Belts</option>
-                    <option value="watches.html" class="bg-brand-bg text-brand-text text-center">Watches</option>
-                    <option value="perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
-                </select>
-            </li>
-            <li><a href="../pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
-            <li><a href="../pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
+        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-gray-200">
+            <li><a href="#" class="hover:text-brand-text transition-colors">Home</a></li>
+            <ul class="flex gap-6 items-center"> <li class="relative group cursor-pointer list-none py-2">
+        <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
+            <span>Shopping</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+
+        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
+            <li><a href="#" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Rings</a></li>
+            <li><a href="pendents.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Pendants</a></li>
+            <li><a href="earrings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Earrings</a></li>
+            <li><a href="bracelets.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bracelets</a></li>
+            <li><a href="diamond.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Diamond</a></li>
+            <li><a href="platinum.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Platinum</a></li>
+        </ul>
+    </li>
+
+    <li class="relative group cursor-pointer list-none py-2">
+        <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
+            <span>Collection</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+
+        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
+            <li><a href="bags.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bags</a></li>
+            <li><a href="hats.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Hats</a></li>
+            <li><a href="belts.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Belts</a></li>
+            <li><a href="watches.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Watches</a></li>
+            <li><a href="perfumes.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Perfumes</a></li>
+        </ul>
+    </li>
+
+</ul>
+            <li><a href="./pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="./pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
         </ul>
 
-        <div class="flex items-center space-x-6 text-brand-subtext">
-            <a href="../pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
-            <span class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+        <div class="flex items-center space-x-6 text-gray-200">
+            <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            
+            <a href="./pages/wishlist.html" class="cursor-pointer hover:text-brand-text transition-colors relative" title="View Wishlist">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span id="wishlist-count" class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden shadow-sm">0</span>
+            </a>
+
+            <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="9" cy="21" r="1"></circle>
                     <circle cx="20" cy="21" r="1"></circle>
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
-            </span>
+            </a>
         </div>
     </nav>
 
