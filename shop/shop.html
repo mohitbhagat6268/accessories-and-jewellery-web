@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura - Premium Jewellery</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#131313',
+                            card: '#333C3C',
+                            button: '#775144',
+                            hover: '#C08991',
+                            text: '#F4D6D8',
+                            subtext: '#BEABA7',
+                            shadow: '#0A0A0A'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Smooth scrolling and hiding scrollbar for a cleaner look */
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #333C3C; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #775144; }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-button selection:text-white">
+    
+    <!-- Header -->
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center shadow-lg">
+        <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
+        
+        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
+            <li><a href="index.html" class="hover:text-brand-text transition-colors">Home</a></li>
+            <li>
+                <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
+                    <option value="" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
+                    <option value="shop.html" class="bg-brand-bg text-brand-text text-center">Shop</option>
+                    <option value="rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
+                    <option value="pendants.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
+                    <option value="earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
+                    <option value="bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
+                    <option value="diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
+                    <option value="platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
+                </select>
+            </li>
+            <li>
+                <select id="collection" onchange="goToPage()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
+                    <option value="" class="bg-brand-bg text-brand-text">COLLECTION ⮛</option>
+                    <option value="#" class="bg-brand-bg text-brand-text text-center">Bags</option>
+                    <option value="#" class="bg-brand-bg text-brand-text text-center">Hats</option>
+                    <option value="#" class="bg-brand-bg text-brand-text text-center">Belts</option>
+                    <option value="#" class="bg-brand-bg text-brand-text text-center">Watches</option>
+                    <option value="#" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
+                </select>
+            </li>
+            <li><a href="#about" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="#contact" class="hover:text-brand-text transition-colors">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-6 text-brand-subtext">
+            <!-- Currency Switcher -->
+            <select id="currencySelector" class="bg-transparent text-brand-subtext text-xs uppercase tracking-wider border-none outline-none cursor-pointer hover:text-brand-text transition-colors">
+                <option value="USD" class="bg-brand-bg text-brand-text">USD $</option>
+                <option value="GBP" class="bg-brand-bg text-brand-text">GBP £</option>
+            </select>
+            
+            <a href="#login" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            
+            <!-- Cart -->
+            <button class="relative cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span id="cartCount" class="absolute -top-2 -right-2 bg-brand-button text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+            </button>
+            
+            <!-- Wishlist -->
+            <button class="relative cursor-pointer hover:text-brand-text transition-colors" title="View Wishlist">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                </svg>
+                <span id="wishlistCount" class="absolute -top-2 -right-2 bg-brand-button text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+            </button>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuToggle" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="hidden fixed top-[72px] left-0 right-0 bg-brand-bg/95 backdrop-blur-md border-b border-brand-card/50 z-40 md:hidden">
+        <ul class="flex flex-col p-6 space-y-4 text-sm uppercase tracking-wider text-brand-subtext">
+            <li><a href="index.html" class="block hover:text-brand-text transition-colors">Home</a></li>
+            <li class="border-t border-brand-card pt-4">
+                <p class="text-xs mb-2 text-brand-text">Shopping</p>
+                <div class="pl-4 space-y-2">
+                    <a href="rings.html" class="block hover:text-brand-text transition-colors">Rings</a>
+                    <a href="pendants.html" class="block hover:text-brand-text transition-colors">Pendants</a>
+                    <a href="earrings.html" class="block hover:text-brand-text transition-colors">Earrings</a>
+                    <a href="bracelets.html" class="block hover:text-brand-text transition-colors">Bracelets</a>
+                    <a href="diamond.html" class="block hover:text-brand-text transition-colors">Diamond</a>
+                    <a href="platinum.html" class="block hover:text-brand-text transition-colors">Platinum</a>
+                </div>
+            </li>
+            <li class="border-t border-brand-card pt-4"><a href="#about" class="block hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="#contact" class="block hover:text-brand-text transition-colors">Contact</a></li>
+            <li class="border-t border-brand-card pt-4"><a href="#login" class="block hover:text-brand-text transition-colors">Login</a></li>
+        </ul>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-shadow/50 to-brand-bg/80 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1739591414031-edd27896c8bf?w=1920" alt="Hero" class="absolute inset-0 w-full h-full object-cover">
+        <div class="relative z-20 text-center px-4">
+            <h2 class="font-serif text-4xl md:text-6xl mb-4 tracking-wide">Timeless Elegance</h2>
+            <p class="text-brand-subtext text-lg md:text-xl mb-8 max-w-2xl mx-auto">Discover our exquisite collection of handcrafted jewelry, where luxury meets artistry</p>
+            <a href="#collections" class="inline-block bg-brand-button hover:bg-brand-hover text-white px-8 py-3 rounded transition duration-300">Explore Collections</a>
+        </div>
+    </section>
+    
+    <!-- Collections Section -->
+    <section id="collections" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h3 class="font-serif text-3xl md:text-4xl text-center mb-12">Our Collections</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rings -->
+                <a href="rings.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1695238856436-caaa0e926030?w=600" alt="Rings Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-2xl mb-2">Rings</h4>
+                        <p class="text-brand-subtext">Engagement, Wedding & Casual</p>
+                    </div>
+                </a>
+                
+                <!-- Pendants -->
+                <a href="pendants.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1758995115560-59c10d6cc28f?w=600" alt="Pendants Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-2xl mb-2">Pendants</h4>
+                        <p class="text-brand-subtext">Gold, Silver & Diamond</p>
+                    </div>
+                </a>
+                
+                <!-- Earrings -->
+                <a href="earrings.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1774504347388-3d01f7cac097?w=600" alt="Earrings Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-2xl mb-2">Earrings</h4>
+                        <p class="text-brand-subtext">Studs, Hoops & Drops</p>
+                    </div>
+                </a>
+                
+                <!-- Bracelets -->
+                <a href="bracelets.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1725368844213-c167fe556f98?w=600" alt="Bracelets Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-2xl mb-2">Bracelets</h4>
+                        <p class="text-brand-subtext">Bangles, Chains & Cuffs</p>
+                    </div>
+                </a>
+                
+                <!-- Diamond -->
+                <a href="diamond.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1739591414031-edd27896c8bf?w=600" alt="Diamond Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-2xl mb-2">Diamond</h4>
+                        <p class="text-brand-subtext">Certified Diamond Jewelry</p>
+                    </div>
+                </a>
+                
+                <!-- Platinum -->
+                <a href="platinum.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1561995734-ef4b62bb6586?w=600" alt="Platinum Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-2xl mb-2">Platinum</h4>
+                        <p class="text-brand-subtext">Pure Platinum Masterpieces</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+     </div>
+   
+    <!-- Footer -->
+    <footer class="bg-brand-shadow border-t border-brand-card py-12 px-4 mt-16">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h5 class="font-serif text-xl mb-4">AURA</h5>
+                    <p class="text-brand-subtext text-sm">Premium jewelry crafted with excellence and passion since 2010.</p>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Collections</h6>
+                    <ul class="space-y-2 text-sm text-brand-subtext">
+                        <li><a href="rings.html" class="hover:text-brand-hover transition">Rings</a></li>
+                        <li><a href="pendants.html" class="hover:text-brand-hover transition">Pendants</a></li>
+                        <li><a href="earrings.html" class="hover:text-brand-hover transition">Earrings</a></li>
+                        <li><a href="bracelets.html" class="hover:text-brand-hover transition">Bracelets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Customer Service</h6>
+                    <ul class="space-y-2 text-sm text-brand-subtext">
+                        <li><a href="#" class="hover:text-brand-hover transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-brand-hover transition">Shipping Info</a></li>
+                        <li><a href="#" class="hover:text-brand-hover transition">Returns</a></li>
+                        <li><a href="#" class="hover:text-brand-hover transition">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold mb-4">Newsletter</h6>
+                    <p class="text-sm text-brand-subtext mb-4">Subscribe for exclusive offers</p>
+                    <input type="email" placeholder="Your email" class="w-full bg-brand-card text-brand-text px-4 py-2 rounded text-sm border border-brand-button/30 focus:outline-none focus:border-brand-button mb-2">
+                    <button class="w-full bg-brand-button hover:bg-brand-hover text-white px-4 py-2 rounded text-sm transition">Subscribe</button>
+                </div>
+            </div>
+            <div class="border-t border-brand-card mt-8 pt-8 text-center text-sm text-brand-subtext">
+                <p>&copy; 2026 Aura Premium Jewellery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        function goToShop() {
+            var shop = document.getElementById("shop").value;
+            if (shop) {
+                window.location.href = shop;
+            }
+        }
+
+        function goToPage() {
+            var page = document.getElementById("collection").value;
+            if (page) {
+                window.location.href = page;
+            }
+        }
+    </script>
+</body>
+</html>

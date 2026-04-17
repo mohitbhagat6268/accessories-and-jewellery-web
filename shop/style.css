@@ -1,0 +1,337 @@
+/* Custom Styles for Aura Premium Jewellery */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Gender Toggle Active State */
+.gender-toggle.active {
+    background-color: #775144;
+    color: #F4D6D8;
+}
+
+.gender-toggle {
+    background-color: transparent;
+    color: #BEABA7;
+}
+
+/* Product Card Hover Effects */
+.product-card {
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: #775144;
+    box-shadow: 0 20px 25px -5px rgba(119, 81, 68, 0.2), 0 10px 10px -5px rgba(119, 81, 68, 0.1);
+}
+
+/* Image Lazy Loading Effect */
+.product-card img {
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Button Hover Effects */
+button:focus {
+    outline: none;
+}
+
+/* Notification Animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease;
+}
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    gap: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #131313;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #775144;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #C08991;
+}
+
+/* Mobile Menu Animation */
+#mobileMenu {
+    transition: all 0.3s ease;
+}
+
+/* Price Input Focus */
+input[type="number"]:focus,
+input[type="email"]:focus,
+select:focus {
+    outline: none;
+    border-color: #775144 !important;
+    box-shadow: 0 0 0 3px rgba(119, 81, 68, 0.1);
+}
+
+/* Remove number input arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+/* Link Hover Effects */
+a {
+    transition: color 0.2s ease;
+}
+
+/* Hero Section Overlay */
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.3), rgba(19, 19, 19, 0.8));
+}
+
+/* Card Shadows */
+.shadow-luxury {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, #F4D6D8 0%, #C08991 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.loading-shimmer {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(to right, #333C3C 4%, #444C4C 25%, #333C3C 36%);
+    background-size: 1000px 100%;
+}
+
+/* Badge Styles */
+.discount-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Typography Enhancement */
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 0.02em;
+}
+
+.font-serif {
+    letter-spacing: 0.03em;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 640px) {
+    .product-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Focus Visible for Accessibility */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid #775144;
+    outline-offset: 2px;
+}
+
+/* Transition for all interactive elements */
+button, a, input, select {
+    transition: all 0.2s ease;
+}
+
+/* Image Loading State */
+img {
+    background-color: #333C3C;
+}
+
+/* Footer Links */
+footer a:hover {
+    color: #C08991;
+}
+
+/* Price Display */
+.price-original {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.price-current {
+    font-weight: 600;
+    color: #F4D6D8;
+}
+
+/* Rating Stars Alignment */
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Mobile Responsive Padding */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Wishlist Heart Animation */
+@keyframes heart-beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.wishlist-active {
+    animation: heart-beat 0.3s ease;
+}
+
+/* Button Ripple Effect */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Product Grid Gap Consistency */
+#productsGrid {
+    gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    #productsGrid {
+        gap: 2rem;
+    }
+}
+
+/* Smooth Opacity Transitions */
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Selection Color */
+::selection {
+    background-color: #775144;
+    color: #F4D6D8;
+}
+
+::-moz-selection {
+    background-color: #775144;
+    color: #F4D6D8;
+}
+
+/* No Products Found State */
+.no-products {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* Premium Border Glow Effect */
+.premium-glow {
+    box-shadow: 0 0 20px rgba(119, 81, 68, 0.3);
+}
+
+/* Backdrop Blur Support */
+@supports (backdrop-filter: blur(10px)) {
+    header {
+        backdrop-filter: blur(10px);
+    }
+}
+
+/* Print Styles */
+@media print {
+    header, footer {
+        display: none;
+    }
+}
