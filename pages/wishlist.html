@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA | My Wishlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-bg': '#111111',       // Main background (Dark Charcoal)
+                        'brand-card': '#1a1a1a',     // Card background
+                        'brand-text': '#f3f4f6',     // Main text (Light Gray/White)
+                        'brand-subtext': '#9ca3af',  // Subtext (Gray)
+                        'brand-button': '#775144',   // Primary button color (Muted Rose)
+                        'brand-shadow': '#000000',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for a cleaner look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d4af37; }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
+        
+        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-gray-200">
+            <li><a href="#" class="hover:text-brand-text transition-colors">Home</a></li>
+            <ul class="flex gap-6 items-center"> <li class="relative group cursor-pointer list-none py-2">
+        <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
+            <span>Shopping</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+
+        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
+            <li><a href="#" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Rings</a></li>
+            <li><a href="pendents.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Pendants</a></li>
+            <li><a href="earrings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Earrings</a></li>
+            <li><a href="bracelets.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bracelets</a></li>
+            <li><a href="diamond.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Diamond</a></li>
+            <li><a href="platinum.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Platinum</a></li>
+        </ul>
+    </li>
+
+    <li class="relative group cursor-pointer list-none py-2">
+        <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
+            <span>Collection</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+
+        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
+            <li><a href="bags.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bags</a></li>
+            <li><a href="hats.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Hats</a></li>
+            <li><a href="belts.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Belts</a></li>
+            <li><a href="watches.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Watches</a></li>
+            <li><a href="perfumes.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Perfumes</a></li>
+        </ul>
+    </li>
+
+</ul>
+            <li><a href="./pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="./pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-6 text-gray-200">
+            <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            
+            <a href="./pages/wishlist.html" class="cursor-pointer hover:text-brand-text transition-colors relative" title="View Wishlist">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span id="wishlist-count" class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden shadow-sm">0</span>
+            </a>
+
+            <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <main class="max-w-7xl mx-auto px-6 py-12 min-h-[70vh]">
+        <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 py-5 tracking-wider">My Wishlist</h2>
+        
+        <div id="empty-state" class="hidden flex-col items-center justify-center py-20 text-center">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="1" class="mb-6">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <h3 class="text-xl font-serif mb-2">Your wishlist is currently empty</h3>
+            <p class="text-brand-subtext mb-8">Save your favorite items here to review them later.</p>
+            <a href="index.html" class="px-8 py-3 border border-brand-button text-brand-button hover:bg-brand-button hover:text-brand-bg transition-colors uppercase tracking-widest text-sm">Continue Shopping</a>
+        </div>
+
+        <div id="wishlist-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            </div>
+    </main>
+    <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">AURA</h3>
+                <p class="text-brand-subtext font-light text-sm leading-relaxed">Elegance that defines you. Discover timeless jewelry and accessories crafted for your unforgettable moments.</p>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Contact Us</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light mb-6">
+                    <li>Email: support@aurajewels.com</li>
+                    <li>Phone: +1 (800) 123-4567</li>
+                    <li>Address: 5th Ave, New York, NY</li>
+                </ul>
+                <div class="flex space-x-4">
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
+                    </a>
+
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
+            &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
+        </div>
+    </footer>
+   
+    <script>
+        // 1. Mock Database
+        // Since localStorage only stores the product name, we need this to fetch the images and prices.
+        const productDatabase = [
+            { 
+                name: '14K Gold Diamond Ring', 
+                price: 199.00, 
+                image: 'https://i.pinimg.com/736x/f8/ab/4a/f8ab4a19d8976acefd33cabfcbd034a8.jpg' 
+            },
+            { 
+                name: 'Diamond Tennis Bracelet', 
+                price: 450.00, 
+                image: 'https://images.unsplash.com/photo-1599643478514-4a4e09b52342?q=80&w=500&auto=format&fit=crop' 
+            },
+            { 
+                name: 'Pearl Drop Earrings', 
+                price: 120.00, 
+                image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=500&auto=format&fit=crop' 
+            },
+            {
+        name: 'Luxury Necklace',
+        price: 299.00,
+        image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=80'
+    },
+    {
+        name: 'Pearl Necklace',
+        price: 1499.00,
+        image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80'
+    },
+    {
+        name: 'Sauvage Dior Perfume',
+        price: 1999.00,
+        image: 'https://i.pinimg.com/1200x/4f/e6/66/4fe6661864c06ea0fab3b30e1be0188f.jpg'
+    },
+    {
+        name: 'Worthy Motif Cotton Cap',
+        price: 2100.00,
+        image: 'https://images.unsplash.com/photo-1589831377283-33cb1cc6bd5d?auto=format&fit=crop&w=400&q=80'
+    },
+    {
+        name: 'Diamond Bracelet',
+        price: 2999.00,
+        image: 'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=400&q=80'
+    },
+    {
+        name: 'Jecob & Co. Bugatti Watch',
+        price: 260000.00,
+        image: 'https://i.pinimg.com/736x/30/59/28/305928faec7d2e3dc9b9c0d1a5a7d5e2.jpg'
+    },
+    {
+        name: 'Louis Vuitton Bag',
+        price: 179000.00,
+        image: 'https://i.pinimg.com/736x/f9/9b/13/f99b131d10689fd05cd53a0f73c2ea33.jpg'
+    }
+
+        ];
+
+        // 2. State Management
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        // 3. Update Notification Badge
+        function updateWishlistCount() {
+            const countSpan = document.getElementById('wishlist-count');
+            if (countSpan) {
+                countSpan.textContent = wishlist.length;
+                countSpan.style.display = wishlist.length > 0 ? 'flex' : 'none';
+            }
+        }
+
+        // 4. Toggle Item in Wishlist
+        function toggleWishlist(button, productName) {
+            const svg = button.querySelector('.heart-icon');
+            const index = wishlist.indexOf(productName);
+
+            // Pop Animation
+            svg.classList.add('scale-150');
+            setTimeout(() => svg.classList.remove('scale-150'), 200);
+
+            if (index === -1) {
+                wishlist.push(productName);
+                svg.setAttribute('fill', '#ef4444');
+                svg.setAttribute('stroke', '#ef4444');
+            } else {
+                wishlist.splice(index, 1);
+                // If we remove it from the wishlist page, we should re-render the grid
+                renderWishlistPage();
+            }
+
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistCount();
+        }
+
+        // 5. Mock Cart Function
+        function addItem(name, price) {
+            alert(`Added ${name} ($${price}) to cart!`);
+        }
+
+        // 6. Render the Wishlist Page
+        function renderWishlistPage() {
+            const grid = document.getElementById('wishlist-grid');
+            const emptyState = document.getElementById('empty-state');
+            
+            grid.innerHTML = ''; // Clear current grid
+
+            if (wishlist.length === 0) {
+                grid.style.display = 'none';
+                emptyState.classList.remove('hidden');
+                emptyState.classList.add('flex');
+                return;
+            } else {
+                grid.style.display = 'grid';
+                emptyState.classList.add('hidden');
+                emptyState.classList.remove('flex');
+            }
+
+            wishlist.forEach(productName => {
+                // Find the product in our database, or use a fallback if not found
+                const product = productDatabase.find(p => p.name === productName) || {
+                    name: productName,
+                    price: 0.00,
+                    image: 'https://via.placeholder.com/400x400?text=Image+Not+Found'
+                };
+
+                // Build the card HTML
+                const cardHTML = `
+                    <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-black/40 border border-transparent hover:border-brand-button/30">
+                        <button onclick="toggleWishlist(this, '${product.name}')" class="absolute top-6 right-6 z-20 text-red-500 transition-colors outline-none cursor-pointer">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ef4444" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                            </svg>
+                        </button>
+                        <div class="w-full aspect-square overflow-hidden mb-4 bg-black">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 hover:opacity-100">
+                        </div>
+                        <h3 class="font-serif text-lg text-center mb-2">${product.name}</h3>
+                        <div class="text-xs tracking-widest text-brand-button mb-2">⭐⭐⭐⭐⭐</div>
+                        <div class="text-brand-text font-bold mb-4">$${product.price.toFixed(2)}</div>
+                        <button onclick="addItem('${product.name}', ${product.price})" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button hover:text-brand-bg transition-colors uppercase text-xs tracking-wider font-bold">Add to Cart</button>
+                    </div>
+                `;
+                
+                grid.insertAdjacentHTML('beforeend', cardHTML);
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateWishlistCount();
+            renderWishlistPage();
+        });
+    </script>
+</body>
+</html>

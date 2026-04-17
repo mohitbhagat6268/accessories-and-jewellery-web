@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura - Premium Jewellery</title>
+    <title>Aura | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,41 +37,65 @@
         ::-webkit-scrollbar-thumb { background: #333C3C; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #775144; }
     </style>
+    <link rel="icon" type="image/x-icon" href="./assets/Favicon.jpg">
 </head>
 <body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
 
     <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
         
-        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
+        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-gray-200">
             <li><a href="#" class="hover:text-brand-text transition-colors">Home</a></li>
-            <li>
-                <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
-                    <option value="" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
-                    <option value="rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
-                    <option value="pendents.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
-                    <option value="earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
-                    <option value="bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
-                    <option value="diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
-                    <option value="platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
-                </select>
-            </li>
-            <li>
-                <select id="collection" onchange="goToPage()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
-                    <option value="" class="bg-brand-bg text-brand-text">COLLECTION ⮛</option>
-                    <option value="bags.html" class="bg-brand-bg text-brand-text text-center">Bags</option>
-                    <option value="hats.html" class="bg-brand-bg text-brand-text text-center">Hats</option>
-                    <option value="belts.html" class="bg-brand-bg text-brand-text text-center">Belts</option>
-                    <option value="watches.html" class="bg-brand-bg text-brand-text text-center">Watches</option>
-                    <option value="perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
-                </select>
-            </li>
+            <ul class="flex gap-6 items-center"> <li class="relative group cursor-pointer list-none py-2">
+        <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
+            <span>Shopping</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+
+        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
+            <li><a href="#" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Rings</a></li>
+            <li><a href="pendents.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Pendants</a></li>
+            <li><a href="earrings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Earrings</a></li>
+            <li><a href="bracelets.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bracelets</a></li>
+            <li><a href="diamond.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Diamond</a></li>
+            <li><a href="platinum.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Platinum</a></li>
+        </ul>
+    </li>
+
+    <li class="relative group cursor-pointer list-none py-2">
+        <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
+            <span>Collection</span>
+            <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+        </div>
+
+        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
+            <li><a href="bags.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bags</a></li>
+            <li><a href="hats.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Hats</a></li>
+            <li><a href="belts.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Belts</a></li>
+            <li><a href="watches.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Watches</a></li>
+            <li><a href="perfumes.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Perfumes</a></li>
+        </ul>
+    </li>
+
+</ul>
             <li><a href="./pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
             <li><a href="./pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
         </ul>
 
-        <div class="flex items-center space-x-6 text-brand-subtext">
+        <div class="flex items-center space-x-6 text-gray-200">
             <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            
+            <a href="./pages/wishlist.html" class="cursor-pointer hover:text-brand-text transition-colors relative" title="View Wishlist">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span id="wishlist-count" class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden shadow-sm">0</span>
+            </a>
+
             <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="9" cy="21" r="1"></circle>
@@ -134,7 +158,13 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 tracking-wider">Trending Products</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                
+                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <button onclick="toggleWishlist(this, '14K Gold Diamond Ring')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                     <div class="w-full aspect-square overflow-hidden mb-4">
                         <img src="https://i.pinimg.com/736x/f8/ab/4a/f8ab4a19d8976acefd33cabfcbd034a8.jpg" alt="14K Gold Diamond Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -143,7 +173,13 @@
                     <div class="text-brand-text font-bold mb-4">$199.00</div>
                     <button onclick="addItem('14K Gold Diamond Ring', 199.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
-                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                
+                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <button onclick="toggleWishlist(this, 'Luxury Necklace')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                     <div class="w-full aspect-square overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=80" alt="Luxury Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -152,7 +188,13 @@
                     <div class="text-brand-text font-bold mb-4">$299.00</div>
                     <button onclick="addItem('Luxury Necklace', 299.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
-                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                
+                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <button onclick="toggleWishlist(this, 'Pearl Necklace')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                     <div class="w-full aspect-square overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80" alt="Pearl Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -161,16 +203,28 @@
                     <div class="text-brand-text font-bold mb-4">$1,499.00</div>
                     <button onclick="addItem('Pearl Necklace', 1499.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
-                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                
+                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <button onclick="toggleWishlist(this, 'Sauvage Dior Perfume')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                     <div class="w-full aspect-square overflow-hidden mb-4">
                         <img src="https://i.pinimg.com/1200x/4f/e6/66/4fe6661864c06ea0fab3b30e1be0188f.jpg" alt="Sauvage Dior Perfume" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <h3 class="font-serif text-lg text-center mb-2">Sauvage Dior Perfume</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$1,999.00</div>
-                    <button onclick="addItem('Sauvage Dior Perfume', 1999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colbuttonpercase text-xs tracking-wider">Add to Cart</button>
+                    <button onclick="addItem('Sauvage Dior Perfume', 1999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
-                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                
+                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <button onclick="toggleWishlist(this, 'Worthy Motif Cotton Cap')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                     <div class="w-full aspect-square overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1589831377283-33cb1cc6bd5d?auto=format&fit=crop&w=400&q=80" alt="Emerald Halo Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -179,7 +233,13 @@
                     <div class="text-brand-text font-bold mb-4">$2,100.00</div>
                     <button onclick="addItem('Worthy Motif Cotton Cap', 2100.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
-                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                
+                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <button onclick="toggleWishlist(this, 'Diamond Bracelet')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                     <div class="w-full aspect-square overflow-hidden mb-4">
                         <img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=400&q=80" alt="Diamond Bracelet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -188,7 +248,13 @@
                     <div class="text-brand-text font-bold mb-4">$2,999.00</div>
                     <button onclick="addItem('Diamond Bracelet', 2999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
-                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                
+                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <button onclick="toggleWishlist(this, 'Jecob & Co. Bugatti Watch')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                     <div class="w-full aspect-square overflow-hidden mb-4">
                         <img src="https://i.pinimg.com/736x/30/59/28/305928faec7d2e3dc9b9c0d1a5a7d5e2.jpg" alt="Sapphire Stud Earrings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -197,7 +263,13 @@
                     <div class="text-brand-text font-bold mb-4">$260,000.00</div>
                     <button onclick="addItem('Jecob & Co. Bugatti Watch', 260000.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
-                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                
+                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <button onclick="toggleWishlist(this, 'Louis Vuitton Bag')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </button>
                     <div class="w-full aspect-square overflow-hidden mb-4">
                         <img src="https://i.pinimg.com/736x/f9/9b/13/f99b131d10689fd05cd53a0f73c2ea33.jpg" alt="Louis Vuitton Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
@@ -206,6 +278,7 @@
                     <div class="text-brand-text font-bold mb-4">$179,000.00</div>
                     <button onclick="addItem('Louis Vuitton Bag', 179000.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
                 </div>
+                
             </div>
         </div>
     </section>
@@ -300,21 +373,20 @@
                     <li>Address: 5th Ave, New York, NY</li>
                 </ul>
                 <div class="flex space-x-4">
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
-    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
+                    </a>
 
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
-    </a>
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
-    </a>
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
-    </a>
-
-</div>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
@@ -335,6 +407,57 @@
                 window.location.href = page;
             }
         }
+
+        // --- Wishlist Logic ---
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        function updateWishlistCount() {
+            const countSpan = document.getElementById('wishlist-count');
+            if (countSpan) {
+                countSpan.textContent = wishlist.length;
+                countSpan.style.display = wishlist.length > 0 ? 'flex' : 'none';
+            }
+        }
+
+        function toggleWishlist(button, productName) {
+            const svg = button.querySelector('.heart-icon');
+            const index = wishlist.indexOf(productName);
+
+            // Pop Animation
+            svg.classList.add('scale-150');
+            setTimeout(() => svg.classList.remove('scale-150'), 200);
+
+            if (index === -1) {
+                // Add to wishlist
+                wishlist.push(productName);
+                svg.setAttribute('fill', '#ef4444'); // Tailwind's red-500
+                svg.setAttribute('stroke', '#ef4444');
+            } else {
+                // Remove from wishlist
+                wishlist.splice(index, 1);
+                svg.setAttribute('fill', 'none');
+                svg.setAttribute('stroke', 'currentColor');
+            }
+
+            // Save and update UI
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            updateWishlistCount();
+        }
+
+        // Initialize UI on load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateWishlistCount();
+            
+            // Loop through existing buttons and set filled hearts for saved items
+            document.querySelectorAll('button[onclick^="toggleWishlist"]').forEach(btn => {
+                const match = btn.getAttribute('onclick').match(/'([^']+)'/);
+                if (match && wishlist.includes(match[1])) {
+                    const svg = btn.querySelector('.heart-icon');
+                    svg.setAttribute('fill', '#ef4444');
+                    svg.setAttribute('stroke', '#ef4444');
+                }
+            });
+        });
     </script>
     <script src="./script/cart.js"></script>
 </body>
