@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura - Premium Jewellery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#131313',          // Night Background
+                            card: '#333C3C',        // Dark Gray Cards
+                            button: '#775144',      // Maroon Buttons
+                            hover: '#C08991',       // Hover Maroon
+                            text: '#F4D6D8',        // Off White Main Text
+                            subtext: '#BEABA7',     // Light Gray Subtext
+                            shadow: '#0A0A0A'       // Deep Shadow
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and hiding scrollbar for a cleaner look */
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #333C3C; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #775144; }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
+        
+        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
+            <li><a href="#" class="hover:text-brand-text transition-colors">Home</a></li>
+            <li>
+                <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
+                    <option value="" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
+                    <option value="rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
+                    <option value="pendents.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
+                    <option value="earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
+                    <option value="bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
+                    <option value="diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
+                    <option value="platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
+                </select>
+            </li>
+            <li>
+                <select id="collection" onchange="goToPage()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
+                    <option value="" class="bg-brand-bg text-brand-text">COLLECTION ⮛</option>
+                    <option value="bags.html" class="bg-brand-bg text-brand-text text-center">Bags</option>
+                    <option value="hats.html" class="bg-brand-bg text-brand-text text-center">Hats</option>
+                    <option value="belts.html" class="bg-brand-bg text-brand-text text-center">Belts</option>
+                    <option value="watches.html" class="bg-brand-bg text-brand-text text-center">Watches</option>
+                    <option value="perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
+                </select>
+            </li>
+            <li><a href="#" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="#" class="hover:text-brand-text transition-colors">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-6 text-brand-subtext">
+            <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <div class="relative w-full h-[85vh] mt-16 overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
+            <source src="./assets/bg-video.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-brand-bg/40"></div>
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+            <h1 class="text-5xl md:text-7xl font-serif mb-4 text-white drop-shadow-lg">Elegance That Defines You</h1>
+            <p class="text-lg md:text-xl text-brand-text font-light mb-8 max-w-2xl drop-shadow-md">Refined and luxurious designs. Discover timeless jewelry and accessories.</p>
+            <button class="rounded-full px-8 py-3 bg-brand-button hover:bg-brand-hover text-brand-text font-serif tracking-wider uppercase text-sm transition-all duration-300 shadow-lg shadow-brand-shadow/50 border border-brand-button hover:border-brand-hover">
+                Shop Now
+            </button>
+        </div>
+    </div>
+
+    <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 tracking-wider">Shop by Category</h2>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="group relative overflow-hidden cursor-pointer aspect-[4/5] bg-brand-card">
+                <img src="https://i.pinimg.com/1200x/52/00/14/520014578771a28562045ec7507528bc.jpg" alt="Rings" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-0 w-full text-center">
+                    <span class="text-xl font-serif tracking-wider text-brand-text">Rings</span>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden cursor-pointer aspect-[4/5] bg-brand-card">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=600&q=80" alt="Pendants" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-0 w-full text-center">
+                    <span class="text-xl font-serif tracking-wider text-brand-text">Pendants</span>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden cursor-pointer aspect-[4/5] bg-brand-card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Earrings" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-0 w-full text-center">
+                    <span class="text-xl font-serif tracking-wider text-brand-text">Earrings</span>
+                </div>
+            </div>
+            <div class="group relative overflow-hidden cursor-pointer aspect-[4/5] bg-brand-card">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" alt="Bracelets" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow/90 via-transparent to-transparent"></div>
+                <div class="absolute bottom-6 left-0 w-full text-center">
+                    <span class="text-xl font-serif tracking-wider text-brand-text">Bracelets</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 bg-brand-shadow/20 border-t border-brand-card/30">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 tracking-wider">Trending Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <div class="w-full aspect-square overflow-hidden mb-4">
+                        <img src="https://i.pinimg.com/736x/f8/ab/4a/f8ab4a19d8976acefd33cabfcbd034a8.jpg" alt="14K Gold Diamond Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-lg text-center mb-2">14K Gold Diamond Ring</h3>
+                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
+                    <div class="text-brand-text font-bold mb-4">$199.00</div>
+                    <button onclick="addItem('14K Gold Diamond Ring', 199.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                </div>
+                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <div class="w-full aspect-square overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=80" alt="Luxury Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-lg text-center mb-2">Luxury Necklace</h3>
+                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
+                    <div class="text-brand-text font-bold mb-4">$299.00</div>
+                    <button onclick="addItem('Luxury Necklace', 299.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                </div>
+                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <div class="w-full aspect-square overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80" alt="Pearl Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-lg text-center mb-2">Pearl Necklace</h3>
+                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
+                    <div class="text-brand-text font-bold mb-4">$1,499.00</div>
+                    <button onclick="addItem('Pearl Necklace', 1499.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                </div>
+                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <div class="w-full aspect-square overflow-hidden mb-4">
+                        <img src="https://i.pinimg.com/1200x/4f/e6/66/4fe6661864c06ea0fab3b30e1be0188f.jpg" alt="Sauvage Dior Perfume" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-lg text-center mb-2">Sauvage Dior Perfume</h3>
+                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
+                    <div class="text-brand-text font-bold mb-4">$1,999.00</div>
+                    <button onclick="addItem('Sauvage Dior Perfume', 1999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colbuttonpercase text-xs tracking-wider">Add to Cart</button>
+                </div>
+                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <div class="w-full aspect-square overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1589831377283-33cb1cc6bd5d?auto=format&fit=crop&w=400&q=80" alt="Emerald Halo Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-lg text-center mb-2">Worthy Motif Cotton Cap</h3>
+                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
+                    <div class="text-brand-text font-bold mb-4">$2,100.00</div>
+                    <button onclick="addItem('Worthy Motif Cotton Cap', 2100.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                </div>
+                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <div class="w-full aspect-square overflow-hidden mb-4">
+                        <img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=400&q=80" alt="Diamond Bracelet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-lg text-center mb-2">Diamond Bracelet</h3>
+                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
+                    <div class="text-brand-text font-bold mb-4">$2,999.00</div>
+                    <button onclick="addItem('Diamond Bracelet', 2999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                </div>
+                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <div class="w-full aspect-square overflow-hidden mb-4">
+                        <img src="https://i.pinimg.com/736x/30/59/28/305928faec7d2e3dc9b9c0d1a5a7d5e2.jpg" alt="Sapphire Stud Earrings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-lg text-center mb-2">Jecob & Co. Bugatti Watch</h3>
+                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
+                    <div class="text-brand-text font-bold mb-4">$260,000.00</div>
+                    <button onclick="addItem('Jecob & Co. Bugatti Watch', 260000.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                </div>
+                <div class="bg-brand-card p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
+                    <div class="w-full aspect-square overflow-hidden mb-4">
+                        <img src="https://i.pinimg.com/736x/f9/9b/13/f99b131d10689fd05cd53a0f73c2ea33.jpg" alt="Louis Vuitton Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-serif text-lg text-center mb-2">Louis Vuitton Bag</h3>
+                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
+                    <div class="text-brand-text font-bold mb-4">$179,000.00</div>
+                    <button onclick="addItem('Louis Vuitton Bag', 179000.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 bg-brand-bg border-y border-brand-card/30">
+        <div class="max-w-[1400px] mx-auto">
+            <h2 class="text-3xl md:text-4xl font-serif text-center mb-16 tracking-wider text-brand-text">Why Choose Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+                <div class="group">
+                    <div class="text-4xl mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 drop-shadow-md">💎</div>
+                    <h3 class="text-xl font-serif tracking-wide text-brand-text mb-4">Premium Quality</h3>
+                    <p class="text-brand-subtext font-light leading-relaxed">Certified diamonds and meticulously crafted fine metals.</p>
+                </div>
+                <div class="group">
+                    <div class="text-4xl mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 drop-shadow-md">🚚</div>
+                    <h3 class="text-xl font-serif tracking-wide text-brand-text mb-4">Fast Delivery</h3>
+                    <p class="text-brand-subtext font-light leading-relaxed">Fully insured, complimentary worldwide shipping.</p>
+                </div>
+                <div class="group">
+                    <div class="text-4xl mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 drop-shadow-md">🔒</div>
+                    <h3 class="text-xl font-serif tracking-wide text-brand-text mb-4">Secure Payment</h3>
+                    <p class="text-brand-subtext font-light leading-relaxed">100% encrypted and secure checkout process.</p>
+                </div>
+                <div class="group">
+                    <div class="text-4xl mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 drop-shadow-md">🔄</div>
+                    <h3 class="text-xl font-serif tracking-wide text-brand-text mb-4">Easy Returns</h3>
+                    <p class="text-brand-subtext font-light leading-relaxed">30-day hassle-free return and exchange policy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 text-center relative overflow-hidden bg-brand-shadow/50 border-b border-brand-card/30">
+        <div class="relative z-10 max-w-3xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-serif mb-6 text-brand-text">Flat 30% OFF on Diamonds</h2>
+            <p class="text-lg text-brand-subtext font-light mb-8">Elevate your elegance with our exclusive seasonal discount on all diamond jewellery.</p>
+            <button class="rounded-full px-10 py-4 bg-brand-button hover:bg-brand-hover text-brand-text font-serif tracking-widest uppercase text-sm transition-all duration-300 shadow-xl shadow-brand-shadow/60 border border-brand-button">
+                Claim Offer
+            </button>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-serif text-center mb-16 tracking-wider">Client Testimonials</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-brand-card p-8 shadow-lg shadow-brand-shadow/30 relative">
+                <div class="text-4xl text-brand-button absolute top-4 left-4 opacity-30">"</div>
+                <p class="text-brand-subtext italic font-light leading-relaxed mb-6 relative z-10 text-center">"The craftsmanship is absolutely exquisite. My engagement ring gets compliments everywhere I go. True elegance!"</p>
+                <div class="text-center font-serif text-brand-text">— Sarah M.</div>
+            </div>
+            <div class="bg-brand-card p-8 shadow-lg shadow-brand-shadow/30 relative">
+                <div class="text-4xl text-brand-button absolute top-4 left-4 opacity-30">"</div>
+                <p class="text-brand-subtext italic font-light leading-relaxed mb-6 relative z-10 text-center">"Premium quality and fantastic customer service. The packaging alone felt incredibly luxurious. Highly recommend."</p>
+                <div class="text-center font-serif text-brand-text">— James T.</div>
+            </div>
+            <div class="bg-brand-card p-8 shadow-lg shadow-brand-shadow/30 relative">
+                <div class="text-4xl text-brand-button absolute top-4 left-4 opacity-30">"</div>
+                <p class="text-brand-subtext italic font-light leading-relaxed mb-6 relative z-10 text-center">"I bought a pendant for our anniversary and my wife was brought to tears. Beautiful designs and fast, secure delivery."</p>
+                <div class="text-center font-serif text-brand-text">— Elena R.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">AURA</h3>
+                <p class="text-brand-subtext font-light text-sm leading-relaxed">Elegance that defines you. Discover timeless jewelry and accessories crafted for your unforgettable moments.</p>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Contact Us</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light mb-6">
+                    <li>Email: support@aurajewels.com</li>
+                    <li>Phone: +1 (800) 123-4567</li>
+                    <li>Address: 5th Ave, New York, NY</li>
+                </ul>
+                <div class="flex space-x-4">
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
+    </a>
+
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
+    </a>
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
+    </a>
+    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
+    </a>
+
+</div>
+            </div>
+        </div>
+        <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
+            &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        function goToPage() {
+            const page = document.getElementById("collection").value;
+            if (page !== "") {
+                window.location.href = page;
+            }
+        }
+        function goToShop() {
+            const page = document.getElementById("shop").value;
+            if (page !== "") {
+                window.location.href = page;
+            }
+        }
+    </script>
+    <script src="./script/cart.js"></script>
+</body>
+</html>
