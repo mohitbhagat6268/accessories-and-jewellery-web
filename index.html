@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
     <title>Aura | Home</title>
+=======
+    <title>Aura - Premium Jewellry</title>
+>>>>>>> Stashed changes
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -39,11 +43,13 @@
     </style>
     <link rel="icon" type="image/x-icon" href="./assets/Favicon.jpg">
 </head>
-<body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-button selection:text-white">
+
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center shadow-lg">
         <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
         
+<<<<<<< Updated upstream
         <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-gray-200">
             <li><a href="#" class="hover:text-brand-text transition-colors">Home</a></li>
             <ul class="flex gap-6 items-center"> <li class="relative group cursor-pointer list-none py-2">
@@ -98,6 +104,38 @@
             </a>
 
             <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+=======
+        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
+            <li><a href="../index.html" class="hover:text-brand-text transition-colors">Home</a></li>
+            <li>
+                <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
+                    <option value="/shop/shop.html" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
+                    <option value="/shop/rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
+                    <option value="/shop/pendents.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
+                    <option value="/shop/earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
+                    <option value="/shop/bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
+                    <option value="/shop/diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
+                    <option value="/shop/platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
+                </select>
+            </li>
+            <li>
+                <select id="collection" onchange="goToPage()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
+                    <option value="" class="bg-brand-bg text-brand-text">COLLECTION ⮛</option>
+                    <option value="bags.html" class="bg-brand-bg text-brand-text text-center">Bags</option>
+                    <option value="hats.html" class="bg-brand-bg text-brand-text text-center">Hats</option>
+                    <option value="belts.html" class="bg-brand-bg text-brand-text text-center">Belts</option>
+                    <option value="watches.html" class="bg-brand-bg text-brand-text text-center">Watches</option>
+                    <option value="perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
+                </select>
+            </li>
+            <li><a href="../pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="../pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-6 text-brand-subtext">
+            <a href="../pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            <span class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+>>>>>>> Stashed changes
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="9" cy="21" r="1"></circle>
                     <circle cx="20" cy="21" r="1"></circle>
@@ -106,8 +144,7 @@
             </a>
         </div>
     </nav>
-
-    <div class="relative w-full h-[85vh] mt-16 overflow-hidden">
+  <div class="relative w-full h-[85vh] mt-16 overflow-hidden">
         <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
             <source src="./assets/bg-video.mp4" type="video/mp4">
         </video>
@@ -217,7 +254,11 @@
                     <h3 class="font-serif text-lg text-center mb-2">Sauvage Dior Perfume</h3>
                     <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
                     <div class="text-brand-text font-bold mb-4">$1,999.00</div>
+<<<<<<< Updated upstream
                     <button onclick="addItem('Sauvage Dior Perfume', 1999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
+=======
+                    <button onclick="addItem('Sauvage Dior Perfume', 1999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colbuttonpercase text-xs tracking-wider">Add to Cart</button>
+>>>>>>> Stashed changes
                 </div>
                 
                 <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
