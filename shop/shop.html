@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura - Premium Jewellery</title>
+    <title>Aura | Shop</title>
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Tailwind Configuration -->
+    <link rel="icon" type="image/x-icon" href="../assets/Favicon.jpg">
     <script>
         tailwind.config = {
             theme: {
@@ -38,7 +36,6 @@
         }
     </script>
     
-    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
     
     <style>
@@ -52,226 +49,307 @@
 </head>
 <body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-button selection:text-white">
     
-    <!-- Header -->
-    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
-       
-        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-gray-200">
-            <li><a href="index.html" class="hover:text-brand-text transition-colors">Home</a></li>
-            <ul class="flex gap-6 items-center">
-                <li class="relative group cursor-pointer list-none py-2">
-                    <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
-                        <span>Shopping</span>
-                        <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
- 
-                    <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
-                        <li><a href="shop.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Shop</a></li>
-                        <li><a href="rings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Rings</a></li>
-                        <li><a href="pendants.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Pendants</a></li>
-                        <li><a href="earrings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Earrings</a></li>
-                        <li><a href="bracelets.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bracelets</a></li>
-                        <li><a href="diamond.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Diamond</a></li>
-                        <li><a href="platinum.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Platinum</a></li>
-                    </ul>
-                </li>
- 
-                <li class="relative group cursor-pointer list-none py-2">
-                    <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
-                        <span>Collection</span>
-                        <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
- 
-                    <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
-                        <li><a href="bags.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bags</a></li>
-                        <li><a href="hats.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Hats</a></li>
-                        <li><a href="belts.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Belts</a></li>
-                        <li><a href="watches.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Watches</a></li>
-                        <li><a href="perfumes.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Perfumes</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <li><a href="./pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
-            <li><a href="./pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
-        </ul>
- 
-        <div class="flex items-center space-x-6 text-gray-200">
-            <!-- Currency Switcher -->
-            <select id="currencySelector" class="bg-transparent text-xs uppercase tracking-wider border-none outline-none cursor-pointer hover:text-brand-text transition-colors">
-                <option value="USD" class="bg-brand-bg text-brand-text">USD $</option>
-                <option value="GBP" class="bg-brand-bg text-brand-text">GBP £</option>
-            </select>
-
-            <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/90 backdrop-blur-xl border-b border-white/5 py-5 px-6 md:px-12 transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto flex justify-between items-center">
+            <div class="text-3xl font-serif font-bold tracking-[0.2em] text-brand-text hover:text-white transition-colors cursor-pointer">AURA</div>
            
-            <a href="/pages/wishlist.html" class="cursor-pointer hover:text-brand-text transition-colors relative" title="View Wishlist">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-                <span id="wishlist-count" class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden shadow-sm">0</span>
-            </a>
- 
-            <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-            </a>
+            <ul class="hidden md:flex space-x-10 items-center text-[13px] uppercase tracking-[0.15em] font-medium text-brand-subtext">
+                <li><a href="../index.html" class="hover:text-white transition-colors py-2 relative after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-brand-button after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Home</a></li>
+                
+                <ul class="flex gap-10 items-center">
+                    <li class="relative group cursor-pointer list-none py-2">
+                        <div class="bg-transparent border-none outline-none hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
+                            <span>Shopping</span>
+                            <svg class="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+    
+                        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-48 bg-brand-bg/95 backdrop-blur-xl border border-white/5 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden m-0 p-2">
+                            <li><a href="../shop/shop.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Shop All</a></li>
+                            <li><a href="../shop/rings.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Rings</a></li>
+                            <li><a href="../shop/pendants.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Pendants</a></li>
+                            <li><a href="../shop/earrings.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Earrings</a></li>
+                            <li><a href="../shop/bracelets.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Bracelets</a></li>
+                            <li><a href="../shop/diamond.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Diamond</a></li>
+                            <li><a href="../shop/platinum.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Platinum</a></li>
+                        </ul>
+                    </li>
+    
+                    <li class="relative group cursor-pointer list-none py-2">
+                        <div class="bg-transparent border-none outline-none hover:text-white transition-colors duration-300 flex items-center justify-center gap-2">
+                            <span>Collection</span>
+                            <svg class="w-4 h-4 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+    
+                        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-48 bg-brand-bg/95 backdrop-blur-xl border border-white/5 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden m-0 p-2">
+                            <li><a href="../pages/bags.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Bags</a></li>
+                            <li><a href="../pages/hats.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Hats</a></li>
+                            <li><a href="../pages/belts.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Belts</a></li>
+                            <li><a href="../pages/watches.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Watches</a></li>
+                            <li><a href="../pages/perfumes.html" class="block px-4 py-2.5 text-brand-subtext text-xs tracking-wider text-center hover:bg-brand-card rounded transition-colors duration-300">Perfumes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <li><a href="../pages/about.html" class="hover:text-white transition-colors py-2 relative after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-brand-button after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">About</a></li>
+                <li><a href="../pages/contact.html" class="hover:text-white transition-colors py-2 relative after:content-[''] after:absolute after:w-0 after:h-[1px] after:bg-brand-button after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Contact</a></li>
+            </ul>
+    
+            <div class="flex items-center space-x-6 text-brand-subtext">
+                <select id="currencySelector" class="bg-transparent text-xs uppercase tracking-widest border-none outline-none cursor-pointer hover:text-white transition-colors">
+                    <option value="USD" class="bg-brand-bg text-brand-text">USD $</option>
+                    <option value="GBP" class="bg-brand-bg text-brand-text">GBP £</option>
+                </select>
+
+                <a href="../pages/login.html" class="text-[13px] uppercase tracking-widest hover:text-white transition-colors hidden md:block">Login</a>
+                
+                <a href="../pages/wishlist.html" class="cursor-pointer hover:text-white transition-colors relative" title="View Wishlist">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span id="wishlist-count" class="absolute -top-1.5 -right-2 bg-brand-button text-white text-[9px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden shadow-sm">0</span>
+                </a>
+    
+                <a href="../pages/cart.html" class="cursor-pointer hover:text-white transition-colors" title="View Cart">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
     </nav>
 
-    <!-- Mobile Navigation -->
-    <div id="mobileMenu" class="hidden fixed top-[72px] left-0 right-0 bg-brand-bg/95 backdrop-blur-md border-b border-brand-card/50 z-40 md:hidden">
-        <ul class="flex flex-col p-6 space-y-4 text-sm uppercase tracking-wider text-brand-subtext">
-            <li><a href="index.html" class="block hover:text-brand-text transition-colors">Home</a></li>
-            <li class="border-t border-brand-card pt-4">
-                <p class="text-xs mb-2 text-brand-text">Shopping</p>
-                <div class="pl-4 space-y-2">
-                    <a href="rings.html" class="block hover:text-brand-text transition-colors">Rings</a>
-                    <a href="pendants.html" class="block hover:text-brand-text transition-colors">Pendants</a>
-                    <a href="earrings.html" class="block hover:text-brand-text transition-colors">Earrings</a>
-                    <a href="bracelets.html" class="block hover:text-brand-text transition-colors">Bracelets</a>
-                    <a href="diamond.html" class="block hover:text-brand-text transition-colors">Diamond</a>
-                    <a href="platinum.html" class="block hover:text-brand-text transition-colors">Platinum</a>
+    <div id="mobileMenu" class="hidden fixed top-[80px] left-0 right-0 bg-brand-bg/95 backdrop-blur-xl border-b border-white/5 z-40 md:hidden">
+        <ul class="flex flex-col p-6 space-y-4 text-[13px] uppercase tracking-widest text-brand-subtext font-medium">
+            <li><a href="../pages/rings.html" class="block hover:text-white transition-colors">Rings</a></li>
+            <li class="border-t border-white/5 pt-4">
+                <p class="text-xs mb-3 text-white tracking-[0.2em]">Shopping</p>
+                <div class="pl-4 space-y-3">
+                    <a href="../pages/rings.html" class="block hover:text-white transition-colors">Rings</a>
+                    <a href="../pages/pendants.html" class="block hover:text-white transition-colors">Pendants</a>
+                    <a href="../pages/earrings.html" class="block hover:text-white transition-colors">Earrings</a>
+                    <a href="../pages/bracelets.html" class="block hover:text-white transition-colors">Bracelets</a>
+                    <a href="../pages/diamond.html" class="block hover:text-white transition-colors">Diamond</a>
+                    <a href="../pages/platinum.html" class="block hover:text-white transition-colors">Platinum</a>
                 </div>
             </li>
-            <li class="border-t border-brand-card pt-4"><a href="#about" class="block hover:text-brand-text transition-colors">About</a></li>
-            <li><a href="#contact" class="block hover:text-brand-text transition-colors">Contact</a></li>
-            <li class="border-t border-brand-card pt-4"><a href="#login" class="block hover:text-brand-text transition-colors">Login</a></li>
+            <li class="border-t border-white/5 pt-4"><a href="../pages/about.html" class="block hover:text-white transition-colors">About</a></li>
+            <li><a href="../pages/contact.html" class="block hover:text-white transition-colors">Contact</a></li>
+            <li class="border-t border-white/5 pt-4"><a href="../pages/login.html" class="block hover:text-white transition-colors">Login</a></li>
         </ul>
     </div>
     
-    <!-- Hero Section -->
-    <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-brand-shadow/50 to-brand-bg/80 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1739591414031-edd27896c8bf?w=1920" alt="Hero" class="absolute inset-0 w-full h-full object-cover">
-        <div class="relative z-20 text-center px-4">
-            <h2 class="font-serif text-4xl md:text-6xl mb-4 tracking-wide">Timeless Elegance</h2>
-            <p class="text-brand-subtext text-lg md:text-xl mb-8 max-w-2xl mx-auto">Discover our exquisite collection of handcrafted jewelry, where luxury meets artistry</p>
-            <a href="#collections" class="inline-block bg-brand-button hover:bg-brand-hover text-white px-8 py-3 rounded transition duration-300">Explore Collections</a>
+    <section class="relative w-full min-h-[90vh] flex items-center justify-center pt-20">
+        <div class="absolute inset-0 w-full h-full z-0">
+            <img src="https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?q=80&w=2000&auto=format&fit=crop" alt="Hero Background" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-bg/80 via-transparent to-brand-bg"></div>
+        </div>
+
+        <div class="relative z-20 text-center px-4 w-full max-w-4xl mx-auto">
+            <h2 class="font-serif text-5xl md:text-7xl mb-6 tracking-wide text-white drop-shadow-lg">Timeless Elegance</h2>
+            <p class="text-brand-subtext text-lg md:text-2xl mb-12 max-w-2xl mx-auto font-light drop-shadow-md">Discover our exquisite collection of handcrafted jewelry and premium accessories, where luxury meets artistry.</p>
+            
+            <div class="relative mb-10 max-w-xl mx-auto group">
+                <input 
+                    type="text" 
+                    id="mainSearch" 
+                    placeholder="Search collections (e.g. Rings, Bags, Watches...)" 
+                    class="w-full bg-brand-bg/60 backdrop-blur-md text-brand-text pl-14 pr-6 py-4 md:py-5 rounded-full border border-brand-card focus:outline-none focus:border-brand-button transition-all shadow-2xl text-base md:text-lg"
+                >
+                <svg class="absolute left-5 top-1/2 -translate-y-1/2 w-6 h-6 text-brand-subtext group-focus-within:text-brand-button transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+                
+                <div id="searchDropdown" class="absolute top-full left-0 right-0 mt-3 bg-brand-bg/95 backdrop-blur-xl border border-brand-card rounded-2xl overflow-hidden shadow-2xl hidden z-50 text-left">
+                </div>
+            </div>
+
+            <a href="../pages/collections.html" class="inline-block bg-brand-button hover:bg-brand-hover text-white font-medium tracking-widest text-sm uppercase px-10 py-4 rounded-full transition duration-300 shadow-[0_0_20px_rgba(119,81,68,0.3)] hover:shadow-[0_0_25px_rgba(192,137,145,0.5)]">Explore Collections</a>
         </div>
     </section>
     
-    <!-- Collections Section -->
-    <section id="collections" class="py-16 px-4">
-        <div class="container mx-auto">
-            <h3 class="font-serif text-3xl md:text-4xl text-center mb-12">Our Collections</h3>
+    <section id="collections" class="py-24 px-4 relative z-20">
+        <div class="container mx-auto max-w-7xl">
+            <h3 class="font-serif text-3xl md:text-5xl text-center mb-16 tracking-wide text-white">Our Collections</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Rings -->
-                <a href="rings.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                <a href="../shop/rings.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
                     <div class="aspect-square overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1695238856436-caaa0e926030?w=600" alt="Rings Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://i.pinimg.com/736x/9b/5b/79/9b5b79f04f60a257092c6afd090ca74a.jpg" alt="Rings Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-2xl mb-2">Rings</h4>
-                        <p class="text-brand-subtext">Engagement, Wedding & Casual</p>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Rings</h4>
+                        <p class="text-brand-subtext text-sm">Engagement, Wedding & Casual</p>
                     </div>
                 </a>
                 
-                <!-- Pendants -->
-                <a href="pendants.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                <a href="../shop/pendants.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
                     <div class="aspect-square overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1758995115560-59c10d6cc28f?w=600" alt="Pendants Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://i.pinimg.com/1200x/3e/5f/83/3e5f8360f767c41a211243a0f1aa53c0.jpg" alt="Pendants Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-2xl mb-2">Pendants</h4>
-                        <p class="text-brand-subtext">Gold, Silver & Diamond</p>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Pendants</h4>
+                        <p class="text-brand-subtext text-sm">Gold, Silver & Diamond</p>
                     </div>
                 </a>
                 
-                <!-- Earrings -->
-                <a href="earrings.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                <a href="../shop/earrings.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
                     <div class="aspect-square overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1774504347388-3d01f7cac097?w=600" alt="Earrings Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://i.pinimg.com/736x/a7/05/c4/a705c4d12b4e49eae11dcf29a485db0d.jpg" alt="Earrings Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-2xl mb-2">Earrings</h4>
-                        <p class="text-brand-subtext">Studs, Hoops & Drops</p>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Earrings</h4>
+                        <p class="text-brand-subtext text-sm">Studs, Hoops & Drops</p>
                     </div>
                 </a>
                 
-                <!-- Bracelets -->
-                <a href="bracelets.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                <a href="../shop/bracelets.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
                     <div class="aspect-square overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1725368844213-c167fe556f98?w=600" alt="Bracelets Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1725368844213-c167fe556f98?w=600" alt="Bracelets Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-2xl mb-2">Bracelets</h4>
-                        <p class="text-brand-subtext">Bangles, Chains & Cuffs</p>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Bracelets</h4>
+                        <p class="text-brand-subtext text-sm">Bangles, Chains & Cuffs</p>
                     </div>
                 </a>
                 
-                <!-- Diamond -->
-                <a href="diamond.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                <a href="../shop/diamond.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
                     <div class="aspect-square overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1739591414031-edd27896c8bf?w=600" alt="Diamond Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://i.pinimg.com/736x/ff/b0/43/ffb0433b9b4381b4b7e81ad89fbca380.jpg" alt="Diamond Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-2xl mb-2">Diamond</h4>
-                        <p class="text-brand-subtext">Certified Diamond Jewelry</p>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Diamond</h4>
+                        <p class="text-brand-subtext text-sm">Certified Diamond Jewelry</p>
                     </div>
                 </a>
                 
-                <!-- Platinum -->
-                <a href="platinum.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-300">
+                <a href="../shop/platinum.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
                     <div class="aspect-square overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1561995734-ef4b62bb6586?w=600" alt="Platinum Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <img src="https://i.pinimg.com/736x/46/b1/cb/46b1cba25fb841961b11b733d423d4cc.jpg" alt="Platinum Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="font-serif text-2xl mb-2">Platinum</h4>
-                        <p class="text-brand-subtext">Pure Platinum Masterpieces</p>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Platinum</h4>
+                        <p class="text-brand-subtext text-sm">Pure Platinum Masterpieces</p>
                     </div>
                 </a>
+
+                <a href="../pages/bags.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/ec/cb/87/eccb877a1c5e640fda8b3e0224c9de47.jpg" alt="Bags Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Bags</h4>
+                        <p class="text-brand-subtext text-sm">Designer Totes & Clutches</p>
+                    </div>
+                </a>
+
+                <a href="../pages/hats.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/b2/d8/f2/b2d8f2562d170284993fd8b8a57e7b34.jpg" alt="Hats Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Hats</h4>
+                        <p class="text-brand-subtext text-sm">Elegant Sun Hats & Fedoras</p>
+                    </div>
+                </a>
+
+                <a href="../pages/belts.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://i.pinimg.com/1200x/a3/0e/57/a30e57f0addc0f645fd17deee1ce4660.jpg" alt="Belts Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Belts</h4>
+                        <p class="text-brand-subtext text-sm">Premium Leather & Chain Belts</p>
+                    </div>
+                </a>
+
+                <a href="../pages/perfumes.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://i.pinimg.com/1200x/7b/46/c4/7b46c4a09f0336b3454dc1b8639e11ea.jpg" alt="Perfumes Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Perfumes</h4>
+                        <p class="text-brand-subtext text-sm">Signature Scents & Fragrances</p>
+                    </div>
+                </a>
+
+                <a href="../pages/watches.html" class="group relative overflow-hidden rounded-lg bg-brand-card hover:shadow-2xl transition-all duration-500">
+                    <div class="aspect-square overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/ea/2b/f8/ea2bf85b12de88af5bd1ec80424ad2ef.jpg" alt="Watches Collection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                    </div>
+                    <div class="p-6 absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-12">
+                        <h4 class="font-serif text-2xl mb-1 text-white">Watches</h4>
+                        <p class="text-brand-subtext text-sm">Luxury Timepieces</p>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
     
-    <!-- About Section -->
-    <section id="about" class="py-16 px-4">
-        <div class="container mx-auto">
-            <h3 class="font-serif text-3xl md:text-4xl text-center mb-12">About Us</h3>
+    <section id="about" class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="font-serif text-3xl md:text-4xl text-center mb-16">About Us</h3>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h4 class="font-serif text-2xl mb-4">Our Story</h4>
-                    <p class="text-brand-subtext text-lg">Founded in 2010, Aura Premium Jewellery has been dedicated to crafting exquisite pieces that blend luxury with artistry. Our team of skilled artisans uses only the finest materials to create timeless pieces that are both beautiful and durable.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="bg-brand-card/30 p-8 rounded-2xl border border-white/5">
+                    <h4 class="font-serif text-2xl mb-4 text-white">Our Story</h4>
+                    <p class="text-brand-subtext text-lg leading-relaxed">Founded in 2010, Aura Premium Jewellery has been dedicated to crafting exquisite pieces that blend luxury with artistry. Our team of skilled artisans uses only the finest materials to create timeless pieces that are both beautiful and durable.</p>
                 </div>
-                <div>
-                    <h4 class="font-serif text-2xl mb-4">Our Commitment</h4>
-                    <p class="text-brand-subtext text-lg">At Aura, we are committed to providing exceptional customer service and satisfaction. We believe in transparency and honesty in all our dealings, and we strive to exceed your expectations with every piece we create.</p>
+                <div class="bg-brand-card/30 p-8 rounded-2xl border border-white/5">
+                    <h4 class="font-serif text-2xl mb-4 text-white">Our Commitment</h4>
+                    <p class="text-brand-subtext text-lg leading-relaxed">At Aura, we are committed to providing exceptional customer service and satisfaction. We believe in transparency and honesty in all our dealings, and we strive to exceed your expectations with every piece we create.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4">
-        <div class="container mx-auto">
-            <h3 class="font-serif text-3xl md:text-4xl text-center mb-12">Contact Us</h3>
+    <section id="contact" class="py-20 px-4 bg-brand-shadow/30">
+        <div class="container mx-auto max-w-6xl">
+            <h3 class="font-serif text-3xl md:text-4xl text-center mb-16">Contact Us</h3>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <h4 class="font-serif text-2xl mb-4">Get in Touch</h4>
-                    <p class="text-brand-subtext text-lg">If you have any questions or need assistance, feel free to contact us. We are here to help and provide you with the best possible service.</p>
-                    <p class="text-brand-subtext text-lg mt-4">Email: <a href="mailto:info@aurajewellery.com" class="text-brand-text hover:text-brand-hover transition">info@aurajewellery.com</a></p>
-                    <p class="text-brand-subtext text-lg">Phone: <a href="tel:+1234567890" class="text-brand-text hover:text-brand-hover transition">+1 234 567 890</a></p>
+                    <h4 class="font-serif text-2xl mb-6 text-white">Get in Touch</h4>
+                    <p class="text-brand-subtext text-lg mb-6">If you have any questions or need assistance, feel free to contact us. We are here to help and provide you with the best possible service.</p>
+                    <div class="space-y-4">
+                        <p class="text-brand-subtext text-lg flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-full bg-brand-card flex items-center justify-center text-brand-text">✉</span>
+                            <a href="mailto:info@aurajewellery.com" class="hover:text-brand-hover transition">info@aurajewellery.com</a>
+                        </p>
+                        <p class="text-brand-subtext text-lg flex items-center gap-3">
+                            <span class="w-10 h-10 rounded-full bg-brand-card flex items-center justify-center text-brand-text">☎</span>
+                            <a href="tel:+1234567890" class="hover:text-brand-hover transition">+1 234 567 890</a>
+                        </p>
+                    </div>
                 </div>
                 <div>
-                    <h4 class="font-serif text-2xl mb-4">Visit Us</h4>
-                    <p class="text-brand-subtext text-lg">You can also visit our store to see our collection in person. We are located in the heart of the city, making it easy for you to find us.</p>
-                    <p class="text-brand-subtext text-lg mt-4">Address: 123 Main Street, City, Country</p>
+                    <h4 class="font-serif text-2xl mb-6 text-white">Visit Us</h4>
+                    <p class="text-brand-subtext text-lg mb-6">You can also visit our store to see our collection in person. We are located in the heart of the city, making it easy for you to find us.</p>
+                    <div class="bg-brand-card/50 p-6 rounded-xl border border-white/5">
+                        <p class="text-brand-text text-lg font-medium">Aura Flagship Store</p>
+                        <p class="text-brand-subtext text-md mt-2">123 Main Street<br>City, Country 10001</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Footer -->
     <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
@@ -281,18 +359,18 @@
             <div>
                 <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
                 <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
+                    <li><a href="./pages/about.html" class="hover:text-brand-hover transition-colors">About Us</a></li>
+                    <li><a href="./shop/index.html" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
+                    <li><a href="./pages/track-order.html" class="hover:text-brand-hover transition-colors">Track Order</a></li>
+                    <li><a href="./pages/faq.html" class="hover:text-brand-hover transition-colors">FAQs</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
                 <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
-                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
-                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
+                    <li><a href="../pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
+                    <li><a href="../pages/terms-of-service.html" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
+                    <li><a href="../pages/return-policy.html" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
                 </ul>
             </div>
             <div>
@@ -306,6 +384,7 @@
                     <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
                         <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
                     </a>
+
                     <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
                         <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
                     </a>
@@ -323,22 +402,59 @@
         </div>
     </footer>
     
-    <!-- JavaScript -->
     <script src="script.js"></script>
     <script>
-        function goToShop() {
-            var shop = document.getElementById("shop").value;
-            if (shop) {
-                window.location.href = shop;
-            }
-        }
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('mainSearch');
+        const dropdown = document.getElementById('searchDropdown');
 
-        function goToPage() {
-            var page = document.getElementById("collection").value;
-            if (page) {
-                window.location.href = page;
+        // Define your searchable areas
+        const directory = [
+            { name: 'Rings Collection', url: 'rings.html', tags: ['ring', 'engagement', 'wedding', 'diamond'] },
+            { name: 'Pendants & Necklaces', url: 'pendants.html', tags: ['pendant', 'necklace', 'gold', 'silver'] },
+            { name: 'Earrings', url: 'earrings.html', tags: ['earring', 'studs', 'hoops'] },
+            { name: 'Bracelets', url: 'bracelets.html', tags: ['bracelet', 'bangle', 'cuff'] },
+            { name: 'Luxury Watches', url: 'watches.html', tags: ['watch', 'rolex', 'bugatti', 'timepiece'] },
+            { name: 'Premium Bags', url: 'bags.html', tags: ['bag', 'handbag', 'louis vuitton', 'lv'] },
+            { name: 'Perfumes', url: 'perfumes.html', tags: ['perfume', 'scent', 'fragrance', 'dior'] },
+            { name: 'Hats', url: 'hats.html', tags: ['hat', 'fedora', 'sun hat'] },
+            { name: 'Belts', url: 'belts.html', tags: ['belt', 'leather', 'chain'] }
+        ];
+
+        searchInput.addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase().trim();
+            
+            if (term.length < 1) {
+                dropdown.classList.add('hidden');
+                return;
             }
-        }
+
+            const matches = directory.filter(item => 
+                item.name.toLowerCase().includes(term) || 
+                item.tags.some(tag => tag.includes(term))
+            );
+
+            if (matches.length > 0) {
+                dropdown.classList.remove('hidden');
+                dropdown.innerHTML = matches.map(item => `
+                    <a href="${item.url}" class="block px-6 py-4 hover:bg-brand-card/50 transition-colors text-left border-b border-white/5 last:border-none">
+                        <span class="text-sm font-medium text-white">${item.name}</span>
+                        <span class="block text-[10px] uppercase tracking-widest text-brand-subtext mt-1">View Collection →</span>
+                    </a>
+                `).join('');
+            } else {
+                dropdown.innerHTML = `<div class="px-6 py-5 text-sm text-brand-subtext text-center">No collections found for "${term}"</div>`;
+                dropdown.classList.remove('hidden');
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    });
     </script>
 </body>
 </html>
