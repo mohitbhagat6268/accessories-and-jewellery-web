@@ -39,65 +39,99 @@
 </head>
 <body class="bg-brand-bg font-sans text-brand-text">
     
-    <header class="sticky top-0 z-50 bg-brand-bg/95 backdrop-blur-sm border-b border-brand-card">
-        <div class="container mx-auto px-4">
-            <div class="flex items-center justify-between py-4">
-                <div class="flex items-center">
-                    <a href="index.html" class="font-serif text-2xl md:text-3xl tracking-wide">AURA</a>
-                    <span class="ml-2 text-xs text-brand-subtext">Premium Jewellery</span>
-                </div>
-                
-                <nav class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-brand-subtext hover:text-brand-hover transition">Home</a>
-                    <a href="rings.html" class="text-brand-subtext hover:text-brand-hover transition">Rings</a>
-                    <a href="pendants.html" class="text-brand-subtext hover:text-brand-hover transition">Pendants</a>
-                    <a href="earrings.html" class="text-brand-subtext hover:text-brand-hover transition">Earrings</a>
-                    <a href="bracelets.html" class="text-brand-subtext hover:text-brand-hover transition">Bracelets</a>
-                    <a href="diamond.html" class="text-brand-subtext hover:text-brand-hover transition">Diamond</a>
-                    <a href="platinum.html" class="text-brand-text hover:text-brand-hover transition">Platinum</a>
-                </nav>
-                
-                <div class="flex items-center space-x-4">
-                    <select id="currencySelector" class="bg-brand-card text-brand-text px-3 py-1 rounded text-sm border border-brand-button/30 focus:outline-none focus:border-brand-button">
-                        <option value="USD">USD $</option>
-                        <option value="GBP">GBP £</option>
-                    </select>
-                    
-                    <button class="relative hover:text-brand-hover transition">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
+       
+        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-gray-200">
+            <li><a href="index.html" class="hover:text-brand-text transition-colors">Home</a></li>
+            <ul class="flex gap-6 items-center">
+                <li class="relative group cursor-pointer list-none py-2">
+                    <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
+                        <span>Shopping</span>
+                        <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                        <span id="cartCount" class="absolute -top-2 -right-2 bg-brand-button text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
-                    </button>
-                    
-                    <button class="relative hover:text-brand-hover transition">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                    </div>
+ 
+                    <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
+                        <li><a href="rings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Rings</a></li>
+                        <li><a href="pendants.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Pendants</a></li>
+                        <li><a href="earrings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Earrings</a></li>
+                        <li><a href="bracelets.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bracelets</a></li>
+                        <li><a href="diamond.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Diamond</a></li>
+                        <li><a href="platinum.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Platinum</a></li>
+                    </ul>
+                </li>
+ 
+                <li class="relative group cursor-pointer list-none py-2">
+                    <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
+                        <span>Collection</span>
+                        <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
-                        <span id="wishlistCount" class="absolute -top-2 -right-2 bg-brand-button text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
-                    </button>
-                    
-                    <button id="mobileMenuToggle" class="md:hidden">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-            
-            <nav id="mobileMenu" class="hidden md:hidden pb-4">
-                <a href="index.html" class="block py-2 text-brand-subtext hover:text-brand-hover transition">Home</a>
-                <a href="shop.html" class="bg-brand-bg text-brand-subtext hover:text-brand-hover transition">Shop</a>
-                <a href="rings.html" class="block py-2 text-brand-subtext hover:text-brand-hover transition">Rings</a>
-                <a href="pendants.html" class="block py-2 text-brand-subtext hover:text-brand-hover transition">Pendants</a>
-                <a href="earrings.html" class="block py-2 text-brand-subtext hover:text-brand-hover transition">Earrings</a>
-                <a href="bracelets.html" class="block py-2 text-brand-subtext hover:text-brand-hover transition">Bracelets</a>
-                <a href="diamond.html" class="block py-2 text-brand-subtext hover:text-brand-hover transition">Diamond</a>
-                <a href="platinum.html" class="block py-2 text-brand-text hover:text-brand-hover transition">Platinum</a>
-            </nav>
+                    </div>
+ 
+                    <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
+                        <li><a href="bags.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bags</a></li>
+                        <li><a href="hats.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Hats</a></li>
+                        <li><a href="belts.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Belts</a></li>
+                        <li><a href="watches.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Watches</a></li>
+                        <li><a href="perfumes.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Perfumes</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <li><a href="./pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="./pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
+        </ul>
+ 
+        <div class="flex items-center space-x-6 text-gray-200">
+            <!-- Currency Switcher -->
+            <select id="currencySelector" class="bg-transparent text-xs uppercase tracking-wider border-none outline-none cursor-pointer hover:text-brand-text transition-colors">
+                <option value="USD" class="bg-brand-bg text-brand-text">USD $</option>
+                <option value="GBP" class="bg-brand-bg text-brand-text">GBP £</option>
+            </select>
+
+            <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+           
+            <a href="./pages/wishlist.html" class="cursor-pointer hover:text-brand-text transition-colors relative" title="View Wishlist">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span id="wishlist-count" class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden shadow-sm">0</span>
+            </a>
+ 
+            <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </a>
         </div>
-    </header>
-    
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="hidden fixed top-[72px] left-0 right-0 bg-brand-bg/95 backdrop-blur-md border-b border-brand-card/50 z-40 md:hidden">
+        <ul class="flex flex-col p-6 space-y-4 text-sm uppercase tracking-wider text-brand-subtext">
+            <li><a href="index.html" class="block hover:text-brand-text transition-colors">Home</a></li>
+            <li class="border-t border-brand-card pt-4">
+                <p class="text-xs mb-2 text-brand-text">Shopping</p>
+                <div class="pl-4 space-y-2">
+                    <a href="shop.html" class="block hover:text-brand-text transition-colors">Shop</a>
+                    <a href="rings.html" class="block hover:text-brand-text transition-colors">Rings</a>
+                    <a href="pendants.html" class="block hover:text-brand-text transition-colors">Pendants</a>
+                    <a href="earrings.html" class="block hover:text-brand-text transition-colors">Earrings</a>
+                    <a href="bracelets.html" class="block hover:text-brand-text transition-colors">Bracelets</a>
+                    <a href="diamond.html" class="block hover:text-brand-text transition-colors">Diamond</a>
+                    <a href="platinum.html" class="block hover:text-brand-text transition-colors">Platinum</a>
+                </div>
+            </li>
+            <li class="border-t border-brand-card pt-4"><a href="/pages/about.html" class="block hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="index.html#contact" class="block hover:text-brand-text transition-colors">Contact</a></li>
+            <li class="border-t border-brand-card pt-4"><a href="#login" class="block hover:text-brand-text transition-colors">Login</a></li>
+        </ul>
+    </div>
+  
     <section class="bg-gradient-to-r from-brand-shadow to-brand-card py-16 px-4">
         <div class="container mx-auto text-center">
             <h1 class="font-serif text-4xl md:text-5xl mb-4">Platinum Collection</h1>
@@ -133,45 +167,56 @@
             </div>
         </div>
     </section>
-    
-    <footer class="bg-brand-shadow border-t border-brand-card py-12 px-4 mt-16">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h5 class="font-serif text-xl mb-4">AURA</h5>
-                    <p class="text-brand-subtext text-sm">Premium jewelry crafted with excellence and passion since 2010.</p>
-                </div>
-                <div>
-                    <h6 class="font-semibold mb-4">Collections</h6>
-                    <ul class="space-y-2 text-sm text-brand-subtext">
-                        <li><a href="rings.html" class="hover:text-brand-hover transition">Rings</a></li>
-                        <li><a href="pendants.html" class="hover:text-brand-hover transition">Pendants</a></li>
-                        <li><a href="earrings.html" class="hover:text-brand-hover transition">Earrings</a></li>
-                        <li><a href="bracelets.html" class="hover:text-brand-hover transition">Bracelets</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h6 class="font-semibold mb-4">Customer Service</h6>
-                    <ul class="space-y-2 text-sm text-brand-subtext">
-                        <li><a href="#" class="hover:text-brand-hover transition">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-brand-hover transition">Shipping Info</a></li>
-                        <li><a href="#" class="hover:text-brand-hover transition">Returns</a></li>
-                        <li><a href="#" class="hover:text-brand-hover transition">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h6 class="font-semibold mb-4">Newsletter</h6>
-                    <p class="text-sm text-brand-subtext mb-4">Subscribe for exclusive offers</p>
-                    <input type="email" placeholder="Your email" class="w-full bg-brand-card text-brand-text px-4 py-2 rounded text-sm border border-brand-button/30 focus:outline-none focus:border-brand-button mb-2">
-                    <button class="w-full bg-brand-button hover:bg-brand-hover text-white px-4 py-2 rounded text-sm transition">Subscribe</button>
-                </div>
+        <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">AURA</h3>
+                <p class="text-brand-subtext font-light text-sm leading-relaxed">Elegance that defines you. Discover timeless jewelry and accessories crafted for your unforgettable moments.</p>
             </div>
-            <div class="border-t border-brand-card mt-8 pt-8 text-center text-sm text-brand-subtext">
-                <p>&copy; 2026 Aura Premium Jewellery. All rights reserved.</p>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
+                    <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light">
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
+                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-xl text-brand-text mb-6">Contact Us</h3>
+                <ul class="space-y-3 text-brand-subtext text-sm font-light mb-6">
+                    <li>Email: support@aurajewels.com</li>
+                    <li>Phone: +1 (800) 123-4567</li>
+                    <li>Address: 5th Ave, New York, NY</li>
+                </ul>
+                <div class="flex space-x-4">
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
+                    </a>
+                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
+                    </a>
+                </div>
             </div>
         </div>
+        <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
+            &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
+        </div>
     </footer>
-    
     <script src="script.js"></script>
     <script>
         const pageData = {
