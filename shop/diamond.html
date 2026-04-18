@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamond Collection - Aura Premium Jewellery</title>
+    <title>Aura | Diamond Collection</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +11,7 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <link rel="icon" type="image/x-icon" href="../assets/Favicon.jpg">
     <script>
         tailwind.config = {
             theme: {
@@ -142,12 +143,24 @@
         <div class="container mx-auto">
             <div class="flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center space-x-2 bg-brand-card rounded-lg p-1">
-                    <button id="genderWomen" class="gender-toggle active px-6 py-2 rounded-md transition">Women</button>
-                    <button id="genderMen" class="gender-toggle px-6 py-2 rounded-md transition">Men</button>
+                    <button id="genderWomen" class="gender-toggle active px-6 py-2 rounded-md transition text-sm">Women</button>
+                    <button id="genderMen" class="gender-toggle px-6 py-2 rounded-md transition text-sm">Men</button>
                 </div>
                 
+                <div class="relative flex-grow max-w-md w-full order-last lg:order-none">
+                    <input 
+                        type="text" 
+                        id="productSearch" 
+                        placeholder="Search diamonds..." 
+                        class="w-full bg-brand-card text-brand-text pl-10 pr-4 py-2 rounded-lg text-sm border border-brand-button/30 focus:outline-none focus:border-brand-button transition-colors placeholder:text-brand-subtext"
+                    >
+                    <svg class="absolute left-3 top-2.5 w-4 h-4 text-brand-subtext" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </div>
+
                 <div class="flex items-center space-x-4">
-                    <label class="text-sm text-brand-subtext">Price Range:</label>
+                    <label class="hidden md:block text-sm text-brand-subtext">Price Range:</label>
                     <div class="flex items-center space-x-2">
                         <input type="number" id="minPrice" placeholder="Min" class="w-24 bg-brand-card text-brand-text px-3 py-2 rounded text-sm border border-brand-button/30 focus:outline-none focus:border-brand-button">
                         <span class="text-brand-subtext">-</span>
@@ -224,7 +237,39 @@
         };
         
         document.addEventListener('DOMContentLoaded', function() {
+            // Initial render
             renderProducts(pageData.products);
+
+            // Functional Search Logic
+            const searchInput = document.getElementById('productSearch');
+            const gridContainer = document.getElementById('productsGrid');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', function(e) {
+                    const searchTerm = e.target.value.toLowerCase().trim();
+
+                    // Filter products by name
+                    const filtered = pageData.products.filter(product => {
+                        const title = (product.name || product.title || "").toLowerCase();
+                        return title.includes(searchTerm);
+                    });
+
+                    // Update UI
+                    if (filtered.length > 0) {
+                        renderProducts(filtered);
+                    } else {
+                        gridContainer.innerHTML = `
+                            <div class="col-span-full text-center py-20">
+                                <p class="text-brand-subtext text-xl font-serif italic">No diamonds match your search.</p>
+                                <button onclick="document.getElementById('productSearch').value=''; document.getElementById('productSearch').dispatchEvent(new Event('input'));" 
+                                        class="mt-4 text-brand-button hover:text-brand-hover uppercase text-xs tracking-widest border-b border-brand-button">
+                                    Clear Search
+                                </button>
+                            </div>
+                        `;
+                    }
+                });
+            }
         });
     </script>
 </body>

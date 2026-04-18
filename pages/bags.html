@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bags-for-man-women </title>
+    <title>Aura | Bags</title>
    <link rel="stylesheet" href="/style/collection.css">
-</head>
-
-<body>
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+     <script src="https://cdn.tailwindcss.com"></script>
+     
+    <link rel="icon" type="image/x-icon" href="../assets/Favicon.jpg">
 <!-- Header -->
 <!-- Header -->
  <script>
@@ -41,42 +42,42 @@
         ::-webkit-scrollbar-thumb { background: #333C3C; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #775144; }
     </style>
-</head></head>
+</head>
 <body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
 
     <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
         <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
         
         <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
-            <li><a href="#" class="hover:text-brand-text transition-colors">Home</a></li>
+            <li><a href="../index.html" class="hover:text-brand-text transition-colors">Home</a></li>
             <li>
                 <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
-                    <option value="" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
-                    <option value="rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
-                    <option value="pendents.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
-                    <option value="earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
-                    <option value="bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
-                    <option value="diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
-                    <option value="platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
+                    <option value="../shop/shop.html" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
+                    <option value="../shop/rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
+                    <option value="../shop/pendents.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
+                    <option value="../shop/earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
+                    <option value="../shop/bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
+                    <option value="../shop/diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
+                    <option value="../shop/platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
                 </select>
             </li>
             <li>
                 <select id="collection" onchange="goToPage()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
                     <option value="" class="bg-brand-bg text-brand-text">COLLECTION ⮛</option>
-                    <option value="bags.html" class="bg-brand-bg text-brand-text text-center">Bags</option>
-                    <option value="hats.html" class="bg-brand-bg text-brand-text text-center">Hats</option>
-                    <option value="belts.html" class="bg-brand-bg text-brand-text text-center">Belts</option>
-                    <option value="watches.html" class="bg-brand-bg text-brand-text text-center">Watches</option>
-                    <option value="perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
+                    <option value="../pages/bags.html" class="bg-brand-bg text-brand-text text-center">Bags</option>
+                    <option value="../pages/hats.html" class="bg-brand-bg text-brand-text text-center">Hats</option>
+                    <option value="../pages/belts.html" class="bg-brand-bg text-brand-text text-center">Belts</option>
+                    <option value="../pages/watches.html" class="bg-brand-bg text-brand-text text-center">Watches</option>
+                    <option value="../pages/perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
                 </select>
             </li>
-            <li><a href="#" class="hover:text-brand-text transition-colors">About</a></li>
-            <li><a href="#" class="hover:text-brand-text transition-colors">Contact</a></li>
+            <li><a href="../pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
+            <li><a href="../pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
         </ul>
 
         <div class="flex items-center space-x-6 text-brand-subtext">
-            <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
-            <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
+            <a href="../pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
+            <a href="../pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="9" cy="21" r="1"></circle>
                     <circle cx="20" cy="21" r="1"></circle>
@@ -109,7 +110,7 @@
         <div class="image-wrapper">
             <img src="/assets/bagm1.avif" alt="Bag">
            <button class="wishlist-icon">♡</button>
-            <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -127,8 +128,8 @@
    <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm2.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -146,8 +147,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm3.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -165,8 +166,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm4.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -184,8 +185,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm5.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+            <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -203,8 +204,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm6.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -222,8 +223,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm7.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -241,8 +242,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm8.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -260,8 +261,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm9.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -279,8 +280,8 @@
     <div class="product-card">
        <div class="image-wrapper">
             <img src="/assets/bagm10.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -298,8 +299,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm11.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -317,8 +318,8 @@
     <div class="product-card">
        <div class="image-wrapper">
             <img src="/assets/bagm12.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -336,8 +337,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm13.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -355,8 +356,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm14.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -374,8 +375,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm15.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -393,8 +394,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm16.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -412,8 +413,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm17.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -431,8 +432,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm18.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -450,8 +451,8 @@
     <div class="product-card">
         <div class="image-wrapper">
             <img src="/assets/bagm19.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+            <a href="#"><button class="wishlist-icon">♡</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -470,7 +471,7 @@
         <div class="image-wrapper">
             <img src="/assets/bagm20.avif" alt="Bag">
            <button class="wishlist-icon">♡</button>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -512,7 +513,7 @@
         <div class="image-wrapper">
             <img src="/assets/bagw1.webp" alt="Bag">
            <button class="wishlist-icon">♡</button>
-             <a href="/pages/cart.html"><button class="buy-btn">Add to cart</button></a>
+             <a href="../pages/cart.html"><button class="buy-btn">Add to cart</button></a>
         </div>
 
         <div class="product-details">
@@ -902,8 +903,8 @@
             <div>
                 <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
                 <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
+                    <li><a href="../pages/about.html" class="hover:text-brand-hover transition-colors">About Us</a></li>
+                    <li><a href="../pages/shop.html" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
                     <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
                     <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
                 </ul>
@@ -911,9 +912,9 @@
             <div>
                 <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
                 <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
+                    <li><a href="../pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
+                    <li><a href="../pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
+                    <li><a href="../pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
                 </ul>
             </div>
             <div>
