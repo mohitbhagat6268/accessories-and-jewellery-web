@@ -1,464 +1,1080 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura | Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AURA | Premium Jewellery & Accessories</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#131313',          // Night Background
-                            card: '#333C3C',        // Dark Gray Cards
-                            button: '#775144',      // Maroon Buttons
-                            hover: '#C08991',       // Hover Maroon
-                            text: '#F4D6D8',        // Off White Main Text
-                            subtext: '#BEABA7',     // Light Gray Subtext
-                            shadow: '#0A0A0A'       // Deep Shadow
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Lato"', 'sans-serif'],
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                bg: "#131313",
+                card: "#333C3C",
+                button: "#775144",
+                hover: "#C08991",
+                text: "#F4D6D8",
+                subtext: "#BEABA7",
+                shadow: "#0A0A0A",
+              },
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', "serif"],
+              sans: ['"Lato"', "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
+
     <style>
-        /* Smooth scrolling and hiding scrollbar for a cleaner look */
-        html { scroll-behavior: smooth; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #131313; }
-        ::-webkit-scrollbar-thumb { background: #333C3C; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #775144; }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #131313;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #333c3c;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #775144;
+      }
+
+      .product-card {
+        transition: all 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-7px);
+      }
+
+      .product-image {
+        transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .product-image {
+        transform: scale(1.07);
+      }
+
+      .hero-overlay {
+        background: linear-gradient(
+          to top,
+          #131313 0%,
+          rgba(19, 19, 19, 0.1) 65%,
+          rgba(19, 19, 19, 0.4) 100%
+        );
+      }
     </style>
-    <link rel="icon" type="image/x-icon" href="./assets/Favicon.jpg">
-</head>
-<body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
 
-    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
-        
-        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-gray-200">
-            <li><a href="#" class="hover:text-brand-text transition-colors">Home</a></li>
-            <ul class="flex gap-6 items-center"> <li class="relative group cursor-pointer list-none py-2">
-        <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
-            <a href="./shop/shop.html">Shopping</a>
-            <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </div>
+    <link rel="icon" type="image/x-icon" href="./assets/Favicon.jpg" />
+  </head>
 
-        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
-            <li><a href="./shop/rings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Rings</a></li>
-            <li><a href="./shop/pendants.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Pendants</a></li>
-            <li><a href="./shop/earrings.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Earrings</a></li>
-            <li><a href="./shop/bracelets.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bracelets</a></li>
-            <li><a href="./shop/diamond.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Diamond</a></li>
-            <li><a href="./shop/platinum.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Platinum</a></li>
-        </ul>
-    </li>
+  <body class="bg-brand-bg text-brand-text font-sans antialiased">
+    <!-- ================= NAVBAR ================= -->
 
-    <li class="relative group cursor-pointer list-none py-2">
-        <div class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium">
-            <span>Collection</span>
-            <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-        </div>
+    <nav
+      class="fixed w-full z-50 top-0 left-0 bg-brand-bg/90 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12"
+    >
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a
+          href="./index.html"
+          class="text-3xl font-serif font-bold tracking-widest"
+        >
+          AURA
+        </a>
 
-        <ul class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0">
-            <li><a href="./pages/bags.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Bags</a></li>
-            <li><a href="./pages/hats.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Hats</a></li>
-            <li><a href="./pages/belts.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Belts</a></li>
-            <li><a href="./pages/watches.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Watches</a></li>
-            <li><a href="./pages/perfumes.html" class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300">Perfumes</a></li>
-        </ul>
-    </li>
-
-</ul>
-            <li><a href="./pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
-            <li><a href="./pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
-        </ul>
-
-        <div class="flex items-center space-x-6 text-gray-200">
-            <a href="./pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
-            
-            <a href="./pages/wishlist.html" class="cursor-pointer hover:text-brand-text transition-colors relative" title="View Wishlist">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-                <span id="wishlist-count" class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden shadow-sm">0</span>
+        <ul
+          class="hidden lg:flex gap-8 items-center text-sm uppercase tracking-wider"
+        >
+          <li>
+            <a href="./index.html" class="hover:text-brand-hover transition">
+              Home
             </a>
+          </li>
 
-            <a href="./pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
+          <li>
+            <a
+              href="./shop/shop.html"
+              class="hover:text-brand-hover transition"
+            >
+              Shopping
             </a>
+          </li>
+
+          <li>
+            <a
+              href="./shop/rings.html"
+              class="hover:text-brand-hover transition"
+            >
+              Rings
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./shop/pendants.html"
+              class="hover:text-brand-hover transition"
+            >
+              Pendants
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./shop/earrings.html"
+              class="hover:text-brand-hover transition"
+            >
+              Earrings
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./pages/about.html"
+              class="hover:text-brand-hover transition"
+            >
+              About
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="./pages/contact.html"
+              class="hover:text-brand-hover transition"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-5">
+          <a
+            href="./pages/login.html"
+            class="text-sm uppercase tracking-wider hover:text-brand-hover transition"
+          >
+            Login
+          </a>
+
+          <!-- Wishlist -->
+
+          <a
+            href="./pages/wishlist.html"
+            class="relative hover:text-brand-hover"
+            title="Wishlist"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              />
+            </svg>
+
+            <span
+              id="wishlist-count"
+              class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] rounded-full h-4 w-4 items-center justify-center hidden"
+            >
+              0
+            </span>
+          </a>
+
+          <!-- Cart -->
+
+          <a
+            href="./pages/cart.html"
+            class="relative hover:text-brand-hover"
+            title="Shopping Bag"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              />
+            </svg>
+
+            <span
+              id="cart-count"
+              class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] rounded-full h-4 w-4 items-center justify-center hidden"
+            >
+              0
+            </span>
+          </a>
         </div>
+      </div>
     </nav>
 
-    <div class="relative w-full h-[85vh] mt-16 overflow-hidden">
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
-            <source src="./assets/bg-video.mp4" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-bg via-transparent to-brand-bg/40"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-            <h1 class="text-5xl md:text-7xl font-serif mb-4 text-white drop-shadow-lg">Elegance That Defines You</h1>
-            <p class="text-lg md:text-xl text-brand-text font-light mb-8 max-w-2xl drop-shadow-md">Refined and luxurious designs. Discover timeless jewelry and accessories.</p>
-            <button class="rounded-full px-8 py-3 bg-brand-button hover:bg-brand-hover text-brand-text font-serif tracking-wider uppercase text-sm transition-all duration-300 shadow-lg shadow-brand-shadow/50 border border-brand-button hover:border-brand-hover">
-                Shop Now
-            </button>
-        </div>
-    </div>
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="relative w-full h-[85vh] mt-16 overflow-hidden">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover opacity-60"
+      >
+        <source src="./assets/bg-video.mp4" type="video/mp4" />
+      </video>
+
+      <div class="absolute inset-0 hero-overlay"></div>
+
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center text-center px-6"
+      >
+        <p
+          class="uppercase tracking-[0.4em] text-brand-text text-xs md:text-sm mb-6"
+        >
+          AURA Premium Collection
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-serif mb-6 text-white">
+          Elegance That Defines You
+        </h1>
+
+        <p
+          class="text-lg md:text-xl text-brand-text font-light mb-10 max-w-2xl"
+        >
+          Refined and luxurious designs. Discover timeless jewellery and
+          accessories.
+        </p>
+
+        <a
+          href="./shop/shop.html"
+          class="rounded-full px-10 py-4 bg-brand-button hover:bg-brand-hover text-brand-text font-serif tracking-widest uppercase text-sm transition duration-300"
+        >
+          Explore Collection
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORIES ================= -->
 
     <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 tracking-wider">Shop by Category</h2>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="group relative overflow-hidden cursor-pointer aspect-[4/5] bg-brand-card">
-                <img src="https://i.pinimg.com/1200x/52/00/14/520014578771a28562045ec7507528bc.jpg" alt="Rings" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow/90 via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-0 w-full text-center">
-                    <span class="text-xl font-serif tracking-wider text-brand-text">Rings</span>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden cursor-pointer aspect-[4/5] bg-brand-card">
-                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=600&q=80" alt="Pendants" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow/90 via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-0 w-full text-center">
-                    <span class="text-xl font-serif tracking-wider text-brand-text">Pendants</span>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden cursor-pointer aspect-[4/5] bg-brand-card">
-                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" alt="Earrings" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow/90 via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-0 w-full text-center">
-                    <span class="text-xl font-serif tracking-wider text-brand-text">Earrings</span>
-                </div>
-            </div>
-            <div class="group relative overflow-hidden cursor-pointer aspect-[4/5] bg-brand-card">
-                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" alt="Bracelets" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-shadow/90 via-transparent to-transparent"></div>
-                <div class="absolute bottom-6 left-0 w-full text-center">
-                    <span class="text-xl font-serif tracking-wider text-brand-text">Bracelets</span>
-                </div>
-            </div>
-        </div>
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-4">
+        Shop by Category
+      </h2>
+
+      <p class="text-brand-subtext text-center mb-12">
+        Find something extraordinary for every occasion.
+      </p>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <a
+          href="./shop/rings.html"
+          class="group relative overflow-hidden aspect-[4/5] bg-brand-card"
+        >
+          <img
+            src="https://i.pinimg.com/1200x/52/00/14/520014578771a28562045ec7507528bc.jpg"
+            alt="Rings"
+            class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition duration-700"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"
+          ></div>
+
+          <h3 class="absolute bottom-7 w-full text-center text-2xl font-serif">
+            Rings
+          </h3>
+        </a>
+
+        <a
+          href="./shop/pendants.html"
+          class="group relative overflow-hidden aspect-[4/5] bg-brand-card"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=600&q=80"
+            alt="Pendants"
+            class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition duration-700"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"
+          ></div>
+
+          <h3 class="absolute bottom-7 w-full text-center text-2xl font-serif">
+            Pendants
+          </h3>
+        </a>
+
+        <a
+          href="./shop/earrings.html"
+          class="group relative overflow-hidden aspect-[4/5] bg-brand-card"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80"
+            alt="Earrings"
+            class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition duration-700"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"
+          ></div>
+
+          <h3 class="absolute bottom-7 w-full text-center text-2xl font-serif">
+            Earrings
+          </h3>
+        </a>
+
+        <a
+          href="./shop/bracelets.html"
+          class="group relative overflow-hidden aspect-[4/5] bg-brand-card"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80"
+            alt="Bracelets"
+            class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition duration-700"
+          />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"
+          ></div>
+
+          <h3 class="absolute bottom-7 w-full text-center text-2xl font-serif">
+            Bracelets
+          </h3>
+        </a>
+      </div>
     </section>
 
-    <section class="py-20 px-6 md:px-12 bg-brand-shadow/20 border-t border-brand-card/30">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-serif text-center mb-12 tracking-wider">Trending Products</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                
-                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
-                    <button onclick="toggleWishlist(this, '14K Gold Diamond Ring')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <div class="w-full aspect-square overflow-hidden mb-4">
-                        <img src="https://i.pinimg.com/736x/f8/ab/4a/f8ab4a19d8976acefd33cabfcbd034a8.jpg" alt="14K Gold Diamond Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-serif text-lg text-center mb-2">14K Gold Diamond Ring</h3>
-                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
-                    <div class="text-brand-text font-bold mb-4">$199.00</div>
-                    <button onclick="addItem('14K Gold Diamond Ring', 199.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
-                </div>
-                
-                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
-                    <button onclick="toggleWishlist(this, 'Luxury Necklace')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <div class="w-full aspect-square overflow-hidden mb-4">
-                        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=80" alt="Luxury Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-serif text-lg text-center mb-2">Luxury Necklace</h3>
-                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
-                    <div class="text-brand-text font-bold mb-4">$299.00</div>
-                    <button onclick="addItem('Luxury Necklace', 299.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
-                </div>
-                
-                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
-                    <button onclick="toggleWishlist(this, 'Pearl Necklace')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <div class="w-full aspect-square overflow-hidden mb-4">
-                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80" alt="Pearl Necklace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-serif text-lg text-center mb-2">Pearl Necklace</h3>
-                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
-                    <div class="text-brand-text font-bold mb-4">$1,499.00</div>
-                    <button onclick="addItem('Pearl Necklace', 1499.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
-                </div>
-                
-                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
-                    <button onclick="toggleWishlist(this, 'Sauvage Dior Perfume')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <div class="w-full aspect-square overflow-hidden mb-4">
-                        <img src="https://i.pinimg.com/1200x/4f/e6/66/4fe6661864c06ea0fab3b30e1be0188f.jpg" alt="Sauvage Dior Perfume" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-serif text-lg text-center mb-2">Sauvage Dior Perfume</h3>
-                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
-                    <div class="text-brand-text font-bold mb-4">$1,999.00</div>
-                    <button onclick="addItem('Sauvage Dior Perfume', 1999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
-                </div>
-                
-                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
-                    <button onclick="toggleWishlist(this, 'Worthy Motif Cotton Cap')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <div class="w-full aspect-square overflow-hidden mb-4">
-                        <img src="https://images.unsplash.com/photo-1589831377283-33cb1cc6bd5d?auto=format&fit=crop&w=400&q=80" alt="Emerald Halo Ring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-serif text-lg text-center mb-2">Worthy Motif Cotton Cap</h3>
-                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
-                    <div class="text-brand-text font-bold mb-4">$2,100.00</div>
-                    <button onclick="addItem('Worthy Motif Cotton Cap', 2100.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
-                </div>
-                
-                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
-                    <button onclick="toggleWishlist(this, 'Diamond Bracelet')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <div class="w-full aspect-square overflow-hidden mb-4">
-                        <img src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=400&q=80" alt="Diamond Bracelet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-serif text-lg text-center mb-2">Diamond Bracelet</h3>
-                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐⭐</div>
-                    <div class="text-brand-text font-bold mb-4">$2,999.00</div>
-                    <button onclick="addItem('Diamond Bracelet', 2999.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
-                </div>
-                
-                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
-                    <button onclick="toggleWishlist(this, 'Jecob & Co. Bugatti Watch')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <div class="w-full aspect-square overflow-hidden mb-4">
-                        <img src="https://i.pinimg.com/736x/30/59/28/305928faec7d2e3dc9b9c0d1a5a7d5e2.jpg" alt="Sapphire Stud Earrings" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-serif text-lg text-center mb-2">Jecob & Co. Bugatti Watch</h3>
-                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
-                    <div class="text-brand-text font-bold mb-4">$260,000.00</div>
-                    <button onclick="addItem('Jecob & Co. Bugatti Watch', 260000.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
-                </div>
-                
-                <div class="bg-brand-card relative p-4 flex flex-col items-center group transition-transform duration-300 hover:-translate-y-2 shadow-lg shadow-brand-shadow/40 border border-transparent hover:border-brand-button/30">
-                    <button onclick="toggleWishlist(this, 'Louis Vuitton Bag')" class="absolute top-6 right-6 z-20 text-gray-400 hover:text-red-500 transition-colors outline-none">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="heart-icon transition-transform duration-300 ease-in-out drop-shadow-md">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                        </svg>
-                    </button>
-                    <div class="w-full aspect-square overflow-hidden mb-4">
-                        <img src="https://i.pinimg.com/736x/f9/9b/13/f99b131d10689fd05cd53a0f73c2ea33.jpg" alt="Louis Vuitton Bag" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="font-serif text-lg text-center mb-2">Louis Vuitton Bag</h3>
-                    <div class="text-xs tracking-widest text-brand-subtext mb-2">⭐⭐⭐⭐</div>
-                    <div class="text-brand-text font-bold mb-4">$179,000.00</div>
-                    <button onclick="addItem('Louis Vuitton Bag', 179000.00)" class="w-full py-2 border border-brand-button text-brand-text hover:bg-brand-button transition-colors uppercase text-xs tracking-wider">Add to Cart</button>
-                </div>
-                
-            </div>
-        </div>
-    </section>
+    <!-- ================= TRENDING PRODUCTS ================= -->
 
-    <section class="py-24 px-6 md:px-12 bg-brand-bg border-y border-brand-card/30">
-        <div class="max-w-[1400px] mx-auto">
-            <h2 class="text-3xl md:text-4xl font-serif text-center mb-16 tracking-wider text-brand-text">Why Choose Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-                <div class="group">
-                    <div class="text-4xl mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 drop-shadow-md">💎</div>
-                    <h3 class="text-xl font-serif tracking-wide text-brand-text mb-4">Premium Quality</h3>
-                    <p class="text-brand-subtext font-light leading-relaxed">Certified diamonds and meticulously crafted fine metals.</p>
-                </div>
-                <div class="group">
-                    <div class="text-4xl mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 drop-shadow-md">🚚</div>
-                    <h3 class="text-xl font-serif tracking-wide text-brand-text mb-4">Fast Delivery</h3>
-                    <p class="text-brand-subtext font-light leading-relaxed">Fully insured, complimentary worldwide shipping.</p>
-                </div>
-                <div class="group">
-                    <div class="text-4xl mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 drop-shadow-md">🔒</div>
-                    <h3 class="text-xl font-serif tracking-wide text-brand-text mb-4">Secure Payment</h3>
-                    <p class="text-brand-subtext font-light leading-relaxed">100% encrypted and secure checkout process.</p>
-                </div>
-                <div class="group">
-                    <div class="text-4xl mb-6 transform group-hover:-translate-y-2 transition-transform duration-300 drop-shadow-md">🔄</div>
-                    <h3 class="text-xl font-serif tracking-wide text-brand-text mb-4">Easy Returns</h3>
-                    <p class="text-brand-subtext font-light leading-relaxed">30-day hassle-free return and exchange policy.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section
+      class="py-20 px-6 md:px-12 bg-brand-shadow/30 border-t border-brand-card/30"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="uppercase tracking-[0.3em] text-brand-hover text-xs mb-4">
+            Handpicked for you
+          </p>
 
-    <section class="py-24 px-6 text-center relative overflow-hidden bg-brand-shadow/50 border-b border-brand-card/30">
-        <div class="relative z-10 max-w-3xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-serif mb-6 text-brand-text">Flat 30% OFF on Diamonds</h2>
-            <p class="text-lg text-brand-subtext font-light mb-8">Elevate your elegance with our exclusive seasonal discount on all diamond jewellery.</p>
-            <button class="rounded-full px-10 py-4 bg-brand-button hover:bg-brand-hover text-brand-text font-serif tracking-widest uppercase text-sm transition-all duration-300 shadow-xl shadow-brand-shadow/60 border border-brand-button">
-                Claim Offer
+          <h2 class="text-3xl md:text-4xl font-serif">Trending Products</h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+        >
+          <!-- PRODUCT 1 -->
+
+          <div
+            class="product-card bg-brand-card relative p-4 flex flex-col items-center shadow-lg"
+          >
+            <button
+              onclick="toggleWishlist(this, '14K Gold Diamond Ring')"
+              class="absolute top-6 right-6 z-20 text-gray-300 hover:text-red-500"
+            >
+              <svg
+                class="heart-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
             </button>
+
+            <div class="w-full aspect-square overflow-hidden mb-4">
+              <img
+                src="https://i.pinimg.com/736x/f8/ab/4a/f8ab4a19d8976acefd33cabfcbd034a8.jpg"
+                alt="14K Gold Diamond Ring"
+                class="product-image w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="font-serif text-lg text-center mb-2">
+              14K Gold Diamond Ring
+            </h3>
+
+            <p class="text-xs text-brand-subtext mb-2">★★★★★</p>
+
+            <p class="font-bold mb-4">$199.00</p>
+
+            <button
+              onclick="
+                addItem(
+                  '14K Gold Diamond Ring',
+                  199.0,
+                  'https://i.pinimg.com/736x/f8/ab/4a/f8ab4a19d8976acefd33cabfcbd034a8.jpg',
+                  'Ring',
+                )
+              "
+              class="w-full py-3 border border-brand-button hover:bg-brand-button transition uppercase text-xs tracking-wider"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- PRODUCT 2 -->
+
+          <div
+            class="product-card bg-brand-card relative p-4 flex flex-col items-center shadow-lg"
+          >
+            <button
+              onclick="toggleWishlist(this, 'Luxury Necklace')"
+              class="absolute top-6 right-6 z-20 text-gray-300 hover:text-red-500"
+            >
+              <svg
+                class="heart-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </button>
+
+            <div class="w-full aspect-square overflow-hidden mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=80"
+                alt="Luxury Necklace"
+                class="product-image w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="font-serif text-lg text-center mb-2">Luxury Necklace</h3>
+
+            <p class="text-xs text-brand-subtext mb-2">★★★★★</p>
+
+            <p class="font-bold mb-4">$299.00</p>
+
+            <button
+              onclick="
+                addItem(
+                  'Luxury Necklace',
+                  299.0,
+                  'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=80',
+                  'Necklace',
+                )
+              "
+              class="w-full py-3 border border-brand-button hover:bg-brand-button transition uppercase text-xs tracking-wider"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- PRODUCT 3 -->
+
+          <div
+            class="product-card bg-brand-card relative p-4 flex flex-col items-center shadow-lg"
+          >
+            <button
+              onclick="toggleWishlist(this, 'Pearl Necklace')"
+              class="absolute top-6 right-6 z-20 text-gray-300 hover:text-red-500"
+            >
+              <svg
+                class="heart-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </button>
+
+            <div class="w-full aspect-square overflow-hidden mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80"
+                alt="Pearl Necklace"
+                class="product-image w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="font-serif text-lg text-center mb-2">Pearl Necklace</h3>
+
+            <p class="text-xs text-brand-subtext mb-2">★★★★</p>
+
+            <p class="font-bold mb-4">$1,499.00</p>
+
+            <button
+              onclick="
+                addItem(
+                  'Pearl Necklace',
+                  1499.0,
+                  'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80',
+                  'Necklace',
+                )
+              "
+              class="w-full py-3 border border-brand-button hover:bg-brand-button transition uppercase text-xs tracking-wider"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- PRODUCT 4 -->
+
+          <div
+            class="product-card bg-brand-card relative p-4 flex flex-col items-center shadow-lg"
+          >
+            <button
+              onclick="toggleWishlist(this, 'Sauvage Dior Perfume')"
+              class="absolute top-6 right-6 z-20 text-gray-300 hover:text-red-500"
+            >
+              <svg
+                class="heart-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </button>
+
+            <div class="w-full aspect-square overflow-hidden mb-4">
+              <img
+                src="https://i.pinimg.com/1200x/4f/e6/66/4fe6661864c06ea0fab3b30e1be0188f.jpg"
+                alt="Sauvage Dior Perfume"
+                class="product-image w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="font-serif text-lg text-center mb-2">
+              Sauvage Dior Perfume
+            </h3>
+
+            <p class="text-xs text-brand-subtext mb-2">★★★★★</p>
+
+            <p class="font-bold mb-4">$1,999.00</p>
+
+            <button
+              onclick="
+                addItem(
+                  'Sauvage Dior Perfume',
+                  1999.0,
+                  'https://i.pinimg.com/1200x/4f/e6/66/4fe6661864c06ea0fab3b30e1be0188f.jpg',
+                  'Perfume',
+                )
+              "
+              class="w-full py-3 border border-brand-button hover:bg-brand-button transition uppercase text-xs tracking-wider"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- PRODUCT 5 -->
+
+          <div
+            class="product-card bg-brand-card relative p-4 flex flex-col items-center shadow-lg"
+          >
+            <button
+              onclick="toggleWishlist(this, 'Worthy Motif Cotton Cap')"
+              class="absolute top-6 right-6 z-20 text-gray-300 hover:text-red-500"
+            >
+              <svg
+                class="heart-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </button>
+
+            <div class="w-full aspect-square overflow-hidden mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1589831377283-33cb1cc6bd5d?auto=format&fit=crop&w=400&q=80"
+                alt="Worthy Motif Cotton Cap"
+                class="product-image w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="font-serif text-lg text-center mb-2">
+              Worthy Motif Cotton Cap
+            </h3>
+
+            <p class="text-xs text-brand-subtext mb-2">★★★★</p>
+
+            <p class="font-bold mb-4">$2,100.00</p>
+
+            <button
+              onclick="
+                addItem(
+                  'Worthy Motif Cotton Cap',
+                  2100.0,
+                  'https://images.unsplash.com/photo-1589831377283-33cb1cc6bd5d?auto=format&fit=crop&w=400&q=80',
+                  'Cap',
+                )
+              "
+              class="w-full py-3 border border-brand-button hover:bg-brand-button transition uppercase text-xs tracking-wider"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- PRODUCT 6 -->
+
+          <div
+            class="product-card bg-brand-card relative p-4 flex flex-col items-center shadow-lg"
+          >
+            <button
+              onclick="toggleWishlist(this, 'Diamond Bracelet')"
+              class="absolute top-6 right-6 z-20 text-gray-300 hover:text-red-500"
+            >
+              <svg
+                class="heart-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </button>
+
+            <div class="w-full aspect-square overflow-hidden mb-4">
+              <img
+                src="https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=400&q=80"
+                alt="Diamond Bracelet"
+                class="product-image w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="font-serif text-lg text-center mb-2">
+              Diamond Bracelet
+            </h3>
+
+            <p class="text-xs text-brand-subtext mb-2">★★★★★</p>
+
+            <p class="font-bold mb-4">$2,999.00</p>
+
+            <button
+              onclick="
+                addItem(
+                  'Diamond Bracelet',
+                  2999.0,
+                  'https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=400&q=80',
+                  'Bracelet',
+                )
+              "
+              class="w-full py-3 border border-brand-button hover:bg-brand-button transition uppercase text-xs tracking-wider"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- PRODUCT 7 -->
+
+          <div
+            class="product-card bg-brand-card relative p-4 flex flex-col items-center shadow-lg"
+          >
+            <button
+              onclick="toggleWishlist(this, 'Jecob & Co. Bugatti Watch')"
+              class="absolute top-6 right-6 z-20 text-gray-300 hover:text-red-500"
+            >
+              <svg
+                class="heart-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </button>
+
+            <div class="w-full aspect-square overflow-hidden mb-4">
+              <img
+                src="https://i.pinimg.com/736x/30/59/28/305928faec7d2e3dc9b9c0d1a5a7d5e2.jpg"
+                alt="Jecob & Co. Bugatti Watch"
+                class="product-image w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="font-serif text-lg text-center mb-2">
+              Jecob & Co. Bugatti Watch
+            </h3>
+
+            <p class="text-xs text-brand-subtext mb-2">★★★★</p>
+
+            <p class="font-bold mb-4">$260,000.00</p>
+
+            <button
+              onclick="
+                addItem(
+                  'Jecob & Co. Bugatti Watch',
+                  260000.0,
+                  'https://i.pinimg.com/736x/30/59/28/305928faec7d2e3dc9b9c0d1a5a7d5e2.jpg',
+                  'Watch',
+                )
+              "
+              class="w-full py-3 border border-brand-button hover:bg-brand-button transition uppercase text-xs tracking-wider"
+            >
+              Add to Cart
+            </button>
+          </div>
+
+          <!-- PRODUCT 8 -->
+
+          <div
+            class="product-card bg-brand-card relative p-4 flex flex-col items-center shadow-lg"
+          >
+            <button
+              onclick="toggleWishlist(this, 'Louis Vuitton Bag')"
+              class="absolute top-6 right-6 z-20 text-gray-300 hover:text-red-500"
+            >
+              <svg
+                class="heart-icon"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+            </button>
+
+            <div class="w-full aspect-square overflow-hidden mb-4">
+              <img
+                src="https://i.pinimg.com/736x/f9/9b/13/f99b131d10689fd05cd53a0f73c2ea33.jpg"
+                alt="Louis Vuitton Bag"
+                class="product-image w-full h-full object-cover"
+              />
+            </div>
+
+            <h3 class="font-serif text-lg text-center mb-2">
+              Louis Vuitton Bag
+            </h3>
+
+            <p class="text-xs text-brand-subtext mb-2">★★★★</p>
+
+            <p class="font-bold mb-4">$179,000.00</p>
+
+            <button
+              onclick="
+                addItem(
+                  'Louis Vuitton Bag',
+                  179000.0,
+                  'https://i.pinimg.com/736x/f9/9b/13/f99b131d10689fd05cd53a0f73c2ea33.jpg',
+                  'Bag',
+                )
+              "
+              class="w-full py-3 border border-brand-button hover:bg-brand-button transition uppercase text-xs tracking-wider"
+            >
+              Add to Cart
+            </button>
+          </div>
         </div>
+      </div>
     </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+
+    <section class="py-24 px-6 md:px-12 border-y border-brand-card/30">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-serif text-center mb-16">
+          Why Choose Us
+        </h2>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center"
+        >
+          <div>
+            <div class="text-4xl mb-6">💎</div>
+            <h3 class="text-xl font-serif mb-4">Premium Quality</h3>
+            <p class="text-brand-subtext font-light">
+              Certified diamonds and meticulously crafted fine metals.
+            </p>
+          </div>
+
+          <div>
+            <div class="text-4xl mb-6">🚚</div>
+            <h3 class="text-xl font-serif mb-4">Fast Delivery</h3>
+            <p class="text-brand-subtext font-light">
+              Carefully packaged delivery for your special purchases.
+            </p>
+          </div>
+
+          <div>
+            <div class="text-4xl mb-6">🔒</div>
+            <h3 class="text-xl font-serif mb-4">Secure Payment</h3>
+            <p class="text-brand-subtext font-light">
+              A secure checkout experience for your purchases.
+            </p>
+          </div>
+
+          <div>
+            <div class="text-4xl mb-6">🔄</div>
+            <h3 class="text-xl font-serif mb-4">Easy Returns</h3>
+            <p class="text-brand-subtext font-light">
+              Simple support for returns and exchanges.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OFFER ================= -->
+
+    <section
+      class="py-24 px-6 text-center bg-brand-shadow/50 border-b border-brand-card/30"
+    >
+      <p class="uppercase tracking-[0.3em] text-brand-hover text-xs mb-5">
+        Limited Time Offer
+      </p>
+
+      <h2 class="text-4xl md:text-5xl font-serif mb-6">
+        Flat 30% OFF on Diamonds
+      </h2>
+
+      <p class="text-lg text-brand-subtext font-light mb-8">
+        Elevate your elegance with our exclusive seasonal collection.
+      </p>
+
+      <a
+        href="./shop/diamond.html"
+        class="inline-block rounded-full px-10 py-4 bg-brand-button hover:bg-brand-hover text-brand-text font-serif tracking-widest uppercase text-sm transition"
+      >
+        Explore Diamonds
+      </a>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
 
     <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-serif text-center mb-16 tracking-wider">Client Testimonials</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-brand-card p-8 shadow-lg shadow-brand-shadow/30 relative">
-                <div class="text-4xl text-brand-button absolute top-4 left-4 opacity-30">"</div>
-                <p class="text-brand-subtext italic font-light leading-relaxed mb-6 relative z-10 text-center">"The craftsmanship is absolutely exquisite. My engagement ring gets compliments everywhere I go. True elegance!"</p>
-                <div class="text-center font-serif text-brand-text">— Sarah M.</div>
-            </div>
-            <div class="bg-brand-card p-8 shadow-lg shadow-brand-shadow/30 relative">
-                <div class="text-4xl text-brand-button absolute top-4 left-4 opacity-30">"</div>
-                <p class="text-brand-subtext italic font-light leading-relaxed mb-6 relative z-10 text-center">"Premium quality and fantastic customer service. The packaging alone felt incredibly luxurious. Highly recommend."</p>
-                <div class="text-center font-serif text-brand-text">— James T.</div>
-            </div>
-            <div class="bg-brand-card p-8 shadow-lg shadow-brand-shadow/30 relative">
-                <div class="text-4xl text-brand-button absolute top-4 left-4 opacity-30">"</div>
-                <p class="text-brand-subtext italic font-light leading-relaxed mb-6 relative z-10 text-center">"I bought a pendant for our anniversary and my wife was brought to tears. Beautiful designs and fast, secure delivery."</p>
-                <div class="text-center font-serif text-brand-text">— Elena R.</div>
-            </div>
+      <h2 class="text-3xl md:text-4xl font-serif text-center mb-16">
+        Client Testimonials
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-brand-card p-8 text-center">
+          <p class="text-brand-subtext italic leading-relaxed mb-6">
+            "The craftsmanship is absolutely exquisite. My engagement ring gets
+            compliments everywhere!"
+          </p>
+          <p class="font-serif">— Sarah M.</p>
         </div>
+
+        <div class="bg-brand-card p-8 text-center">
+          <p class="text-brand-subtext italic leading-relaxed mb-6">
+            "Premium quality and fantastic customer service. Highly recommend."
+          </p>
+          <p class="font-serif">— James T.</p>
+        </div>
+
+        <div class="bg-brand-card p-8 text-center">
+          <p class="text-brand-subtext italic leading-relaxed mb-6">
+            "Beautiful designs and a wonderful shopping experience."
+          </p>
+          <p class="font-serif">— Elena R.</p>
+        </div>
+      </div>
     </section>
 
-    <footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            <div>
-                <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">AURA</h3>
-                <p class="text-brand-subtext font-light text-sm leading-relaxed">Elegance that defines you. Discover timeless jewelry and accessories crafted for your unforgettable moments.</p>
-            </div>
-            <div>
-                <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
-                <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
-                <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
-                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
-                    <li><a href="./pages/privacy-policy.html" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-serif text-xl text-brand-text mb-6">Contact Us</h3>
-                <ul class="space-y-3 text-brand-subtext text-sm font-light mb-6">
-                    <li>Email: support@aurajewels.com</li>
-                    <li>Phone: +1 (800) 123-4567</li>
-                    <li>Address: 5th Ave, New York, NY</li>
-                </ul>
-                <div class="flex space-x-4">
-                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-                        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
-                    </a>
+    <!-- ================= FOOTER ================= -->
 
-                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
-                    </a>
-                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-                        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
-                    </a>
-                    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
-                    </a>
-                </div>
-            </div>
+    <footer
+      class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+      >
+        <div>
+          <h3 class="font-serif text-3xl tracking-widest mb-6">AURA</h3>
+          <p class="text-brand-subtext text-sm leading-relaxed">
+            Elegance that defines you. Discover timeless jewellery and
+            accessories.
+          </p>
         </div>
-        <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
-            &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
+
+        <div>
+          <h3 class="font-serif text-xl mb-6">Quick Links</h3>
+          <ul class="space-y-3 text-brand-subtext text-sm">
+            <li><a href="./pages/about.html">About Us</a></li>
+            <li><a href="./shop/shop.html">Shop Collection</a></li>
+            <li><a href="./pages/cart.html">Shopping Bag</a></li>
+            <li><a href="./pages/contact.html">Contact Us</a></li>
+          </ul>
         </div>
+
+        <div>
+          <h3 class="font-serif text-xl mb-6">Legal</h3>
+          <ul class="space-y-3 text-brand-subtext text-sm">
+            <li><a href="./pages/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="./pages/privacy-policy.html">Terms of Service</a></li>
+            <li><a href="./pages/privacy-policy.html">Return Policy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-serif text-xl mb-6">Contact Us</h3>
+          <ul class="space-y-3 text-brand-subtext text-sm">
+            <li>Email: support@aurajewels.com</li>
+            <li>Phone: +1 (800) 123-4567</li>
+            <li>Address: 5th Ave, New York, NY</li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="text-center text-brand-subtext text-sm pt-8 border-t border-brand-card/30"
+      >
+        &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
+      </div>
     </footer>
 
+    <!-- ================= WISHLIST SCRIPT ================= -->
+
     <script>
-        function goToPage() {
-            const page = document.getElementById("collection").value;
-            if (page !== "") {
-                window.location.href = page;
-            }
-        }
-        function goToShop() {
-            const page = document.getElementById("shop").value;
-            if (page !== "") {
-                window.location.href = page;
-            }
-        }
+      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-        // --- Wishlist Logic ---
-        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+      function updateWishlistCount() {
+        const count = document.getElementById("wishlist-count");
 
-        function updateWishlistCount() {
-            const countSpan = document.getElementById('wishlist-count');
-            if (countSpan) {
-                countSpan.textContent = wishlist.length;
-                countSpan.style.display = wishlist.length > 0 ? 'flex' : 'none';
-            }
-        }
+        if (!count) return;
 
-        function toggleWishlist(button, productName) {
-            const svg = button.querySelector('.heart-icon');
-            const index = wishlist.indexOf(productName);
+        count.textContent = wishlist.length;
 
-            // Pop Animation
-            svg.classList.add('scale-150');
-            setTimeout(() => svg.classList.remove('scale-150'), 200);
+        count.style.display = wishlist.length > 0 ? "flex" : "none";
+      }
 
-            if (index === -1) {
-                // Add to wishlist
-                wishlist.push(productName);
-                svg.setAttribute('fill', '#ef4444'); // Tailwind's red-500
-                svg.setAttribute('stroke', '#ef4444');
-            } else {
-                // Remove from wishlist
-                wishlist.splice(index, 1);
-                svg.setAttribute('fill', 'none');
-                svg.setAttribute('stroke', 'currentColor');
-            }
+      function toggleWishlist(button, productName) {
+        const svg = button.querySelector(".heart-icon");
 
-            // Save and update UI
-            localStorage.setItem('wishlist', JSON.stringify(wishlist));
-            updateWishlistCount();
+        const index = wishlist.indexOf(productName);
+
+        if (index === -1) {
+          wishlist.push(productName);
+
+          svg.setAttribute("fill", "#ef4444");
+          svg.setAttribute("stroke", "#ef4444");
+        } else {
+          wishlist.splice(index, 1);
+
+          svg.setAttribute("fill", "none");
+          svg.setAttribute("stroke", "currentColor");
         }
 
-        // Initialize UI on load
-        document.addEventListener('DOMContentLoaded', () => {
-            updateWishlistCount();
-            
-            // Loop through existing buttons and set filled hearts for saved items
-            document.querySelectorAll('button[onclick^="toggleWishlist"]').forEach(btn => {
-                const match = btn.getAttribute('onclick').match(/'([^']+)'/);
-                if (match && wishlist.includes(match[1])) {
-                    const svg = btn.querySelector('.heart-icon');
-                    svg.setAttribute('fill', '#ef4444');
-                    svg.setAttribute('stroke', '#ef4444');
-                }
-            });
-        });
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+        updateWishlistCount();
+      }
+
+      function updateCartCount() {
+        const count = document.getElementById("cart-count");
+
+        if (!count) return;
+
+        const cart = JSON.parse(localStorage.getItem("aura_cart")) || [];
+
+        const quantity = cart.reduce(
+          (total, item) => total + Number(item.qty || 0),
+          0,
+        );
+
+        count.textContent = quantity;
+
+        count.style.display = quantity > 0 ? "flex" : "none";
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        updateWishlistCount();
+        updateCartCount();
+
+        document
+          .querySelectorAll('button[onclick^="toggleWishlist"]')
+          .forEach((button) => {
+            const match = button.getAttribute("onclick").match(/'([^']+)'/);
+
+            if (match && wishlist.includes(match[1])) {
+              const svg = button.querySelector(".heart-icon");
+
+              svg.setAttribute("fill", "#ef4444");
+              svg.setAttribute("stroke", "#ef4444");
+            }
+          });
+
+        // Refresh cart badge after adding a product
+        window.addEventListener("storage", updateCartCount);
+
+        const originalAddItem = window.addItem;
+
+        // cart.js is a module and loads separately.
+        // Wait until its global function is available.
+        if (originalAddItem) {
+          const original = originalAddItem;
+
+          window.addItem = async (...args) => {
+            await original(...args);
+            updateCartCount();
+          };
+        }
+      });
     </script>
-    <script src="./script/cart.js"></script>
-</body>
+
+    <!-- ================= FIREBASE CART SCRIPT ================= -->
+
+    <script type="module" src="./script/cart.js"></script>
+  </body>
 </html>
