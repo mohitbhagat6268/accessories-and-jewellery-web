@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | AURA Jewelry</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                bg: "#131313",
+                card: "#333C3C",
+                button: "#775144",
+                hover: "#C08991",
+                text: "#F4D6D8",
+                subtext: "#BEABA7",
+                shadow: "#0A0A0A",
+              },
+            },
+            fontFamily: {
+              serif: ["Playfair Display", "serif"],
+              sans: ["Lato", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-brand-bg text-brand-text font-sans min-h-screen">
+    <!-- NAVBAR -->
+    <nav
+      class="px-6 md:px-12 py-6 border-b border-brand-card flex justify-between items-center"
+    >
+      <a href="../index.html" class="font-serif text-3xl tracking-widest">
+        AURA
+      </a>
+
+      <a href="./cart.html" class="text-brand-subtext hover:text-brand-text">
+        ← Back to Bag
+      </a>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <main class="max-w-6xl mx-auto px-5 py-12">
+      <div class="mb-10">
+        <p class="text-brand-hover uppercase tracking-[0.3em] text-xs mb-3">
+          Almost Yours
+        </p>
+
+        <h1 class="font-serif text-4xl md:text-5xl">Checkout</h1>
+
+        <p class="text-brand-subtext mt-3">
+          Complete your details to place your order.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <!-- CUSTOMER FORM -->
+        <section class="lg:col-span-2">
+          <div class="bg-brand-card rounded-2xl p-6 md:p-8">
+            <h2 class="font-serif text-2xl mb-7">Delivery Information</h2>
+
+            <form id="checkout-form" class="space-y-6">
+              <!-- NAME -->
+              <div>
+                <label
+                  for="customer-name"
+                  class="block text-sm mb-2 text-brand-subtext"
+                >
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  id="customer-name"
+                  name="name"
+                  placeholder="Enter your full name"
+                  required
+                  minlength="2"
+                  autocomplete="name"
+                  class="w-full bg-brand-bg border border-brand-button rounded-lg px-4 py-3 outline-none focus:border-brand-hover"
+                />
+              </div>
+
+              <!-- EMAIL -->
+              <div>
+                <label
+                  for="customer-email"
+                  class="block text-sm mb-2 text-brand-subtext"
+                >
+                  Email Address
+                </label>
+
+                <input
+                  type="email"
+                  id="customer-email"
+                  name="email"
+                  placeholder="Your email address"
+                  readonly
+                  class="w-full bg-brand-bg border border-brand-button rounded-lg px-4 py-3 outline-none opacity-80"
+                />
+
+                <p class="text-xs text-brand-subtext mt-2">
+                  Your email is taken from your Firebase account.
+                </p>
+              </div>
+
+              <!-- PHONE -->
+              <div>
+                <label
+                  for="customer-phone"
+                  class="block text-sm mb-2 text-brand-subtext"
+                >
+                  Phone Number
+                </label>
+
+                <input
+                  type="tel"
+                  id="customer-phone"
+                  name="phone"
+                  placeholder="Enter your 10-digit phone number"
+                  required
+                  pattern="[6-9][0-9]{9}"
+                  maxlength="10"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                  class="w-full bg-brand-bg border border-brand-button rounded-lg px-4 py-3 outline-none focus:border-brand-hover"
+                />
+              </div>
+
+              <!-- ADDRESS -->
+              <div>
+                <label
+                  for="customer-address"
+                  class="block text-sm mb-2 text-brand-subtext"
+                >
+                  Complete Delivery Address
+                </label>
+
+                <textarea
+                  id="customer-address"
+                  name="address"
+                  rows="4"
+                  placeholder="House number, street, area, city, state, PIN code"
+                  required
+                  minlength="10"
+                  autocomplete="street-address"
+                  class="w-full bg-brand-bg border border-brand-button rounded-lg px-4 py-3 outline-none resize-y focus:border-brand-hover"
+                ></textarea>
+              </div>
+
+              <!-- CITY -->
+              <div>
+                <label
+                  for="customer-city"
+                  class="block text-sm mb-2 text-brand-subtext"
+                >
+                  City
+                </label>
+
+                <input
+                  type="text"
+                  id="customer-city"
+                  name="city"
+                  placeholder="Enter your city"
+                  required
+                  autocomplete="address-level2"
+                  class="w-full bg-brand-bg border border-brand-button rounded-lg px-4 py-3 outline-none focus:border-brand-hover"
+                />
+              </div>
+
+              <!-- STATE AND PINCODE -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    for="customer-state"
+                    class="block text-sm mb-2 text-brand-subtext"
+                  >
+                    State
+                  </label>
+
+                  <input
+                    type="text"
+                    id="customer-state"
+                    name="state"
+                    placeholder="State"
+                    required
+                    autocomplete="address-level1"
+                    class="w-full bg-brand-bg border border-brand-button rounded-lg px-4 py-3 outline-none focus:border-brand-hover"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="customer-pincode"
+                    class="block text-sm mb-2 text-brand-subtext"
+                  >
+                    PIN Code
+                  </label>
+
+                  <input
+                    type="text"
+                    id="customer-pincode"
+                    name="pincode"
+                    placeholder="6-digit PIN code"
+                    required
+                    pattern="[0-9]{6}"
+                    maxlength="6"
+                    inputmode="numeric"
+                    autocomplete="postal-code"
+                    class="w-full bg-brand-bg border border-brand-button rounded-lg px-4 py-3 outline-none focus:border-brand-hover"
+                  />
+                </div>
+              </div>
+
+              <p id="checkout-error" class="text-red-400 text-sm hidden"></p>
+
+              <button
+                type="submit"
+                id="place-order-btn"
+                class="w-full bg-brand-button hover:bg-brand-hover text-white py-4 rounded-full font-bold tracking-widest transition"
+              >
+                PLACE ORDER
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- ORDER SUMMARY -->
+        <aside>
+          <div class="bg-brand-card rounded-2xl p-6 sticky top-6">
+            <h2 class="font-serif text-2xl mb-6">Your Order</h2>
+
+            <div id="checkout-items" class="space-y-4 mb-6">
+              <p class="text-brand-subtext text-sm">Loading your products...</p>
+            </div>
+
+            <div class="border-t border-brand-subtext/30 pt-5 space-y-4">
+              <div class="flex justify-between text-sm">
+                <span class="text-brand-subtext"> Total Items </span>
+
+                <span id="checkout-quantity">0</span>
+              </div>
+
+              <div class="flex justify-between text-sm">
+                <span class="text-brand-subtext"> Subtotal </span>
+
+                <span id="checkout-subtotal">$0.00</span>
+              </div>
+
+              <div class="flex justify-between text-sm">
+                <span class="text-brand-subtext"> Delivery </span>
+
+                <span>Free</span>
+              </div>
+
+              <div
+                class="border-t border-brand-subtext/30 pt-4 flex justify-between items-center"
+              >
+                <span class="font-serif text-xl"> Total </span>
+
+                <span id="checkout-total" class="font-bold text-xl">
+                  $0.00
+                </span>
+              </div>
+            </div>
+
+            <p class="text-xs text-brand-subtext mt-6 text-center">
+              Your order will be reviewed before confirmation.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      class="border-t border-brand-card py-8 text-center text-brand-subtext text-sm"
+    >
+      © 2026 AURA Jewelry. All rights reserved.
+    </footer>
+
+    <!-- FIREBASE AND CHECKOUT SCRIPT -->
+    
+    <script type="module">
+import { auth } from "../firebase-config.js";
+
+import {
+    onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
+
+// ==========================================
+// 1. CONFIGURATION
+// ==========================================
+
+const API_URL = "http://localhost:5000/api/orders";
+
+const form = document.getElementById("checkout-form");
+
+const emailInput = document.getElementById("customer-email");
+
+const itemsContainer = document.getElementById("checkout-items");
+
+const errorMessage = document.getElementById("checkout-error");
+
+const placeOrderButton = document.getElementById("place-order-btn");
+
+let currentUser = null;
+
+let cart = JSON.parse(localStorage.getItem("aura_cart")) || [];
+
+// ==========================================
+// 2. FORMAT PRICE
+// ==========================================
+
+function formatPrice(price) {
+    return "$" + Number(price).toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+// ==========================================
+// 3. SAFE HTML
+// ==========================================
+
+function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+    })[char]);
+}
+
+// ==========================================
+// 4. LOAD ORDER SUMMARY
+// ==========================================
+
+function loadOrderSummary() {
+
+    itemsContainer.innerHTML = "";
+
+    let subtotal = 0;
+    let quantity = 0;
+
+    if (cart.length === 0) {
+
+        itemsContainer.innerHTML = `
+            <p class="text-red-400 text-sm">
+                Your cart is empty.
+            </p>
+        `;
+
+        placeOrderButton.disabled = true;
+
+        placeOrderButton.classList.add(
+            "opacity-50",
+            "cursor-not-allowed"
+        );
+
+        return;
+    }
+
+    cart.forEach(item => {
+
+        const price = Number(item.price) || 0;
+        const qty = Number(item.qty) || 1;
+
+        subtotal += price * qty;
+        quantity += qty;
+
+        itemsContainer.innerHTML += `
+            <div class="flex justify-between items-start gap-3">
+
+                <div>
+                    <p class="text-sm font-semibold">
+                        ${escapeHTML(item.name)}
+                    </p>
+
+                    <p class="text-xs text-brand-subtext mt-1">
+                        Quantity: ${qty}
+                    </p>
+                </div>
+
+                <p class="text-sm whitespace-nowrap">
+                    ${formatPrice(price * qty)}
+                </p>
+
+            </div>
+        `;
+    });
+
+    document.getElementById("checkout-quantity").innerText = quantity;
+
+    document.getElementById("checkout-subtotal").innerText =
+        formatPrice(subtotal);
+
+    document.getElementById("checkout-total").innerText =
+        formatPrice(subtotal);
+}
+
+// ==========================================
+// 5. FIREBASE AUTHENTICATION
+// ==========================================
+
+onAuthStateChanged(auth, (user) => {
+
+    if (!user) {
+
+        alert("Please login before checkout.");
+
+        window.location.href = "./login.html";
+
+        return;
+    }
+
+    currentUser = user;
+
+    emailInput.value = user.email || "";
+
+    if (user.displayName) {
+        document.getElementById("customer-name").value =
+            user.displayName;
+    }
+
+    loadOrderSummary();
+});
+
+// ==========================================
+// 6. PLACE ORDER
+// ==========================================
+
+form.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+    errorMessage.classList.add("hidden");
+
+    // Check login
+    if (!currentUser) {
+
+        errorMessage.innerText = "Please login first.";
+
+        errorMessage.classList.remove("hidden");
+
+        return;
+    }
+
+    // Check cart
+    cart = JSON.parse(localStorage.getItem("aura_cart")) || [];
+
+    if (cart.length === 0) {
+
+        errorMessage.innerText = "Your cart is empty.";
+
+        errorMessage.classList.remove("hidden");
+
+        return;
+    }
+
+    // Validate form
+    if (!form.reportValidity()) {
+        return;
+    }
+
+    // Disable button while placing order
+    placeOrderButton.disabled = true;
+
+    placeOrderButton.innerText = "PLACING YOUR ORDER...";
+
+    try {
+
+        // Get Firebase ID token
+        const idToken = await currentUser.getIdToken();
+
+        // Prepare customer details
+        const orderData = {
+
+            name: document.getElementById("customer-name").value.trim(),
+
+            phone: document.getElementById("customer-phone").value.trim(),
+
+            address: document.getElementById("customer-address").value.trim(),
+
+            city: document.getElementById("customer-city").value.trim(),
+
+            state: document.getElementById("customer-state").value.trim(),
+
+            pincode: document.getElementById("customer-pincode").value.trim(),
+
+            items: cart.map(item => ({
+                name: item.name,
+                qty: Number(item.qty)
+            }))
+
+        };
+
+        // Send order to backend
+        const response = await fetch(API_URL, {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${idToken}`
+            },
+
+            body: JSON.stringify(orderData)
+
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.message || "Unable to place order.");
+        }
+
+        // Order successfully saved
+        alert(
+            "Order placed successfully!\n\n" +
+            "Order ID: " + result.orderId + "\n" +
+            "Total: " + formatPrice(result.totalAmount)
+        );
+
+        // Clear cart after successful order
+        localStorage.removeItem("aura_cart");
+
+        // Redirect to homepage
+        window.location.href = "../index.html";
+
+    } catch (error) {
+
+        console.error("Checkout error:", error);
+
+        errorMessage.innerText = error.message;
+
+        errorMessage.classList.remove("hidden");
+
+        placeOrderButton.disabled = false;
+
+        placeOrderButton.innerText = "PLACE ORDER";
+
+    }
+
+});
+</script>
+  </body>
+</html>

@@ -1,90 +1,369 @@
-// Initialize cart from localStorage, or use an empty array if nothing is saved
-let cart = JSON.parse(localStorage.getItem('aura_cart')) || [];
 
-// Save the current state of the cart to localStorage
-function saveCart() {
-    localStorage.setItem('aura_cart', JSON.stringify(cart));
-}
+import { auth } from "../firebase-config.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
-// Add item to cart
-function addItem(name, price) {
-    let item = cart.find(i => i.name === name);
+// ==========================================
+// 1. CART INITIALIZATION
+// ==========================================
 
-    if (item) {
-        item.qty++;
-    } else {
-        cart.push({ name: name, price: price, qty: 1 });
+let cart = JSON.parse(localStorage.getItem("aura_cart")) || [];
+let currentUser = null;
+
+let resolveAuthReady;
+
+const authReady = new Promise((resolve) => {
+    resolveAuthReady = resolve;
+});
+
+// ==========================================
+// 2. FIREBASE AUTHENTICATION
+// ==========================================
+
+onAuthStateChanged(auth, (user) => {
+    currentUser = user;
+    resolveAuthReady(user);
+
+    if (user) {
+        const pendingItem = sessionStorage.getItem("aura_pending_item");
+
+        if (pendingItem) {
+            try {
+                const item = JSON.parse(pendingItem);
+                sessionStorage.removeItem("aura_pending_item");
+
+                addItemDirectly(
+                    item.name,
+                    item.price,
+                    item.image,
+                    item.category
+                );
+
+            } catch (error) {
+                console.error("Pending cart item error:", error);
+                sessionStorage.removeItem("aura_pending_item");
+            }
+        }
     }
-    
-    saveCart();
-    
-    // Optional: A small visual feedback for the user
-    alert(`${name} added to cart!`); 
+});
+
+// ==========================================
+// 3. SAVE CART
+// ==========================================
+
+function saveCart() {
+    localStorage.setItem("aura_cart", JSON.stringify(cart));
 }
 
-// Display Cart Items (Only runs on the cart page)
+// ==========================================
+// 4. ADD PRODUCT DIRECTLY
+// ==========================================
+
+function addItemDirectly(name, price, image = "", category = "Jewelry") {
+
+    const existingItem = cart.find(item => item.name === name);
+
+    if (existingItem) {
+        existingItem.qty++;
+
+        if (image) existingItem.image = image;
+        if (category) existingItem.category = category;
+
+    } else {
+        cart.push({
+            name,
+            price: Number(price),
+            image,
+            category,
+            qty: 1
+        });
+    }
+
+    saveCart();
+    showItem();
+
+    alert(`${name} added to your bag!`);
+}
+
+// ==========================================
+// 5. ADD PRODUCT WITH LOGIN PROTECTION
+// ==========================================
+
+async function addItem(name, price, image = "", category = "Jewelry") {
+
+    const user = await authReady;
+
+    if (!user) {
+
+        sessionStorage.setItem(
+            "aura_pending_item",
+            JSON.stringify({
+                name,
+                price,
+                image,
+                category
+            })
+        );
+
+        alert("Please login to add products to your bag.");
+
+        const loginPage = window.location.pathname.includes("/pages/")
+            ? "./login.html"
+            : "./pages/login.html";
+
+        window.location.href = loginPage;
+        return;
+    }
+
+    addItemDirectly(name, price, image, category);
+}
+
+// ==========================================
+// 6. FORMAT PRICE
+// ==========================================
+
+function formatPrice(price) {
+    return "$" + Number(price).toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
+// ==========================================
+// 7. SAFE HTML TEXT
+// ==========================================
+
+function escapeHTML(value) {
+    return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+    })[char]);
+}
+
+// ==========================================
+// 8. DISPLAY CART ITEMS
+// ==========================================
+
 function showItem() {
-    let list = document.getElementById("cart-items");
-    let totalEl = document.getElementById("cart-total");
-    
-    // If these elements don't exist (like on the home page), stop the function
-    if (!list || !totalEl) return; 
+
+    const list = document.getElementById("cart-items");
+    const totalEl = document.getElementById("cart-total");
+
+    if (!list || !totalEl) return;
 
     list.innerHTML = "";
-    let total = 0;
+
+    let subtotal = 0;
+    let totalQuantity = 0;
 
     if (cart.length === 0) {
-        list.innerHTML = "<p class='text-brand-subtext text-center py-8'>Your cart is currently empty.</p>";
-        totalEl.innerText = "$0.00";
+
+        list.innerHTML = `
+            <div class="text-center py-16">
+                <div class="text-5xl mb-5">🛍️</div>
+
+                <h3 class="font-serif text-2xl text-brand-text mb-2">
+                    Your bag is empty
+                </h3>
+
+                <p class="text-brand-subtext mb-6">
+                    Discover something beautiful for yourself.
+                </p>
+
+                <a href="../index.html"
+                   class="inline-block px-8 py-3 bg-brand-button text-white rounded-full hover:opacity-80 transition">
+                    Continue Shopping
+                </a>
+            </div>
+        `;
+
+        totalEl.innerText = formatPrice(0);
+
+        const subtotalEl = document.getElementById("cart-subtotal");
+        if (subtotalEl) subtotalEl.innerText = formatPrice(0);
+
+        const quantityEl = document.getElementById("cart-quantity");
+        if (quantityEl) quantityEl.innerText = "0";
+
         return;
     }
 
     cart.forEach((item, index) => {
-        total += item.price * item.qty;
+
+        const price = Number(item.price) || 0;
+        const qty = Number(item.qty) || 1;
+
+        subtotal += price * qty;
+        totalQuantity += qty;
+
+        const imageHTML = item.image
+            ? `<img src="${escapeHTML(item.image)}"
+                    alt="${escapeHTML(item.name)}"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+               <div class="hidden w-full h-full items-center justify-center text-3xl bg-brand-card">💎</div>`
+            : `<div class="w-full h-full flex items-center justify-center text-3xl bg-brand-card">💎</div>`;
+
         list.innerHTML += `
-        <div class="flex justify-between items-center bg-brand-card p-6 rounded-lg mb-4 border border-brand-card/50 shadow-md">
-            <div>
-                <h4 class="font-serif text-xl text-brand-text">${item.name}</h4>
-                <p class="text-brand-subtext mt-1">$${item.price.toLocaleString(undefined, {minimumFractionDigits: 2})} each</p>
-            </div>
-            <div class="flex items-center space-x-6">
-                <div class="flex items-center border border-brand-button rounded-full px-3 py-1">
-                    <button onclick="dec(${index})" class="text-brand-text hover:text-brand-hover text-xl px-2 transition-colors">-</button>
-                    <span class="text-brand-text font-bold px-4">${item.qty}</span>
-                    <button onclick="inc(${index})" class="text-brand-text hover:text-brand-hover text-xl px-2 transition-colors">+</button>
+            <div class="flex flex-col sm:flex-row gap-5 items-center
+                        bg-brand-card p-5 rounded-xl mb-4
+                        border border-brand-card/50 shadow-sm">
+
+                <div class="w-28 h-28 flex-shrink-0 rounded-lg overflow-hidden bg-white">
+                    ${imageHTML}
                 </div>
-                <div class="font-bold text-brand-text w-24 text-right">
-                    $${(item.price * item.qty).toLocaleString(undefined, {minimumFractionDigits: 2})}
+
+                <div class="flex-1 text-center sm:text-left">
+
+                    <p class="text-xs uppercase tracking-widest text-brand-subtext mb-2">
+                        ${escapeHTML(item.category || "Jewelry")}
+                    </p>
+
+                    <h4 class="font-serif text-xl text-brand-text">
+                        ${escapeHTML(item.name)}
+                    </h4>
+
+                    <p class="text-brand-subtext mt-2">
+                        ${formatPrice(price)} each
+                    </p>
+
                 </div>
-                <button onclick="dlt(${index})" class="text-brand-hover hover:text-red-500 text-xl ml-4 transition-colors" title="Remove Item">✖</button>
+
+                <div class="flex items-center border border-brand-button rounded-full px-3 py-2">
+
+                    <button onclick="dec(${index})"
+                            class="px-3 text-xl text-brand-text hover:opacity-60">
+                        −
+                    </button>
+
+                    <span class="font-bold px-3 text-brand-text">
+                        ${qty}
+                    </span>
+
+                    <button onclick="inc(${index})"
+                            class="px-3 text-xl text-brand-text hover:opacity-60">
+                        +
+                    </button>
+
+                </div>
+
+                <div class="text-center sm:text-right min-w-24">
+
+                    <p class="font-bold text-brand-text">
+                        ${formatPrice(price * qty)}
+                    </p>
+
+                    <button onclick="dlt(${index})"
+                            class="text-red-500 text-sm mt-3 hover:underline">
+                        Remove
+                    </button>
+
+                </div>
+
             </div>
-        </div>`;
+        `;
     });
 
-    totalEl.innerText = "$" + total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    // UPDATE TOTALS
+
+    totalEl.innerText = formatPrice(subtotal);
+
+    const subtotalEl = document.getElementById("cart-subtotal");
+    if (subtotalEl) subtotalEl.innerText = formatPrice(subtotal);
+
+    const quantityEl = document.getElementById("cart-quantity");
+    if (quantityEl) quantityEl.innerText = totalQuantity;
 }
 
-function inc(i) {
-    cart[i].qty++;
+// ==========================================
+// 9. INCREASE QUANTITY
+// ==========================================
+
+function inc(index) {
+
+    if (!cart[index]) return;
+
+    cart[index].qty++;
+
     saveCart();
     showItem();
 }
 
-function dec(i) {
-    if (cart[i].qty > 1) {
-        cart[i].qty--;
-        saveCart();
-        showItem();
+// ==========================================
+// 10. DECREASE QUANTITY
+// ==========================================
+
+function dec(index) {
+
+    if (!cart[index]) return;
+
+    if (cart[index].qty > 1) {
+        cart[index].qty--;
+    } else {
+        return;
     }
-}
 
-function dlt(i) {
-    cart.splice(i, 1);
     saveCart();
     showItem();
 }
 
-// Automatically render the cart when the page loads (if we are on the cart page)
-document.addEventListener('DOMContentLoaded', () => {
+// ==========================================
+// 11. DELETE PRODUCT
+// ==========================================
+
+function dlt(index) {
+
+    if (!cart[index]) return;
+
+    cart.splice(index, 1);
+
+    saveCart();
+    showItem();
+}
+
+// ==========================================
+// 12. PROCEED TO CHECKOUT
+// ==========================================
+
+async function proceedToCheckout() {
+
+    // Check whether cart is empty
+    if (cart.length === 0) {
+        alert("Your bag is empty. Please add products first.");
+        return;
+    }
+
+    // Wait for Firebase authentication
+    const user = await authReady;
+
+    // Check login status
+    if (!user) {
+        alert("Please login before proceeding to checkout.");
+        window.location.href = "./login.html";
+        return;
+    }
+
+    // Navigate to checkout page
+    window.location.href = "./checkout.html";
+}
+
+// ==========================================
+// 13. MAKE FUNCTIONS AVAILABLE TO HTML
+// ==========================================
+
+window.addItem = addItem;
+window.showItem = showItem;
+window.inc = inc;
+window.dec = dec;
+window.dlt = dlt;
+window.proceedToCheckout = proceedToCheckout;
+
+// ==========================================
+// 14. LOAD CART
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", () => {
     showItem();
 });
