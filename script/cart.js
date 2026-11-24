@@ -31,12 +31,41 @@ onAuthStateChanged(auth, (user) => {
                 const item = JSON.parse(pendingItem);
                 sessionStorage.removeItem("aura_pending_item");
 
-                addItemDirectly(
-                    item.name,
-                    item.price,
-                    item.image,
-                    item.category
-                );
+                function addItemDirectly(
+    name,
+    price,
+    image = "",
+    category = "Jewelry",
+    productId = null
+) {
+    const existingItem = cart.find(item =>
+        productId
+            ? item.id === productId
+            : !item.id && item.name === name
+    );
+
+    if (existingItem) {
+        existingItem.qty++;
+
+        if (image) existingItem.image = image;
+        if (category) existingItem.category = category;
+
+    } else {
+        cart.push({
+            id: productId,
+            name,
+            price: Number(price),
+            image,
+            category,
+            qty: 1
+        });
+    }
+
+    saveCart();
+    showItem();
+
+    alert(`${name} added to your bag!`);
+}
 
             } catch (error) {
                 console.error("Pending cart item error:", error);
@@ -88,15 +117,20 @@ function addItemDirectly(name, price, image = "", category = "Jewelry") {
 // 5. ADD PRODUCT WITH LOGIN PROTECTION
 // ==========================================
 
-async function addItem(name, price, image = "", category = "Jewelry") {
-
+async function addItem(
+    name,
+    price,
+    image = "",
+    category = "Jewelry",
+    productId = null
+) {
     const user = await authReady;
 
     if (!user) {
-
         sessionStorage.setItem(
             "aura_pending_item",
             JSON.stringify({
+                id: productId,
                 name,
                 price,
                 image,
@@ -106,15 +140,19 @@ async function addItem(name, price, image = "", category = "Jewelry") {
 
         alert("Please login to add products to your bag.");
 
-        const loginPage = window.location.pathname.includes("/pages/")
-            ? "./login.html"
-            : "./pages/login.html";
+        const path = window.location.pathname;
+
+        const loginPage = path.includes("/shop/")
+            ? "../pages/login.html"
+            : path.includes("/pages/")
+                ? "./login.html"
+                : "./pages/login.html";
 
         window.location.href = loginPage;
         return;
     }
 
-    addItemDirectly(name, price, image, category);
+    addItemDirectly(name, price, image, category, productId);
 }
 
 // ==========================================
