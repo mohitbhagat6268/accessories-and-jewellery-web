@@ -4,7 +4,7 @@ Elegance That Defines You.
 
 AURA is a modern and elegant jewellery and accessories e-commerce website designed to deliver a premium online shopping experience. It showcases a curated collection of luxury jewellery, watches, bags, perfumes, and fashion accessories through a clean and sophisticated interface.
 
-🌐 Live Demo: https://69e3f3644b42cf50a74a3a91--aura-jewelry-and-accessories.netlify.app/
+🌐 Live Demo: (https://aura-jewelry-and-accessories.netlify.app/)
 
 ✨ Features
 Elegant Homepage: Luxury-inspired design with a modern and attractive user interface.
