@@ -3,7 +3,7 @@
 // AURA - FIRESTORE PRODUCT SYSTEM
 // ==========================================
 
-const API_URL = "http://localhost:5000/api/products";
+const API_URL = "https://aura-backend-txgz.onrender.com/api/products";
 const currentPage = window.location.pathname.toLowerCase();
 
 let PAGE_CATEGORY = "Bracelet";
