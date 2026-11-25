@@ -1096,92 +1096,110 @@
 
     <!-- ================= WISHLIST SCRIPT ================= -->
 
-    <script>
-      let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    
+<script>
+  // Use the same wishlist storage as shopping pages
+  let wishlist = JSON.parse(localStorage.getItem("aura_wishlist")) || [];
 
-      function updateWishlistCount() {
-        const count = document.getElementById("wishlist-count");
+  function updateWishlistCount() {
+    const count = document.getElementById("wishlist-count");
+    if (!count) return;
 
-        if (!count) return;
+    count.textContent = wishlist.length;
+    count.style.display = wishlist.length > 0 ? "flex" : "none";
+  }
 
-        count.textContent = wishlist.length;
+  function toggleWishlist(button, productName) {
+    const card = button.closest(".product-card");
+    const svg = button.querySelector(".heart-icon");
 
-        count.style.display = wishlist.length > 0 ? "flex" : "none";
-      }
+    if (!card || !svg) return;
 
-      function toggleWishlist(button, productName) {
-        const svg = button.querySelector(".heart-icon");
+    const image = card.querySelector("img")?.src || "";
+    const priceText = card.querySelector(".font-bold")?.textContent || "0";
+    const price = Number(priceText.replace(/[^\d.]/g, "")) || 0;
 
-        const index = wishlist.indexOf(productName);
+    // Get category from the Add to Cart button
+    const cartButton = card.querySelector('button[onclick*="addItem"]');
+    const categoryMatch = cartButton?.getAttribute("onclick")
+      ?.match(/,\s*'([^']+)'\s*\)/);
 
-        if (index === -1) {
-          wishlist.push(productName);
+    const category = categoryMatch ? categoryMatch[1] : "Accessory";
 
-          svg.setAttribute("fill", "#ef4444");
-          svg.setAttribute("stroke", "#ef4444");
-        } else {
-          wishlist.splice(index, 1);
+    // Find existing product by name
+    const index = wishlist.findIndex(item => item.name === productName);
 
-          svg.setAttribute("fill", "none");
-          svg.setAttribute("stroke", "currentColor");
-        }
+    if (index === -1) {
+      const product = {
+        id: "home-" + productName.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+        name: productName,
+        description: "",
+        price: price,
+        category: category,
+        image: image
+      };
 
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      wishlist.push(product);
 
-        updateWishlistCount();
-      }
+      svg.setAttribute("fill", "#ef4444");
+      svg.setAttribute("stroke", "#ef4444");
+    } else {
+      wishlist.splice(index, 1);
 
-      function updateCartCount() {
-        const count = document.getElementById("cart-count");
+      svg.setAttribute("fill", "none");
+      svg.setAttribute("stroke", "currentColor");
+    }
 
-        if (!count) return;
+    localStorage.setItem("aura_wishlist", JSON.stringify(wishlist));
 
-        const cart = JSON.parse(localStorage.getItem("aura_cart")) || [];
+    updateWishlistCount();
+  }
 
-        const quantity = cart.reduce(
-          (total, item) => total + Number(item.qty || 0),
-          0,
-        );
+  function updateCartCount() {
+    const count = document.getElementById("cart-count");
+    if (!count) return;
 
-        count.textContent = quantity;
+    const cart = JSON.parse(localStorage.getItem("aura_cart")) || [];
 
-        count.style.display = quantity > 0 ? "flex" : "none";
-      }
+    const quantity = cart.reduce(
+      (total, item) => total + Number(item.qty || 0),
+      0
+    );
 
-      document.addEventListener("DOMContentLoaded", () => {
-        updateWishlistCount();
-        updateCartCount();
+    count.textContent = quantity;
+    count.style.display = quantity > 0 ? "flex" : "none";
+  }
 
-        document
-          .querySelectorAll('button[onclick^="toggleWishlist"]')
-          .forEach((button) => {
-            const match = button.getAttribute("onclick").match(/'([^']+)'/);
+  document.addEventListener("DOMContentLoaded", () => {
+    wishlist = JSON.parse(localStorage.getItem("aura_wishlist")) || [];
 
-            if (match && wishlist.includes(match[1])) {
-              const svg = button.querySelector(".heart-icon");
+    updateWishlistCount();
+    updateCartCount();
 
-              svg.setAttribute("fill", "#ef4444");
-              svg.setAttribute("stroke", "#ef4444");
-            }
-          });
+    // Restore red hearts for products already in wishlist
+    document
+      .querySelectorAll('button[onclick^="toggleWishlist"]')
+      .forEach(button => {
+        const match = button.getAttribute("onclick").match(/'([^']+)'/);
 
-        // Refresh cart badge after adding a product
-        window.addEventListener("storage", updateCartCount);
+        if (match && wishlist.some(item => item.name === match[1])) {
+          const svg = button.querySelector(".heart-icon");
 
-        const originalAddItem = window.addItem;
-
-        // cart.js is a module and loads separately.
-        // Wait until its global function is available.
-        if (originalAddItem) {
-          const original = originalAddItem;
-
-          window.addItem = async (...args) => {
-            await original(...args);
-            updateCartCount();
-          };
+          if (svg) {
+            svg.setAttribute("fill", "#ef4444");
+            svg.setAttribute("stroke", "#ef4444");
+          }
         }
       });
-    </script>
+
+    window.addEventListener("storage", () => {
+      wishlist = JSON.parse(localStorage.getItem("aura_wishlist")) || [];
+      updateWishlistCount();
+      updateCartCount();
+    });
+  });
+</script>
+
 
     <!-- ================= FIREBASE CART SCRIPT ================= -->
 
