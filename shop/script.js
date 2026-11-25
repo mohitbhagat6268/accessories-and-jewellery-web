@@ -8,15 +8,15 @@ const currentPage = window.location.pathname.toLowerCase();
 
 let PAGE_CATEGORY = "Bracelet";
 
-if (currentPage.includes("earrings.html")) {
+if (currentPage.includes("earrings")) {
     PAGE_CATEGORY = "Earrings";
-} else if (currentPage.includes("rings.html")) {
+} else if (currentPage.includes("rings")) {
     PAGE_CATEGORY = "Ring";
-} else if (currentPage.includes("pendants.html")) {
+} else if (currentPage.includes("pendants")) {
     PAGE_CATEGORY = "Pendant";
-} else if (currentPage.includes("diamond.html")) {
+} else if (currentPage.includes("diamond")) {
     PAGE_CATEGORY = "Diamond";
-} else if (currentPage.includes("platinum.html")) {
+} else if (currentPage.includes("platinum")) {
     PAGE_CATEGORY = "Platinum";
 }
 const EXCHANGE_RATE = 0.79;
