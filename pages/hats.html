@@ -1,959 +1,689 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura | Hats</title>
-   <link rel="stylesheet" href="/style/collection.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aura | Hats Collection</title>
 
-    <link rel="icon" type="image/x-icon" href="../assets/Favicon.jpg">
-<body>
-<!-- Header -->
- <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            bg: '#131313',          // Night Background
-                            card: '#333C3C',        // Dark Gray Cards
-                            button: '#775144',      // Maroon Buttons
-                            hover: '#C08991',       // Hover Maroon
-                            text: '#F4D6D8',        // Off White Main Text
-                            subtext: '#BEABA7',     // Light Gray Subtext
-                            shadow: '#0A0A0A'       // Deep Shadow
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Lato"', 'sans-serif'],
-                    }
-                }
-            }
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/x-icon" href="../assets/Favicon.jpg" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                bg: "#131313",
+                card: "#333C3C",
+                button: "#775144",
+                hover: "#C08991",
+                text: "#F4D6D8",
+                subtext: "#BEABA7",
+                shadow: "#0A0A0A",
+              },
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', "serif"],
+              sans: ['"Lato"', "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
+
     <style>
-        /* Smooth scrolling and hiding scrollbar for a cleaner look */
-        html { scroll-behavior: smooth; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #131313; }
-        ::-webkit-scrollbar-thumb { background: #333C3C; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #775144; }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #131313;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #333c3c;
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #775144;
+      }
+
+      .gender-toggle.active {
+        background: #775144;
+        color: #ffffff;
+      }
     </style>
-</head></head>
-<body class="bg-brand-bg text-brand-text font-sans antialiased overflow-x-hidden">
+  </head>
+  <body class="bg-brand-bg font-sans text-brand-text">
+    <!-- NAVBAR -->
+    <nav
+      class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center"
+    >
+      <a
+        href="../index.html"
+        class="text-2xl font-serif font-bold tracking-widest text-brand-text"
+      >
+        AURA
+      </a>
 
-    <nav class="fixed w-full z-50 top-0 left-0 bg-brand-bg/80 backdrop-blur-md border-b border-brand-card/50 py-4 px-6 md:px-12 flex justify-between items-center">
-        <div class="text-2xl font-serif font-bold tracking-widest text-brand-text">AURA</div>
-        
-        <ul class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-brand-subtext">
-            <li><a href="../index.html" class="hover:text-brand-text transition-colors">Home</a></li>
+      <ul
+        class="hidden md:flex space-x-8 items-center text-sm uppercase tracking-wider text-gray-200"
+      >
+        <li>
+          <a
+            href="../index.html"
+            class="hover:text-brand-text transition-colors"
+            >Home</a
+          >
+        </li>
+
+        <!-- SHOPPING DROPDOWN -->
+        <li class="relative group cursor-pointer list-none py-2">
+          <div
+            class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium"
+          >
+            <span>Shopping</span>
+            <svg
+              class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </div>
+
+          <ul
+            class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0"
+          >
             <li>
-                <select id="shop" onchange="goToShop()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
-                    <option value="../shop/shop.html" class="bg-brand-bg text-brand-text">SHOPPING ⮛</option>
-                    <option value="../shop/rings.html" class="bg-brand-bg text-brand-text text-center">Rings</option>
-                    <option value="../shop/pendents.html" class="bg-brand-bg text-brand-text text-center">Pendants</option>
-                    <option value="../shop/earrings.html" class="bg-brand-bg text-brand-text text-center">Earrings</option>
-                    <option value="../shop/bracelets.html" class="bg-brand-bg text-brand-text text-center">Bracelets</option>
-                    <option value="../shop/diamond.html" class="bg-brand-bg text-brand-text text-center">Diamond</option>
-                    <option value="../shop/platinum.html" class="bg-brand-bg text-brand-text text-center">Platinum</option>
-                </select>
+              <a
+                href="../shop/rings.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Rings</a
+              >
             </li>
             <li>
-                <select id="collection" onchange="goToPage()" class="bg-transparent border-none outline-none cursor-pointer hover:text-brand-text transition-colors appearance-none focus:ring-0">
-                    <option value="" class="bg-brand-bg text-brand-text">COLLECTION ⮛</option>
-                    <option value="../pages/bags.html" class="bg-brand-bg text-brand-text text-center">Bags</option>
-                    <option value="../pages/hats.html" class="bg-brand-bg text-brand-text text-center">Hats</option>
-                    <option value="../pages/belts.html" class="bg-brand-bg text-brand-text text-center">Belts</option>
-                    <option value="../pages/watches.html" class="bg-brand-bg text-brand-text text-center">Watches</option>
-                    <option value="../pages/perfumes.html" class="bg-brand-bg text-brand-text text-center">Perfumes</option>
-                </select>
+              <a
+                href="../shop/pendants.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Pendants</a
+              >
             </li>
-            <li><a href="../pages/about.html" class="hover:text-brand-text transition-colors">About</a></li>
-            <li><a href="../pages/contact.html" class="hover:text-brand-text transition-colors">Contact</a></li>
-        </ul>
+            <li>
+              <a
+                href="../shop/earrings.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Earrings</a
+              >
+            </li>
+            <li>
+              <a
+                href="../shop/bracelets.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Bracelets</a
+              >
+            </li>
+            <li>
+              <a
+                href="../shop/diamond.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Diamond</a
+              >
+            </li>
+            <li>
+              <a
+                href="../shop/platinum.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Platinum</a
+              >
+            </li>
+          </ul>
+        </li>
 
-        <div class="flex items-center space-x-6 text-brand-subtext">
-            <a href="../pages/login.html" class="text-sm uppercase tracking-wider hover:text-brand-text transition-colors">Login</a>
-            <a href="../pages/cart.html" class="cursor-pointer hover:text-brand-text transition-colors" title="View Cart">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-            </a>
-        </div>
+        <!-- COLLECTION DROPDOWN -->
+        <li class="relative group cursor-pointer list-none py-2">
+          <div
+            class="bg-transparent border-none outline-none hover:text-brand-text transition-colors duration-300 flex items-center justify-center gap-1.5 uppercase text-sm font-medium"
+          >
+            <span>Collection</span>
+            <svg
+              class="w-3.5 h-3.5 transition-transform duration-300 group-hover:-rotate-180"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </div>
+
+          <ul
+            class="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-44 bg-brand-bg rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:mt-2 transition-all duration-300 ease-out z-50 overflow-hidden border border-white/10 m-0 p-0"
+          >
+            <li>
+              <a
+                href="../pages/bags.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Bags</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/hats.html"
+                class="block px-4 py-3 bg-brand-text text-brand-bg text-sm text-center font-medium transition-colors duration-300"
+                >Hats</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/belts.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Belts</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/watches.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Watches</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/perfumes.html"
+                class="block px-4 py-3 text-brand-text text-sm text-center hover:bg-brand-text hover:text-brand-bg transition-colors duration-300"
+                >Perfumes</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <a
+            href="../pages/about.html"
+            class="hover:text-brand-text transition-colors"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="../pages/contact.html"
+            class="hover:text-brand-text transition-colors"
+            >Contact</a
+          >
+        </li>
+      </ul>
+
+      <!-- NAVBAR ACTIONS -->
+      <div class="flex items-center space-x-6 text-gray-200">
+        <!-- Currency Switcher -->
+        <select
+          id="currencySelector"
+          class="bg-transparent text-xs uppercase tracking-wider border-none outline-none cursor-pointer hover:text-brand-text transition-colors"
+        >
+          <option value="USD" class="bg-brand-bg text-brand-text">USD $</option>
+          <option value="GBP" class="bg-brand-bg text-brand-text">GBP £</option>
+        </select>
+
+        <!-- Login -->
+        <a
+          href="../pages/login.html"
+          class="hidden sm:block text-sm uppercase tracking-wider hover:text-brand-text transition-colors"
+          >Login</a
+        >
+
+        <!-- Wishlist -->
+        <a
+          href="../pages/wishlist.html"
+          class="cursor-pointer hover:text-brand-text transition-colors relative"
+          title="View Wishlist"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            ></path>
+          </svg>
+          <span
+            id="wishlist-count"
+            class="absolute -top-2 -right-2 bg-brand-button text-white text-[10px] font-bold rounded-full h-4 w-4 flex items-center justify-center hidden shadow-sm"
+            >0</span
+          >
+        </a>
+
+        <!-- Cart -->
+        <a
+          href="../pages/cart.html"
+          class="cursor-pointer hover:text-brand-text transition-colors relative"
+          title="View Cart"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path
+              d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+            ></path>
+          </svg>
+          <span
+            id="cart-count"
+            class="absolute -top-1 -right-1 min-w-[16px] h-4 px-1 bg-brand-button text-white text-[9px] font-semibold rounded-full hidden items-center justify-center leading-none"
+            >0</span
+          >
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobileMenuButton"
+          class="md:hidden text-brand-text text-2xl leading-none"
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+      </div>
     </nav>
 
-
-<!--hero section -->
-   <section class="hero-hats-man">
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-    <h1>THE BEST SKATEBOARD<br>EVENTS IN THE WORLD</h1>
-
-    <p>
-      Spitfire is the longest running Skate events globally pulling in the 
-      best talent in the world to its events.
-    </p>
-
-    <button class="hero-btn">shop now</button>
-  </div>
-</section>
-
-<!-- Title -->
-<h1 class="page-title">man’s Hats</h1>
-
-<!-- Product Section -->
-<section class="product-container">
-
-   
-    <!-- products 1-->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg1.avif" alt="Bag">
-            <a href="../index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="../pages/sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Midnight Maven</h3>
-            <p>A sleek, elegant bag designed for bold nights and timeless style</p>
-
-            <div class="price">
-                <span class="new">$6790</span>
-                <span class="old">$8970</span>
-                <span class="off">(60% OFF)</span>
-            </div>
-        </div>
+    <!-- MOBILE NAVIGATION -->
+    <div
+      id="mobileMenu"
+      class="hidden fixed top-[72px] left-0 right-0 bg-brand-bg/95 backdrop-blur-md border-b border-brand-card/50 z-40 md:hidden"
+    >
+      <ul
+        class="flex flex-col p-6 space-y-4 text-sm uppercase tracking-wider text-brand-subtext"
+      >
+        <li>
+          <a
+            href="../index.html"
+            class="block hover:text-brand-text transition-colors"
+            >Home</a
+          >
+        </li>
+        <li class="border-t border-brand-card pt-4">
+          <p class="text-xs mb-2 text-brand-text">Shopping</p>
+          <div class="pl-4 space-y-2">
+            <a
+              href="../shop/rings.html"
+              class="block hover:text-brand-text transition-colors"
+              >Rings</a
+            >
+            <a
+              href="../shop/pendants.html"
+              class="block hover:text-brand-text transition-colors"
+              >Pendants</a
+            >
+            <a
+              href="../shop/earrings.html"
+              class="block hover:text-brand-text transition-colors"
+              >Earrings</a
+            >
+            <a
+              href="../shop/bracelets.html"
+              class="block hover:text-brand-text transition-colors"
+              >Bracelets</a
+            >
+            <a
+              href="../shop/diamond.html"
+              class="block hover:text-brand-text transition-colors"
+              >Diamond</a
+            >
+            <a
+              href="../shop/platinum.html"
+              class="block hover:text-brand-text transition-colors"
+              >Platinum</a
+            >
+          </div>
+        </li>
+        <li class="border-t border-brand-card pt-4">
+          <p class="text-xs mb-2 text-brand-text">Collection</p>
+          <div class="pl-4 space-y-2">
+            <a
+              href="../pages/bags.html"
+              class="block hover:text-brand-text transition-colors"
+              >Bags</a
+            >
+            <a
+              href="../pages/hats.html"
+              class="block text-brand-text font-medium transition-colors"
+              >Hats</a
+            >
+            <a
+              href="../pages/belts.html"
+              class="block hover:text-brand-text transition-colors"
+              >Belts</a
+            >
+            <a
+              href="../pages/watches.html"
+              class="block hover:text-brand-text transition-colors"
+              >Watches</a
+            >
+            <a
+              href="../pages/perfumes.html"
+              class="block hover:text-brand-text transition-colors"
+              >Perfumes</a
+            >
+          </div>
+        </li>
+        <li class="border-t border-brand-card pt-4">
+          <a
+            href="../pages/about.html"
+            class="block hover:text-brand-text transition-colors"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="../pages/contact.html"
+            class="block hover:text-brand-text transition-colors"
+            >Contact</a
+          >
+        </li>
+        <li class="border-t border-brand-card pt-4">
+          <a
+            href="../pages/login.html"
+            class="block hover:text-brand-text transition-colors"
+            >Login</a
+          >
+        </li>
+      </ul>
     </div>
-    <!-- products 2-->
-   <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg2.avif" alt="Bag">
-            <a href="../index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="../pages/sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
 
-        <div class="product-details">
-            <h3>Urban Bloom</h3>
-            <p>A fresh, modern bag inspired by the energy and beauty of city life.</p>
+    <!-- PAGE HEADING -->
+    <section
+      class="bg-gradient-to-r from-brand-shadow to-brand-card py-16 px-4 mt-16"
+    >
+      <div class="container mx-auto text-center">
+        <h1 class="font-serif text-4xl md:text-5xl mb-4">Hats Collection</h1>
+        <p class="text-brand-subtext text-lg">Classic, Casual &amp; Modern Hats</p>
+      </div>
+    </section>
 
-            <div class="price">
-                <span class="new">$454</span>
-                <span class="old">$699</span>
-                <span class="off">(%78 OFF)</span>
+    <!-- FILTER SECTION -->
+    <section class="py-8 px-4 border-b border-brand-card">
+      <div class="container mx-auto">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <!-- GENDER -->
+          <div class="flex items-center space-x-2 bg-brand-card rounded-lg p-1">
+            <button
+              id="genderWomen"
+              class="gender-toggle active px-6 py-2 rounded-md transition text-sm"
+            >
+              Women
+            </button>
+            <button
+              id="genderMen"
+              class="gender-toggle px-6 py-2 rounded-md transition text-sm"
+            >
+              Men
+            </button>
+          </div>
+
+          <!-- SEARCH -->
+          <div
+            class="relative flex-grow max-w-md w-full order-last lg:order-none"
+          >
+            <input
+              type="text"
+              id="productSearch"
+              placeholder="Search for hats..."
+              class="w-full bg-brand-card text-brand-text pl-10 pr-4 py-2 rounded-lg text-sm border border-brand-button/30 focus:outline-none focus:border-brand-button transition-colors placeholder:text-brand-subtext"
+            />
+            <svg
+              class="absolute left-3 top-2.5 w-4 h-4 text-brand-subtext"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- PRICE FILTER -->
+          <div class="flex items-center space-x-4">
+            <label class="hidden md:block text-sm text-brand-subtext"
+              >Price Range:</label
+            >
+            <div class="flex items-center space-x-2">
+              <input
+                type="number"
+                id="minPrice"
+                placeholder="Min"
+                class="w-24 bg-brand-card text-brand-text px-3 py-2 rounded text-sm border border-brand-button/30 focus:outline-none focus:border-brand-button"
+              />
+              <span class="text-brand-subtext">-</span>
+              <input
+                type="number"
+                id="maxPrice"
+                placeholder="Max"
+                class="w-24 bg-brand-card text-brand-text px-3 py-2 rounded text-sm border border-brand-button/30 focus:outline-none focus:border-brand-button"
+              />
+              <button
+                id="applyFilter"
+                class="bg-brand-button hover:bg-brand-hover text-white px-4 py-2 rounded text-sm transition"
+              >
+                Apply
+              </button>
+              <button
+                id="resetFilter"
+                class="bg-brand-card hover:bg-brand-button/50 text-brand-text px-4 py-2 rounded text-sm transition"
+              >
+                Reset
+              </button>
             </div>
-        </div>
-    </div>
-    <!-- products 3-->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg3.avif" alt="Bag">
-            <a href="../index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="../pages/sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Luna Luxe</h3>
-            <p>A luxurious piece with soft tones and a graceful, moonlit charm.</p>
-
-            <div class="price">
-                <span class="new">$8950</span>
-                <span class="old">$15999</span>
-                <span class="off">(67% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!--products 4 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg4.avif" alt="Bag">
-            <a href="../index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="../pages/sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Starlight Satchel</h3>
-            <p>A radiant satchel that adds a subtle sparkle to every outfit.</p>
-
-            <div class="price">
-                <span class="new">$4560</span>
-                <span class="old">$5772</span>
-                <span class="off">(80% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 5 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg5.avif" alt="Bag">
-            <a href="../index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="../pages/sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Ember Clutch</h3>
-            <p>A bold and fiery clutch that makes a confident statement.</p>
-
-            <div class="price">
-                <span class="new">$3999</span>
-                <span class="old">$8999</span>
-                <span class="off">(49% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 6 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg6.avif" alt="Bag">
-            <a href="../index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="../pages/sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Aurora Tote</h3>
-            <p>A spacious tote glowing with soft, elegant color transitions.</p>
-
-            <div class="price">
-                <span class="new">$7000</span>
-                <span class="old">$20000</span>
-                <span class="off">(65% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 7 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg7.avif" alt="Bag">
-            <a href="../index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="../pages/sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Nova Crossbody</h3>
-            <p>A trendy crossbody that shines with modern simplicity</p>
-
-            <div class="price">
-                <span class="new">$2500</span>
-                <span class="old">$5999</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 8 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg8.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Serenade Sling</h3>
-            <p>A light, stylish sling perfect for effortless everyday charm.</p>
-
-            <div class="price">
-                <span class="new">$2457</span>
-                <span class="old">$5899</span>
-                <span class="off">(80% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 9 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg9.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Crystal Cascade</h3>
-            <p>A refined bag with a flowing, elegant and polished look</p>
-
-            <div class="price">
-                <span class="new">$1200</span>
-                <span class="old">$2000</span>
-                <span class="off">(70% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 10 -->
-    <div class="product-card">
-       <div class="image-wrapper">
-            <img src="/assets/hatimg10.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Parisian Pouch</h3>
-            <p>A chic pouch inspired by classic Paris fashion.</p>
-
-            <div class="price">
-                <span class="new">$6660</span>
-                <span class="old">$8549</span>
-                <span class="off">(80% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 11-->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg11.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Ivory Icon</h3>
-            <p>A timeless ivory bag that defines pure elegance.</p>
-
-            <div class="price">
-                <span class="new">$400</span>
-                <span class="old">$800</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 12 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg12.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Marigold Mini</h3>
-            <p>A vibrant mini bag bursting with warm, sunny tones.</p>
-
-            <div class="price">
-                <span class="new">$899</span>
-                <span class="old">$5000</span>
-                <span class="off">(70% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 13 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg13.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Zenith Zip/h3>
-            <p>A sleek, functional bag built for peak performance and style.</p>
-
-            <div class="price">
-                <span class="new">$5999</span>
-                <span class="old">$1200</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 14 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg14.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Casablanca Clasp</h3>
-            <p>A vintage-inspired bag with a touch of classic luxury.</p>
-
-            <div class="price">
-                <span class="new">$1999</span>
-                <span class="old">5999</span>
-                <span class="off">(35% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 15 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg15.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Sapphire Satchel</h3>
-            <p>A deep blue satchel that reflects richness and sophistication.</p>
-
-            <div class="price">
-                <span class="new">$2800</span>
-                <span class="old">$6999</span>
-                <span class="off">(45% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 16 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg16.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Golden Glimmer</h3>
-            <p>A glowing bag that adds a touch of luxury shine.</p>
-
-            <div class="price">
-                <span class="new">$1000</span>
-                <span class="old">$4000</span>
-                <span class="off">(30% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 17 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg17.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Willow Wanderer</h3>
-            <p>A soft, relaxed bag perfect for calm and casual outings.</p>
-
-            <div class="price">
-                <span class="new">$700</span>
-                <span class="old">$7000</span>
-                <span class="off">(70% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- Eproducts 18 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg18.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Celeste Clutch</h3>
-            <p>A heavenly clutch with a delicate and dreamy design.</p>
-
-            <div class="price">
-                <span class="new">$1200</span>
-                <span class="old">$2400</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 19 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg19.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-             
-        </div>
-
-        <div class="product-details">
-            <h3>Retro Radiance</h3>  
-            <p>A vintage-style bag bringing back classic fashion vibes.</p>
-
-            <div class="price">
-                <span class="new">$5000</span>
-                <span class="old">$10000</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-     <!-- products 20 -->
-   <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatimg20.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-             
-        </div>
-
-        <div class="product-details">
-            <h3>Vivid Voyager</h3>  
-            <p>A bold and colorful bag made for travel and adventure.</p>
-
-            <div class="price">
-                <span class="new">$1500</span>
-                <span class="old">$3000</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Title -->
-<h1 class="page-title">Women’s hats</h1>
-
-<!-- Product Section -->
-<section class="product-container">
-
-   
-    <!-- products 1-->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw1.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Midnight Maven</h3>
-            <p>A sleek, elegant bag designed for bold nights and timeless style</p>
-
-            <div class="price">
-                <span class="new">$6790</span>
-                <span class="old">$8970</span>
-                <span class="off">(60% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 2-->
-   <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw2.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Urban Bloom</h3>
-            <p>A fresh, modern bag inspired by the energy and beauty of city life.</p>
-
-            <div class="price">
-                <span class="new">$454</span>
-                <span class="old">$699</span>
-                <span class="off">(%78 OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 3-->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw3.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Luna Luxe</h3>
-            <p>A luxurious piece with soft tones and a graceful, moonlit charm.</p>
-
-            <div class="price">
-                <span class="new">$8950</span>
-                <span class="old">$15999</span>
-                <span class="off">(67% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!--products 4 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw4.avif " alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Starlight Satchel</h3>
-            <p>A radiant satchel that adds a subtle sparkle to every outfit.</p>
-
-            <div class="price">
-                <span class="new">$4560</span>
-                <span class="old">$5772</span>
-                <span class="off">(80% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 5 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw5.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Ember Clutch</h3>
-            <p>A bold and fiery clutch that makes a confident statement.</p>
-
-            <div class="price">
-                <span class="new">$3999</span>
-                <span class="old">$8999</span>
-                <span class="off">(49% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 6 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw6.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Aurora Tote</h3>
-            <p>A spacious tote glowing with soft, elegant color transitions.</p>
-
-            <div class="price">
-                <span class="new">$7000</span>
-                <span class="old">$20000</span>
-                <span class="off">(65% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 7 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw7.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Nova Crossbody</h3>
-            <p>A trendy crossbody that shines with modern simplicity</p>
-
-            <div class="price">
-                <span class="new">$2500</span>
-                <span class="old">$5999</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 8 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw8.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Serenade Sling</h3>
-            <p>A light, stylish sling perfect for effortless everyday charm.</p>
-
-            <div class="price">
-                <span class="new">$2457</span>
-                <span class="old">$5899</span>
-                <span class="off">(80% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 9 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw9.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Crystal Cascade</h3>
-            <p>A refined bag with a flowing, elegant and polished look</p>
-
-            <div class="price">
-                <span class="new">$1200</span>
-                <span class="old">$2000</span>
-                <span class="off">(70% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 10 -->
-    <div class="product-card">
-       <div class="image-wrapper">
-            <img src="/assets/hatw10.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Parisian Pouch</h3>
-            <p>A chic pouch inspired by classic Paris fashion.</p>
-
-            <div class="price">
-                <span class="new">$6660</span>
-                <span class="old">$8549</span>
-                <span class="off">(80% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 11-->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw11.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Ivory Icon</h3>
-            <p>A timeless ivory bag that defines pure elegance.</p>
-
-            <div class="price">
-                <span class="new">$400</span>
-                <span class="old">$800</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 12 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw12.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Marigold Mini</h3>
-            <p>A vibrant mini bag bursting with warm, sunny tones.</p>
-
-            <div class="price">
-                <span class="new">$899</span>
-                <span class="old">$5000</span>
-                <span class="off">(70% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 13 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw13.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Zenith Zip/h3>
-            <p>A sleek, functional bag built for peak performance and style.</p>
-
-            <div class="price">
-                <span class="new">$5999</span>
-                <span class="old">$1200</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 14 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw14.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Casablanca Clasp</h3>
-            <p>A vintage-inspired bag with a touch of classic luxury.</p>
-
-            <div class="price">
-                <span class="new">$1999</span>
-                <span class="old">5999</span>
-                <span class="off">(35% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 15 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw15.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Sapphire Satchel</h3>
-            <p>A deep blue satchel that reflects richness and sophistication.</p>
-
-            <div class="price">
-                <span class="new">$2800</span>
-                <span class="old">$6999</span>
-                <span class="off">(45% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 16 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw16.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Golden Glimmer</h3>
-            <p>A glowing bag that adds a touch of luxury shine.</p>
-
-            <div class="price">
-                <span class="new">$1000</span>
-                <span class="old">$4000</span>
-                <span class="off">(30% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 17 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw17.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Willow Wanderer</h3>
-            <p>A soft, relaxed bag perfect for calm and casual outings.</p>
-
-            <div class="price">
-                <span class="new">$700</span>
-                <span class="old">$7000</span>
-                <span class="off">(70% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- Eproducts 18 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw18.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-        </div>
-
-        <div class="product-details">
-            <h3>Celeste Clutch</h3>
-            <p>A heavenly clutch with a delicate and dreamy design.</p>
-
-            <div class="price">
-                <span class="new">$1200</span>
-                <span class="old">$2400</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-    <!-- products 19 -->
-    <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw19.avif" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-             
-        </div>
-
-        <div class="product-details">
-            <h3>Retro Radiance</h3>  
-            <p>A vintage-style bag bringing back classic fashion vibes.</p>
-
-            <div class="price">
-                <span class="new">$5000</span>
-                <span class="old">$10000</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-     <!-- products 20 -->
-   <div class="product-card">
-        <div class="image-wrapper">
-            <img src="/assets/hatw20.webp" alt="Bag">
-            <a href="index.html"><button class="wishlist-icon">♡</button></a>
-            <a href="sproduct.html"><button class="buy-btn">Add to cart</button></a>
-             
-        </div>
-
-        <div class="product-details">
-            <h3>Vivid Voyager</h3>  
-            <p>A bold and colorful bag made for travel and adventure.</p>
-
-            <div class="price">
-                <span class="new">$1500</span>
-                <span class="old">$3000</span>
-                <span class="off">(50% OFF)</span>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Footer -->
-<footer class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            <div>
-                <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">AURA</h3>
-                <p class="text-brand-subtext font-light text-sm leading-relaxed">Elegance that defines you. Discover timeless jewelry and accessories crafted for your unforgettable moments.</p>
-            </div>
-            <div>
-                <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
-                <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">About Us</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Shop Collection</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Track Order</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">FAQs</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
-                <ul class="space-y-3 text-brand-subtext text-sm font-light">
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Terms of Service</a></li>
-                    <li><a href="#" class="hover:text-brand-hover transition-colors">Return Policy</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-serif text-xl text-brand-text mb-6">Contact Us</h3>
-                <ul class="space-y-3 text-brand-subtext text-sm font-light mb-6">
-                    <li>Email: support@aurajewels.com</li>
-                    <li>Phone: +1 (800) 123-4567</li>
-                    <li>Address: 5th Ave, New York, NY</li>
-                </ul>
-                <div class="flex space-x-4">
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" class="w-4 h-4 object-contain">
-    </a>
-
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" alt="Instagram" class="w-4 h-4 object-contain">
-    </a>
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png" alt="YouTube" class="w-4 h-4 object-contain">
-    </a>
-    <a href="#" class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80">
-        <img src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png" alt="Discord" class="w-4 h-4 object-contain">
-    </a>
-
-</div>
-            </div>
-        </div>
-        <div class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30">
-            &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
-        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DYNAMIC PRODUCTS -->
+    <section class="py-12 px-4">
+      <div class="container mx-auto">
+        <div
+          id="productsGrid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          <!-- Products will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      class="bg-brand-shadow/80 border-t border-brand-card/30 pt-16 pb-8 px-6 md:px-12"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+      >
+        <div>
+          <h3 class="font-serif text-3xl tracking-widest text-brand-text mb-6">
+            AURA
+          </h3>
+          <p class="text-brand-subtext font-light text-sm leading-relaxed">
+            Elegance that defines you. Discover timeless jewelry and accessories
+            crafted for your unforgettable moments.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-brand-text mb-6">Quick Links</h3>
+          <ul class="space-y-3 text-brand-subtext text-sm font-light">
+            <li>
+              <a
+                href="../pages/about.html"
+                class="hover:text-brand-hover transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="../shop/shop.html"
+                class="hover:text-brand-hover transition-colors"
+                >Shop Collection</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/track-order.html"
+                class="hover:text-brand-hover transition-colors"
+                >Track Order</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/faqs.html"
+                class="hover:text-brand-hover transition-colors"
+                >FAQs</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-brand-text mb-6">Legal</h3>
+          <ul class="space-y-3 text-brand-subtext text-sm font-light">
+            <li>
+              <a
+                href="../pages/privacy-policy.html"
+                class="hover:text-brand-hover transition-colors"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/terms-of-service.html"
+                class="hover:text-brand-hover transition-colors"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a
+                href="../pages/return-policy.html"
+                class="hover:text-brand-hover transition-colors"
+                >Return Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-brand-text mb-6">Contact Us</h3>
+          <ul class="space-y-3 text-brand-subtext text-sm font-light mb-6">
+            <li>Email: support@aurajewels.com</li>
+            <li>Phone: +1 (800) 123-4567</li>
+            <li>Address: 5th Ave, New York, NY</li>
+          </ul>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png"
+                alt="Facebook"
+                class="w-4 h-4 object-contain"
+              />
+            </a>
+            <a
+              href="#"
+              class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png"
+                alt="Instagram"
+                class="w-4 h-4 object-contain"
+              />
+            </a>
+            <a
+              href="#"
+              class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/1384/1384060.png"
+                alt="YouTube"
+                class="w-4 h-4 object-contain"
+              />
+            </a>
+            <a
+              href="#"
+              class="flex items-center justify-center transition-colors border border-brand-card p-2.5 rounded-full hover:border-brand-hover hover:opacity-80"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/3670/3670157.png"
+                alt="Discord"
+                class="w-4 h-4 object-contain"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-center text-brand-subtext text-sm font-light pt-8 border-t border-brand-card/30"
+      >
+        &copy; 2026 Aura Premium Jewellery. All Rights Reserved.
+      </div>
     </footer>
 
+    <!-- MOBILE MENU SCRIPT -->
     <script>
-        function goToPage() {
-            const page = document.getElementById("collection").value;
-            if (page !== "") {
-                window.location.href = page;
-            }
-        }
-        function goToShop() {
-            const page = document.getElementById("shop").value;
-            if (page !== "") {
-                window.location.href = page;
-            }
-        }
+      const mobileMenuButton = document.getElementById("mobileMenuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
     </script>
-  <script src="/collections/accessories-and-jewellery-web/script/collection.js"></script>
-</body>
-</html>
-</body>
+
+    <!-- SCRIPTS -->
+    <script type="module" src="../script/cart.js"></script>
+    <script src="../script/collection.js"></script>
+  </body>
 </html>
